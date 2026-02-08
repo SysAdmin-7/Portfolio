@@ -1,0 +1,199 @@
+<!-- Menu -->
+<nav>
+    <ul class="menu-left">
+      <li><a href="index.html">Accueil</a></li>
+    </ul>
+    <ul class="menu-right">
+      <li>
+        <a href="#">Portfolio</a>
+        <ul>
+          <li><a href="TP.html">TPs</a></li>
+          <li><a href="projet.html">Projets</a></li>
+          <li><a href="Stage sio1.html">Stage SIO1</a></li>
+          <li><a href="Stage sio2.html">Stage SIO2</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Documents</a>
+        <ul>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="lettre de motivation.html">Lettre de motivations</a></li>
+          <li><a href="Convention sio1.html">Convention SIO1</a></li>
+          <li><a href="convention sio2.html">Convention SIO2</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Veille</a>
+        <ul>
+          <li><a href="theme1.html">Thème 1</a></li>
+          <li><a href="theme2.html">Thème 2</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <style>
+    /* --- Menu de Navigation (Ajustements légers pour le style) ---------------------------------------------------------------- */
+/* (Ceci est un exemple, vous pouvez avoir un CSS de menu différent) */
+
+/* --- Variables de Couleur (facultatif mais recommandé) --- */
+:root {
+    --nav-bg-color: #ffffff;      /* Arrière-plan sombre (Bootstrap dark) */
+    --nav-text-color: #000000;   /* Texte blanc */
+    --nav-hover-color: #007bff;   /* Couleur principale (Bleu Bootstrap) */
+    --nav-accent-color: #2c3135; /* Couleur de survol des éléments */
+}
+
+/* --- Structure Principale de la Barre de Navigation --- */
+nav {
+    /* Force le calcul des tailles pour éviter les débordements */
+    box-sizing: border-box !important;
+    /* Rendre la barre fixe en haut de page */
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Dans la partie nav { ... } de ton style */
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    
+    background-color: var(--nav-bg-color);
+    box-shadow: var(--nav-shadow);
+    border-bottom: 1px solid var(--nav-border-color);
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 65px; 
+    z-index: 1050; /* Doit être au-dessus de tout le contenu */
+    width: 100%;
+
+}
+
+/* --- Listes d'éléments de Menu --- */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+}
+
+/* --- Liens de Niveau 1 (Parent) --- */
+nav ul li a {
+    color: var(--nav-text-color);
+    text-decoration: none;
+    padding: 0 15px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative; /* Nécessaire pour l'animation du soulignement */
+}
+
+/* Animation de soulignement au survol */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0; /* Commence avec une largeur zéro */
+    height: 3px;
+    background-color: var(--nav-hover-color);
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover {
+    color: var(--nav-hover-color);
+}
+
+/* Le soulignement se déploie au survol */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* --- Sous-Menus (Dropdowns) --- */
+nav ul ul {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    min-width: 180px;
+    background-color: var(--nav-bg-color);
+    border: 1px solid var(--nav-border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    flex-direction: column; 
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li:hover > ul {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Liens du Sous-Menu */
+nav ul ul li a {
+    height: auto;
+    padding: 10px 15px; 
+    border-bottom: 1px solid #f8f9fa; /* Séparateur léger */
+}
+
+nav ul ul li a:hover {
+    background-color: var(--nav-border-color); /* Survol plus clair */
+    color: var(--nav-hover-color);
+}
+
+/* Retrait de l'animation de soulignement pour les sous-menus */
+nav ul ul li a::after {
+    display: none;
+}
+
+/* --- Rendre le menu Réactif (Mobile) --- */
+@media (max-width: 992px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+        position: static; /* Retire l'effet sticky sur mobile pour ne pas cacher trop d'écran */
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        height: auto;
+        justify-content: center;
+        padding: 10px 15px;
+        border-bottom: 1px solid var(--nav-border-color);
+    }
+    
+    /* Cache l'animation de soulignement sur mobile pour un look plus propre */
+    nav ul li a::after {
+        display: none;
+    }
+
+    nav ul ul {
+        position: static;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        background-color: #f1f1f1; /* Fond plus clair pour l'indentation */
+    }
+}
+  </style>
