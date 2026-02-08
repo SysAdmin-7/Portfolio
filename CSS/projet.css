@@ -1,0 +1,99 @@
+ /* --- 1. DESIGN SYSTEM (Même que ta boutique) --- */
+        :root { 
+            --primary: #2563eb;       
+            --primary-dark: #1e40af;  
+            --bg-body: #f3f4f6;       
+            --bg-card: #ffffff;       
+            --text-main: #1f2937;     
+            --text-gray: #6b7280;     
+            --border: #e5e7eb;  
+            --tag-bg: #e0f2fe;
+            --tag-text: #0369a1;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body { background-color: var(--bg-body); color: var(--text-main); padding-bottom: 50px; }
+
+        /* HEADER */
+        header { 
+            background: var(--bg-card); padding: 1.5rem 5%; 
+            display: flex; justify-content: space-between; align-items: center; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            position: sticky; top: 0; z-index: 50;
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .logo span { color: var(--text-main); }
+        nav { display: flex; gap: 20px; }
+        nav a { color: var(--text-gray); text-decoration: none; font-weight: 600; transition: 0.3s; }
+        nav a:hover, nav a.active { color: var(--primary); }
+
+        /* HERO */
+        .hero { text-align: center; padding: 4rem 1rem 2rem 1rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { color: var(--text-gray); max-width: 600px; margin: 0 auto; }
+
+        /* FILTRES */
+        .filters { display: flex; justify-content: center; gap: 10px; margin: 2rem 0; flex-wrap: wrap; }
+        .filter-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 8px 20px; border-radius: 20px; cursor: pointer;
+            font-weight: 600; color: var(--text-gray); transition: 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary); color: white; border-color: var(--primary);
+        }
+
+        /* GRILLE PROJETS */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+            gap: 30px; 
+        }
+
+        /* CARTE PROJET */
+        .card {
+            background: var(--bg-card); border-radius: 16px; overflow: hidden;
+            border: 1px solid var(--border); transition: 0.3s;
+            display: flex; flex-direction: column;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        .card-header {
+            height: 160px; background: #1e293b; 
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 3rem;
+            position: relative;
+        }
+        /* Petit badge en haut à droite de l'image */
+        .status-badge {
+            position: absolute; top: 15px; right: 15px;
+            background: rgba(0,0,0,0.6); color: white;
+            padding: 5px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: bold;
+            backdrop-filter: blur(4px);
+        }
+        
+        .card-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .card-desc { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.5; }
+        
+        .tech-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 15px; }
+        .tag {
+            background: var(--tag-bg); color: var(--tag-text);
+            padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;
+        }
+
+        .card-footer {
+            padding: 1.5rem; border-top: 1px solid var(--border);
+            display: flex; gap: 10px;
+        }
+        .btn {
+            flex: 1; padding: 10px; border-radius: 8px; text-decoration: none;
+            text-align: center; font-weight: 600; font-size: 0.9rem; transition: 0.2s;
+            border: 1px solid var(--border);
+        }
+        .btn-primary { background: var(--primary); color: white; border-color: var(--primary); }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-outline { background: transparent; color: var(--text-main); }
+        .btn-outline:hover { background: #f9fafb; }

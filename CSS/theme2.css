@@ -1,0 +1,146 @@
+/* --- 1. THEME CSI LINUX (DARK MODE VIBES) --- */
+:root {
+    --bg-dark: #f8f9fa;       /* Fond général */
+    --bg-card: #ffffff;       /* Fond des cartes */
+    --accent: #008cff;        /* Bleu plus "Tech" pour CSI Linux */
+    --text-main: #333333;
+    --text-muted: #616161;
+    --border: #d1d5db;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, .tag { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 700; }
+a { text-decoration: none; color: inherit; }
+
+/* --- 2. HEADER --- */
+header {
+    background: linear-gradient(135deg, #000000, #1a1a2e); /* Fond noir/bleu nuit style terminal */
+    border-bottom: 4px solid var(--accent);
+    padding: 5rem 2rem;
+    text-align: center;
+    color: white;
+}
+
+.badge {
+    background: rgba(0, 140, 255, 0.15);
+    color: #4db8ff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px; /* Plus carré pour le style technique */
+    font-size: 0.9rem;
+    border: 1px solid var(--accent);
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-family: 'Roboto Mono', monospace; /* Police style code */
+}
+
+header h1 { font-size: 3rem; margin-bottom: 0.5rem; letter-spacing: 1px; }
+
+/* --- 3. LES 3 PILIERS (Grid Auto) --- */
+.pillars-section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+
+.section-header { 
+    display: flex; align-items: center; gap: 1rem; 
+    margin-bottom: 2rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem;
+}
+.section-header i { color: var(--accent); }
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.pillar-card {
+    background: var(--bg-card);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Petit effet de barre au survol */
+.pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.pillar-card:hover::before { transform: scaleX(1); }
+
+.pillar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pillar-card i { font-size: 3rem; color: var(--accent); margin-bottom: 1.5rem; }
+
+/* --- 4. FLUX D'ARTICLES --- */
+.feed-container { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem 2rem; }
+
+.article-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.meta { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); font-weight: 500;}
+
+.tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.tag { 
+    background: #eef2ff; 
+    color: var(--accent);
+    font-size: 0.75rem; 
+    padding: 0.3rem 0.8rem; 
+    border-radius: 4px; 
+    font-weight: bold;
+}
+
+.read-btn { align-self: flex-start; color: var(--accent); font-weight: bold; display: flex; align-items: center; gap: 0.5rem; transition: 0.2s;}
+.read-btn:hover { gap: 1rem; } /* Petite animation de flèche */
+
+/* --- 5. RESSOURCES / FOOTER --- */
+.resources { background: #e5e7eb; padding: 4rem 2rem; text-align: center; border-top: 1px solid var(--border);}
+.resource-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+
+.res-link { 
+    background: white;
+    border: 1px solid var(--border); 
+    padding: 1rem 2rem; 
+    border-radius: 50px; 
+    transition: 0.3s; 
+    font-weight: 500;
+    display: flex; align-items: center; gap: 0.5rem;
+}
+
+.res-link:hover { 
+    background: var(--accent); 
+    color: white; 
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    header h1 { font-size: 2rem; }
+    .meta { flex-direction: column; gap: 0.5rem; }
+}

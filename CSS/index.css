@@ -1,0 +1,110 @@
+  
+
+/* --- CONFIGURATION GLOBALE --- */
+body {
+  margin: 0;          /* Enlève les marges blanches autour de la page */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden; /* Empêche la barre de défilement horizontale */
+  background: rgba(255,255,255,0.2); /* Fond légèrement transparent */
+}
+
+/* --- STRUCTURE D'UNE DIAPOSITIVE (SLIDE) --- */
+.slide {
+  width: 100vw;       /* Largeur = 100% de la fenêtre visible */
+  height: 100vh;      /* Hauteur = 100% de la fenêtre visible */
+  display: flex;      /* Active Flexbox pour gérer la mise en page interne */
+  flex-direction: column; /* Les éléments (titres, textes) s'empilent verticalement */
+  justify-content: center; /* Centre le contenu verticalement */
+  align-items: center;     /* Centre le contenu horizontalement */
+  text-align: center;      /* Centre le texte lui-même */
+  transition: transform 0.8s ease-in-out; /* Animation fluide quand la slide bouge */
+  position: absolute; /* Permet de superposer les slides les unes sur les autres */
+  top: 60px;          /* Décale de 60px vers le bas pour laisser la place au menu */
+  left: 0;
+}
+
+/* --- IMAGES DE FOND PAR SECTION --- */
+/* Pour chaque classe : l'image couvre tout (cover), ne se répète pas et est centrée */
+.profil { 
+  background-image: url("../images/Fond_acceuil.png");
+  background-size: cover;       
+  background-repeat: no-repeat; 
+  background-position: center;  
+  margin: 0; height: 100vh; 
+}
+.experience { 
+  background-image: url("../images/Fond_experiences_personnelles.jpg");
+  background-size: cover; background-repeat: no-repeat; background-position: center;
+  margin: 0; height: 100vh; 
+}
+.competences { 
+  background-image: url("../images/Fond_competences.jpg");
+  background-size: cover; background-repeat: no-repeat; background-position: center;
+  margin: 0; height: 100vh; 
+}
+.formation {  
+  background-image: url("../images/Fond_formation.jpg");
+  background-size: cover; background-repeat: no-repeat; background-position: center;
+  margin: 0; height: 100vh; 
+}
+.contact {  
+  background-image: url("../images/Fond_contact_acceuil.jpg");
+  background-size: cover; background-repeat: no-repeat; background-position: center;
+  margin: 0; height: 100vh; 
+}
+
+/* --- TYPOGRAPHIE --- */
+h1, h2 { margin: 10px 0; } /* Ajoute un peu d'espace autour des titres */
+
+p, ul { 
+  max-width: 600px;   /* Limite la largeur du texte pour qu'il reste lisible */
+  margin: 10px auto;  /* Centre le bloc de texte horizontalement */
+  line-height: 1.6;   /* Aère les lignes de texte */
+}
+
+ul { list-style: none; padding: 0; } /* Enlève les puces (points) des listes */
+ul li { margin: 8px 0; }
+
+/* --- NAVIGATION (BOUTONS EN BAS) --- */
+.nav-buttons {
+  position: fixed;    /* Fixe les boutons par rapport à l'écran (ne bougent pas au scroll) */
+  bottom: 20px;       /* Collés en bas */
+  width: 100%;
+  text-align: center; /* Centre les boutons */
+  z-index: 1000;      /* Force les boutons à être AU-DESSUS des images */
+}
+
+.nav-buttons button {
+  background: rgba(255,255,255,0.2); /* Fond semi-transparent */
+  border: 2px solid #fff; /* Bordure blanche */
+  color: #fff;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 25px; /* Arrondit les bords (forme de pilule) */
+  cursor: pointer;     /* Change la souris en main au survol */
+  font-size: 16px;
+  transition: all 0.3s; /* Animation douce au survol */
+}
+
+.nav-buttons button:hover {
+  background: rgba(255,255,255,0.6); /* Devient plus opaque au survol */
+  color: #000; /* Texte devient noir */
+}
+
+/* --- STYLES SPÉCIFIQUES (ID) --- */
+/* Ces styles ciblent des éléments précis pour ajuster leur taille */
+h1 { color: white; font-size: 100px; }
+h2 { color: white; font-size: 50px; }
+#profilp { font-size: 30px; color: white; }
+#exp { font-size: 50px; color: white; }
+#exp2 { font-size: 30px; color: white; }
+#compétence2 { font-size: 50px; color: white; }
+#compétence1 { font-size: 30px; color: rgb(255, 255, 255); }
+#formation1 { font-size: 30px; color: rgb(255, 255, 255); }
+#formation2 { font-size: 75px; color: white; } 
+#Contact1 { font-size: 50px; color: white; }
+#Contact2 { font-size: 30px; color: white; }
+
+/* Navigation links spécifiques */
+.nav-link{ background-color: white; color: black !important; }
+.nav-link:hover{ color: black; }

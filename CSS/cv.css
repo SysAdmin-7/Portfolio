@@ -1,0 +1,133 @@
+/* --- VARIABLES --- */
+:root {
+    --primary-color: #007bff; /* Couleur principale (Bleu) */
+    --secondary-color: #343a40; /* Gris foncé */
+    --background-light: #f8f9fa; 
+    --sidebar-bg: #e9ecef; /* Fond gris de la barre latérale */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-light);
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+/* Conteneur principal (Feuille blanche) */
+.cv-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 40px auto; /* Centré horizontalement */
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre portée */
+    border-radius: 8px;
+}
+
+/* --- EN-TÊTE DU CV --- */
+.cv-header {
+    background-image: url('../images/serveur pour cv.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 40px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 20px;
+    position: relative; /* Indispensable pour positionner le filtre sombre */
+}
+
+/* Filtre sombre par-dessus l'image */
+.cv-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Noir à 50% d'opacité */
+    border-radius: 8px 8px 0 0;
+}
+
+.header-text { position: relative; z-index: 10; /* Assure que le texte est au-dessus du filtre */ }
+
+.cv-header h1 { font-size: 3em; font-weight: 700; margin-bottom: 5px; }
+.cv-header h2 { font-size: 1.5em; font-weight: 400; color: #ced4da; margin-bottom: 15px; }
+
+/* --- CORPS DU CV (Grille) --- */
+.cv-body {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1 part pour sidebar, 2 parts pour contenu principal */
+    gap: 30px;
+    padding: 30px 0;
+}
+
+/* --- BARRE LATÉRALE (GAUCHE) --- */
+.cv-sidebar {
+    background-color: var(--sidebar-bg);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.sidebar-title {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color); /* Ligne soulignée bleue */
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.skill-list, .language-list { list-style: none; padding: 0; }
+.skill-list li { padding: 5px 0; font-size: 1em; }
+
+.contact-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.contact-link:hover { color: var(--primary-color); }
+
+/* --- CONTENU PRINCIPAL (DROITE) --- */
+.main-title {
+    color: var(--secondary-color);
+    font-size: 1.7em;
+    font-weight: 700;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* Ligne de temps (Timeline) */
+.timeline-item {
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 3px solid #ced4da; /* Barre verticale grise à gauche */
+}
+
+.timeline-item h4 { color: var(--primary-color); font-weight: 600; margin-bottom: 2px; }
+.timeline-meta { font-style: italic; color: #6c757d; font-size: 0.9em; margin-bottom: 5px; }
+
+/* --- BOUTON DE TÉLÉCHARGEMENT --- */
+.download-button-wrapper { text-align: right; margin-bottom: 20px; padding-right: 20px; }
+
+.download-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px; /* Forme de pilule */
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Bouton monte légèrement */
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.6);
+}
+
+/* --- MOBILE --- */
+@media (max-width: 992px) {
+    .cv-body { grid-template-columns: 1fr; /* Passe en une seule colonne */ }
+    .cv-header { padding: 40px 20px; }
+    .cv-header h1 { font-size: 2.5em; }
+    .download-button-wrapper { text-align: center; padding-right: 0; }
+}

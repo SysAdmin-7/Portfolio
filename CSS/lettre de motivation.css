@@ -1,0 +1,136 @@
+/* --- Variables --- */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #343a40;
+    --text-muted: #6c757d;
+    --background-light: #f8f9fa;
+    --paper-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Configuration Générale --- */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--background-light);
+    color: var(--secondary-color);
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 40px;
+    display: block; /* Important pour que le layout ne casse pas */
+}
+
+#nav-container { width: 100%; display: block; }
+
+/* --- Le conteneur "Feuille de papier" --- */
+.paper {
+    background: white;
+    width: 100%;
+    max-width: 800px; /* Largeur type A4 */
+    margin: 40px auto; /* 'auto' centre la feuille horizontalement */
+    padding: 60px; /* Marges internes comme sur une vraie feuille */
+    box-shadow: var(--paper-shadow); /* Ombre pour effet posé sur table */
+    border-radius: 8px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* --- En-tête (Header) --- */
+header {
+    display: flex; /* Aligne gauche/droite */
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+.my-info h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.my-info h2 { font-size: 1.1em; font-weight: 400; color: var(--text-muted); margin: 5px 0 0 0; }
+
+/* --- Informations de contact --- */
+.contact-info { text-align: right; font-size: 0.95em; }
+.contact-info p { margin: 5px 0; color: var(--secondary-color); }
+.contact-info i { color: var(--primary-color); margin-right: 8px; width: 20px; text-align: center; }
+
+/* --- Section Destinataire et Date --- */
+.recipient-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    align-items: flex-end;
+}
+
+.company-info {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid var(--secondary-color);
+    font-size: 0.95em;
+}
+
+.company-info p { margin: 2px 0; }
+.date { font-style: italic; color: var(--text-muted); }
+
+/* --- Corps de la lettre --- */
+.content { text-align: justify; /* Bords droits des deux côtés (comme un livre) */ }
+
+.subject {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color); /* Soulignement bleu */
+    text-underline-offset: 5px; /* Écarte le trait du texte */
+}
+
+.content p { margin-bottom: 15px; font-size: 1em; }
+.content strong { color: var(--primary-color); }
+
+/* --- Signature --- */
+.signature { margin-top: 60px; text-align: right; padding-right: 20px; }
+.signature p { font-weight: bold; font-size: 1.2em; color: var(--primary-color); }
+
+/* --- Bouton Téléchargement --- */
+.actions { margin-top: 30px; text-align: center; }
+
+.btn-download {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+    transition: all 0.3s ease;
+    display: inline-flex; align-items: center; gap: 10px;
+}
+
+.btn-download:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.6);
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+    .paper {
+        width: 95%; /* Prend presque toute la largeur sur mobile */
+        padding: 30px 20px;
+        margin-top: 20px;
+    }
+
+    header { flex-direction: column; text-align: center; align-items: center; } /* Empile le header */
+    .contact-info { text-align: center; margin-top: 20px; }
+    .recipient-section { flex-direction: column; gap: 20px; }
+    .company-info { width: 100%; box-sizing: border-box; }
+    .date { align-self: flex-start; }
+}
