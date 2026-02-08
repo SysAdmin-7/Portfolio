@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Lettre de Motivation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="CSS/lettre de motivation.css">
+</head>
+<body>
+    <!-- Menu -->
+    <div id="nav-container"></div>
+</div>
+    <div class="paper">
+        
+        <header>
+            <div class="my-info">
+                <h1>Mathis Dubos</h1>
+                <h2>Etudiant en informatique (BTS SIO)</h2>
+            </div>
+            <div class="contact-info">
+                <p><i class="fa-solid fa-phone"></i> 06 46 72 60 62</p>
+                <p><i class="fa-solid fa-envelope"></i> mathisdubos15@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Rosière-en-santerre, France</p>
+                <p><i class="fa-brands fa-linkedin"></i> Mathis Dubos</p>
+            </div>
+        </header>
+
+        <div class="recipient-section">
+            <div class="company-info">
+                <p>À l'attention du <strong>Responsable Recrutement</strong></p>
+                <p>Entreprise </p>
+                <p>adresse</p>
+                <p>Corde_Postal Ville</p>
+            </div>
+            <div class="date">
+                <p>Fait à Amiens, le <span id="current-date"></span></p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="subject">
+                Objet : Candidature au poste de Administrateur Réseaux (Réf. 1711)
+            </div>
+
+            <p>Madame, Monsieur,</p>
+
+    <p>
+        Actuellement étudiant en Première année de BTS SIO (Services Informatiques aux Organisations), option SISR (Solutions d'Infrastructure, Systèmes et Réseaux), je suis à la recherche d'un stage conventionné d'une durée de [Durée] semaines à partir du [Date de début]. Votre entreprise, reconnue pour la fiabilité de ses infrastructures et son exigence en matière de sécurité, représente l'environnement idéal pour mettre en pratique mes compétences.
+    </p>
+
+    <p>
+        Au cours de ma formation et de mes projets personnels, j'ai acquis de solides connaissances en administration système et réseau. Je suis familier avec la configuration d'équipements actifs (commutation, routage, VLANs), ainsi qu'avec l'administration de serveurs <strong>Windows et Linux</strong>. J'ai également développé des compétences en virtualisation et je porte une attention particulière aux politiques de sécurité, notamment les concepts de <strong>Zero Trust</strong> et de gestion des droits d'accès (Active Directory).
+    </p>
+
+    <p>
+        Rigoureux et doté d'un bon esprit d'analyse, j'aime diagnostiquer les pannes et optimiser les performances des réseaux. Ma curiosité technique me pousse à effectuer une veille technologique constante pour anticiper les nouvelles menaces et comprendre les évolutions du cloud et de la cybersécurité. Je suis prêt à m'investir pleinement pour garantir la disponibilité et la sécurité de votre système d'information.
+    </p>
+
+    <p>
+        Je serais ravi de vous rencontrer lors d'un entretien pour vous exposer plus en détail ma motivation et mes aptitudes techniques.
+    </p>
+
+    <p>
+        Dans cette attente, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.
+    </p>
+        </div>
+
+        <div class="signature">
+            <p>Mathis Dubos</p>
+            </div>
+
+    </div>
+ <div class="actions">
+        <a href="Assets/fichier pdf/Lettre_De_Motivation_Dubos_Mathis.pdf" download="Lettre_Motivation_Mathis_Dubos.pdf" class="btn-download" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
+    <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+    <span class="text" style="margin-left: 10px;">Télécharger en PDF</span>
+        </a>
+    </div>
+    <script>
+        // Script simple pour mettre la date du jour automatiquement
+        const dateElement = document.getElementById('current-date');
+        const today = new Date();
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString('fr-FR', options);
+    </script>
+<script src="JS/load-nav.js"></script>
+<script src="JS/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="JS/lettre de motivation.js"></script>
+</body>
+</html>

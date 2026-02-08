@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Techno | Architecture Zero Trust</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/theme1.css">
+</head>
+<body>
+
+        <div id="nav-container"></div>
+
+    <section class="pillars-section">
+        <div class="section-header">
+            <i class="fa-solid fa-layer-group fa-lg"></i>
+            <h2>Les 3 Piliers de ma veille</h2>
+        </div>
+        
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <i class="fa-solid fa-user-shield"></i>
+                <h3>Identité (IAM)</h3>
+                <p>Authentification forte (MFA), SSO et gestion des accès basés sur le moindre privilège.</p>
+            </div>
+            <div class="pillar-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Device Trust</h3>
+                <p>Vérification de la santé des terminaux avant d'autoriser l'accès aux ressources.</p>
+            </div>
+            <div class="pillar-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Micro-segmentation</h3>
+                <p>Sécurisation du réseau pour empêcher les mouvements latéraux en cas d'intrusion.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="feed-container">
+        <div class="section-header">
+            <i class="fa-solid fa-newspaper fa-lg"></i>
+            <h2>Dernières Actualités & Analyses</h2>
+        </div>
+
+        <article class="article-card">
+            <div class="meta">
+                <span><i class="fa-regular fa-calendar"></i> 12 Fév 2024</span>
+                <span>Source : NIST.gov</span>
+            </div>
+            <div class="article-content">
+                <h3>Mise à jour du standard NIST 800-207</h3>
+                <p>Le NIST publie de nouvelles directives concernant l'application du Zero Trust dans les environnements Multi-Cloud. Analyse des impacts pour les architectures hybrides.</p>
+                <div class="tags">
+                    <span class="tag">#NIST</span>
+                    <span class="tag">#CloudSecurity</span>
+                    <span class="tag">#Normes</span>
+                </div>
+            </div>
+            <a href="en cours.html" class="read-btn">Lire l'analyse <i class="fa-solid fa-arrow-right-long"></i></a>
+        </article>
+
+        <article class="article-card">
+            <div class="meta">
+                <span><i class="fa-regular fa-calendar"></i> 28 Jan 2024</span>
+                <span>Source : The Hacker News</span>
+            </div>
+            <div class="article-content">
+                <h3>La fin du VPN traditionnel ?</h3>
+                <p>Google et Microsoft poussent vers l'abandon des VPN classiques au profit des solutions ZTNA (Zero Trust Network Access). Avantages en termes de latence et de sécurité.</p>
+                <div class="tags">
+                    <span class="tag">#ZTNA</span>
+                    <span class="tag">#Network</span>
+                    <span class="tag">#VPN</span>
+                </div>
+            </div>
+            <a href="en cours.html" class="read-btn">Consulter l'article <i class="fa-solid fa-arrow-right-long"></i></a>
+        </article>
+
+        <article class="article-card">
+            <div class="meta">
+                <span><i class="fa-regular fa-calendar"></i> 10 Jan 2024</span>
+                <span>Source : Blog AWS Security</span>
+            </div>
+            <div class="article-content">
+                <h3>IAM et IA : Détection comportementale</h3>
+                <p>Comment l'intelligence artificielle renforce le Zero Trust en analysant les comportements anormaux des utilisateurs en temps réel.</p>
+                <div class="tags">
+                    <span class="tag">#AI</span>
+                    <span class="tag">#IAM</span>
+                    <span class="tag">#Innovation</span>
+                </div>
+            </div>
+            <a href="en cours.html" class="read-btn">Voir la ressource <i class="fa-solid fa-arrow-right-long"></i></a>
+        </article>
+
+    </section>
+
+    <footer class="resources">
+        <h2 style="margin-bottom: 1rem;">Sources Officielles à surveiller</h2>
+        <p style="color: var(--text-muted);">Les bibles techniques pour comprendre le Zero Trust.</p>
+        
+        <div class="resource-links">
+            <a href="en cours.html" class="res-link"><i class="fa-solid fa-book"></i> NIST SP 800-207</a>
+            <a href="en cours.html" class="res-link"><i class="fa-brands fa-microsoft"></i> Microsoft Zero Trust</a>
+            <a href="en cours.html" class="res-link"><i class="fa-brands fa-google"></i> Google BeyondCorp</a>
+        </div>
+        
+        <p style="margin-top: 3rem; color: #475569; font-size: 0.8rem;">© 2025 - Projet Veille Informatique</p>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6Ua95x3m1h4w95nO7+Bq5S1o0W1h8n2l0Z0j7aF3K0/B93e8U5f4mJ4d3K0/B5a5W2K5aA4K0k7T2Z0k8X1" crossorigin="anonymous"></script>
+<script src="JS/load-nav.js"></script>
+<script src="JS/script.js"></script>
+</body>
+</html>
