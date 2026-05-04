@@ -28,7 +28,7 @@
                 icon: "fa-chart-line",
                 desc: "Stack complète de surveillance serveur. Utilisation de NodeExporter pour les données et Grafana pour la visualisation en temps réel.",
                 tags: ["Docker", "Grafana", "Prometheus", "Linux"],
-                linkDemo: "../en cours.html",
+                linkDemo: "en cours.html",
                 linkGithub: "#"
             },
             {
@@ -71,7 +71,7 @@
                 icon: "fa-code",
                 desc: "Développement complet d'un portfolio et d'une boutique de services sans CMS. HTML/CSS pur et intégration PayPal/Formspree.",
                 tags: ["HTML5", "CSS3", "JS", "API"],
-                linkDemo: "../en cours.html",
+                linkDemo: "en cours.html",
                 linkGithub: "https://github.com/SysAdmin-7/Portfolio"
             },
             {
