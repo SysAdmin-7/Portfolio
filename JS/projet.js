@@ -72,7 +72,7 @@
                 desc: "Développement complet d'un portfolio et d'une boutique de services sans CMS. HTML/CSS pur et intégration PayPal/Formspree.",
                 tags: ["HTML5", "CSS3", "JS", "API"],
                 linkDemo: "../en cours.html",
-                linkGithub: "#"
+                linkGithub: "https://github.com/SysAdmin-7/Portfolio"
             },
             {
     title: "Serveur Minecraft Optimisé",
