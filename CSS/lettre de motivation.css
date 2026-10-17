@@ -1,0 +1,175 @@
+/* ==========================================================================
+   LETTRE DE MOTIVATION - DARK THEME PROFESSIONNEL
+   Mathis Dubos - BTS SIO SISR
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+    --bg-page: #0b0f19;
+    --bg-card: #111827;
+    --bg-panel: #090d16;
+    
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --primary-glow: rgba(59, 130, 246, 0.25);
+    --cyan: #38bdf8;
+    
+    --text-title: #f8fafc;
+    --text-body: #cbd5e1;
+    --text-muted: #94a3b8;
+    
+    --border: #1f2937;
+    --border-hover: #374151;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-body);
+    line-height: 1.65;
+    margin: 0;
+    padding-bottom: 50px;
+    background-image: 
+        radial-gradient(circle at 10% 15%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 45%, rgba(168, 85, 247, 0.07) 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+#nav-container { width: 100%; display: block; }
+
+/* --- Le conteneur "Feuille de papier Sombre" --- */
+.paper {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 860px;
+    margin: 40px auto;
+    padding: 60px 55px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    position: relative;
+}
+
+.paper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4, #a855f7);
+    border-radius: 16px 16px 0 0;
+}
+
+/* --- En-tête --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+}
+
+.my-info h1 {
+    font-size: 2.2em;
+    color: var(--text-title);
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.my-info h2 { 
+    font-size: 1.05em; 
+    font-weight: 600; 
+    color: var(--cyan); 
+    margin: 6px 0 0 0; 
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* --- Informations de contact --- */
+.contact-info { text-align: right; font-size: 0.92em; }
+.contact-info p { margin: 6px 0; color: var(--text-muted); }
+.contact-info i { color: var(--primary); margin-right: 8px; width: 20px; text-align: center; }
+
+/* --- Section Destinataire et Date --- */
+.recipient-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: flex-end;
+}
+
+.company-info {
+    background-color: var(--bg-panel);
+    padding: 20px 24px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    font-size: 0.92em;
+}
+
+.company-info p { margin: 3px 0; color: #e2e8f0; }
+.date { font-style: italic; color: var(--text-muted); font-size: 0.9em; }
+
+/* --- Corps de la lettre --- */
+.content { text-align: justify; }
+
+.subject {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--text-title);
+    margin-bottom: 25px;
+    border-left: 3px solid var(--primary);
+    padding-left: 12px;
+}
+
+.content p { margin-bottom: 16px; font-size: 0.98em; color: var(--text-body); line-height: 1.7; }
+.content strong { color: #93c5fd; }
+
+/* --- Signature --- */
+.signature { margin-top: 50px; text-align: right; padding-right: 20px; }
+.signature p { font-weight: 700; font-size: 1.2em; color: var(--cyan); }
+
+/* --- Bouton Téléchargement --- */
+.actions { margin-top: 35px; text-align: center; }
+
+.btn-download {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 13px 32px;
+    border-radius: 50px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--primary-glow);
+    transition: all 0.25s ease;
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px;
+    text-decoration: none;
+}
+
+.btn-download:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.4);
+    color: white;
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+    .paper {
+        width: 95%;
+        padding: 35px 22px;
+        margin-top: 20px;
+    }
+
+    header { flex-direction: column; text-align: center; align-items: center; }
+    .contact-info { text-align: center; margin-top: 20px; }
+    .recipient-section { flex-direction: column; gap: 20px; align-items: stretch; }
+    .company-info { width: 100%; }
+    .date { align-self: flex-start; }
+}

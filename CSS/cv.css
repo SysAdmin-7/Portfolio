@@ -1,0 +1,274 @@
+/* ==========================================================================
+   PAGE CV - DARK THEME PROFESSIONNEL
+   Mathis Dubos - BTS SIO SISR
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+    --bg-page: #0b0f19;
+    --bg-card: #111827;
+    --bg-sidebar: #0e1526;
+    --primary: #3b82f6;
+    --primary-glow: rgba(59, 130, 246, 0.25);
+    --cyan: #38bdf8;
+    
+    --text-title: #f8fafc;
+    --text-body: #cbd5e1;
+    --text-muted: #94a3b8;
+    
+    --border: #1f2937;
+    --border-light: #374151;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-body);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    background-image: 
+        radial-gradient(circle at 10% 15%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 45%, rgba(168, 85, 247, 0.07) 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+/* Conteneur principal (Feuille CV Sombre) */
+.cv-container {
+    padding: 0;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: var(--bg-card);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+/* --- EN-TÊTE DU CV --- */
+.cv-header {
+    background: linear-gradient(135deg, #090d16 0%, #172138 100%);
+    color: white;
+    padding: 50px 40px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+}
+
+.cv-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4, #a855f7);
+}
+
+.header-text { position: relative; z-index: 10; max-width: 850px; }
+
+.cv-header h1 { 
+    font-size: clamp(2.2rem, 4vw, 3rem); 
+    font-weight: 800; 
+    margin-bottom: 5px; 
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.cv-header h2 { 
+    font-size: 1.25rem; 
+    font-weight: 600; 
+    color: var(--cyan); 
+    margin-bottom: 15px; 
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.cv-header p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* --- BOUTON DE TÉLÉCHARGEMENT --- */
+.download-button-wrapper { 
+    padding: 1.5rem 40px 0; 
+    display: flex;
+    justify-content: flex-end;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px var(--primary-glow);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* --- CORPS DU CV --- */
+.cv-body {
+    display: grid;
+    grid-template-columns: 1fr 1.75fr;
+    gap: 35px;
+    padding: 30px 40px 45px;
+}
+
+/* --- BARRE LATÉRALE (GAUCHE) --- */
+.cv-sidebar {
+    background-color: var(--bg-sidebar);
+    padding: 30px 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.sidebar-title {
+    color: var(--cyan);
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.skill-list, .language-list { list-style: none; padding: 0; }
+.skill-list li { 
+    padding: 7px 0; 
+    font-size: 0.92rem; 
+    color: var(--text-body);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.skill-list li:last-child { border-bottom: none; }
+
+.section-contact p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-link {
+    color: var(--cyan);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.contact-link:hover { color: #ffffff; }
+
+/* --- CONTENU PRINCIPAL (DROITE) --- */
+.main-title {
+    color: var(--text-title);
+    font-size: 1.45rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.main-title i { color: var(--primary); }
+
+/* Timeline */
+.timeline-item {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-left: 2px solid var(--border-light);
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--primary);
+}
+
+.timeline-item h4 { color: var(--text-title); font-size: 1.1rem; font-weight: 600; margin-bottom: 3px; }
+.timeline-meta { font-style: italic; color: var(--cyan); font-size: 0.88rem; margin-bottom: 6px; }
+.timeline-item p { color: var(--text-muted); font-size: 0.92rem; }
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 992px) {
+    .cv-body { grid-template-columns: 1fr; }
+    .cv-header { padding: 40px 25px; }
+    .download-button-wrapper { justify-content: center; padding-right: 0; }
+}
+
+/* --- RÈGLES D'EXPORT IMPRESSION / PDF IDENTIQUE À L'ÉCRAN --- */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 5mm;
+    }
+    
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    body {
+        background-color: #0b0f19 !important;
+        color: #cbd5e1 !important;
+        padding: 0 !important;
+        background-image: none !important;
+    }
+    
+    #nav-container, .download-button-wrapper {
+        display: none !important;
+    }
+    
+    .cv-container {
+        margin: 0 !important;
+        max-width: 100% !important;
+        border: 1px solid #1f2937 !important;
+        box-shadow: none !important;
+        border-radius: 8px !important;
+    }
+    
+    .cv-header {
+        padding: 30px 30px 20px !important;
+        background: linear-gradient(135deg, #090d16 0%, #172138 100%) !important;
+    }
+    
+    .cv-header h1 {
+        font-size: 2.2rem !important;
+        color: #ffffff !important;
+    }
+    
+    .cv-body {
+        padding: 20px 30px !important;
+        gap: 20px !important;
+    }
+    
+    .cv-sidebar {
+        background-color: #0e1526 !important;
+        padding: 20px !important;
+    }
+    
+    .timeline-item {
+        margin-bottom: 15px !important;
+        page-break-inside: avoid;
+    }
+}
