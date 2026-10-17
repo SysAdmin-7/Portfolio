@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Obsidian & Documentation | Mathis Dubos • BTS SIO SISR</title>
+    <meta name="description" content="Base de connaissances et notes techniques Obsidian de Mathis Dubos (BTS SIO SISR) : mémos Cisco IOS, durcissement GNU/Linux, investigations DFIR, scripts PowerShell et architectures Docker.">
+    
+    <!-- Bibliothèques & Polices -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Marked.js pour le rendu Markdown haute fidélité -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Feuille de style dédiée aux Notes Obsidian (Thème Sombre Professionnel) -->
+    <link rel="stylesheet" href="CSS/obsidian.css">
+</head>
+<body>
+
+    <!-- Barre de Navigation Globale (chargée via load-nav.js avec fallback) -->
+    <div id="nav-container">
+        <!-- Fallback Navigation -->
+        <nav>
+            <ul class="menu-left">
+              <li><a href="index.html" class="nav-brand"><i class="fas fa-terminal me-2"></i>Mathis Dubos</a></li>
+            </ul>
+            <ul class="menu-right">
+              <li><a href="index.html">Accueil</a></li>
+              <li>
+                <a href="#">Portfolio <i class="fas fa-chevron-down nav-arrow"></i></a>
+                <ul>
+                  <li><a href="TP.html"><i class="fas fa-layer-group me-2"></i>TPs & Labs</a></li>
+                  <li><a href="projet.html"><i class="fas fa-server me-2"></i>Projets</a></li>
+                  <li><a href="Stage sio1.html"><i class="fas fa-briefcase me-2"></i>Stage SIO 1</a></li>
+                  <li><a href="Stage sio2.html"><i class="fas fa-building me-2"></i>Stage SIO 2</a></li>
+                  <li><a href="obsidian.html"><i class="fa-solid fa-book-bookmark me-2"></i>Notes Obsidian</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Documents <i class="fas fa-chevron-down nav-arrow"></i></a>
+                <ul>
+                  <li><a href="cv.html"><i class="fas fa-id-card me-2"></i>CV</a></li>
+                  <li><a href="lettre de motivation.html"><i class="fas fa-envelope-open-text me-2"></i>Lettre de Motivation</a></li>
+                  <li><a href="Convention sio1.html"><i class="fas fa-file-contract me-2"></i>Convention SIO 1</a></li>
+                  <li><a href="convention sio2.html"><i class="fas fa-file-signature me-2"></i>Convention SIO 2</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Veille Techno <i class="fas fa-chevron-down nav-arrow"></i></a>
+                <ul>
+                  <li><a href="theme1.html"><i class="fas fa-shield-halved me-2"></i>Thème 1 : Purple Team & CSI</a></li>
+                  <li><a href="theme2.html"><i class="fa-solid fa-infinity me-2"></i>Thème 2 : DevOps (Docker, K8s, Ansible)</a></li>
+                </ul>
+              </li>
+              <li><a href="contact.html" class="nav-contact-btn"><i class="fas fa-paper-plane me-1"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- ================= HERO HEADER : VAULT OBSIDIAN ================= -->
+    <header class="hero-obsidian">
+        <div class="hero-obsidian-container">
+            <div class="hero-badges-group">
+                <span class="badge-obsidian"><i class="fa-solid fa-book-bookmark"></i> Base de Connaissances</span>
+                <span class="badge-obsidian blue"><i class="fa-solid fa-server"></i> BTS SIO SISR • 2ème Année</span>
+                <span class="badge-obsidian green"><i class="fa-solid fa-code-commit"></i> Vault Markdown</span>
+            </div>
+
+            <h1 class="hero-title">
+                Notes & Documentation <br>
+                <span class="gradient-obsidian">Obsidian Vault</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Mon second cerveau technique : fiches de synthèse, mémos de commandes, procédures de déploiement et guides d'investigation en administration systèmes, réseaux et cybersécurité.
+            </p>
+
+            <div class="hero-actions">
+                <button type="button" class="btn-primary-obsidian" id="btn-open-add-modal">
+                    <i class="fa-solid fa-plus"></i> Ajouter / Importer une Note (.md)
+                </button>
+                <a href="#vault-workspace-anchor" class="btn-secondary-obsidian">
+                    <i class="fa-solid fa-book-open"></i> Parcourir les Fiches
+                </a>
+            </div>
+
+            <!-- Grille de Statistiques Clés -->
+            <div class="hero-stats-grid">
+                <div class="stat-card-obsidian">
+                    <span class="stat-number" id="stat-total-notes">59</span>
+                    <span class="stat-label">Notes Techniques Documentées</span>
+                </div>
+                <div class="stat-card-obsidian">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Domaines d'Expertise SISR</span>
+                </div>
+                <div class="stat-card-obsidian">
+                    <span class="stat-number" id="stat-total-tags">35</span>
+                    <span class="stat-label">Mots-clés & Tags Indexés</span>
+                </div>
+                <div class="stat-card-obsidian">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Markdown & Callouts Pratiques</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= AVERTISSEMENT & CADRE ÉDUCATIF ================= -->
+    <div class="disclaimer-container">
+        <div class="educational-disclaimer-card">
+            <div class="disclaimer-icon-wrapper">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="disclaimer-body">
+                <div class="disclaimer-header-title">
+                    <span class="badge-disclaimer"><i class="fa-solid fa-shield-halved me-1"></i> Cadre Éthique & Légal</span>
+                    <h3>Usage Strictement Pédagogique & Éducatif</h3>
+                </div>
+                <p>
+                    L'intégralité des fiches techniques, mémos de commandes, procédures de durcissement, scripts d'automatisation et analyses de sécurité (Purple Team, DFIR, investigations réseau) documentés au sein de ce coffre Obsidian sont réalisés <strong>purement et exclusivement dans un but éducatif, académique et de recherche technique</strong> dans le cadre de mon cursus en BTS SIO (option SISR).
+                </p>
+                <p class="disclaimer-sub">
+                    <i class="fa-solid fa-scale-balanced me-1"></i> Ces notes visent la compréhension approfondie des architectures, l'expérimentation de la défense en profondeur et le renforcement de la résilience des infrastructures. Conformément aux dispositions des <strong>articles 323-1 et suivants du Code pénal français</strong> réprimant les atteintes aux systèmes de traitement automatisé de données, toute mise en application non autorisée ou usage malveillant de ces techniques est formellement prohibé.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ancre pour le défilement fluide -->
+    <div id="vault-workspace-anchor"></div>
+
+    <!-- ================= WORKSPACE OBSIDIAN : EXPLORATEUR & LECTEUR ================= -->
+    <main class="vault-workspace">
+        <div class="vault-layout">
+            
+            <!-- COLONNE GAUCHE : EXPLORATEUR DE NOTES & FILTRES -->
+            <aside class="vault-sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-title">
+                        <i class="fa-solid fa-folder-tree"></i>
+                        <span>Explorateur du Vault</span>
+                    </div>
+                    <span class="sidebar-badge"><i class="fa-solid fa-shield-halved me-1"></i>SISR</span>
+                </div>
+
+                <!-- Champ de Recherche Directe -->
+                <div class="search-box-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="vault-search-input" class="search-input" placeholder="Rechercher une commande, un protocole, un tag...">
+                    <button type="button" id="vault-search-clear" class="search-clear" title="Effacer"><i class="fas fa-times"></i></button>
+                </div>
+
+                <!-- Filtres par Catégories / Sujets -->
+                <div class="category-filter-pills">
+                    <button type="button" class="filter-pill active" data-category="all">
+                        <i class="fa-solid fa-layer-group"></i> Tout
+                    </button>
+                    <button type="button" class="filter-pill" data-category="linux">
+                        <i class="fa-brands fa-linux"></i> Linux
+                    </button>
+                    <button type="button" class="filter-pill" data-category="reseau">
+                        <i class="fa-solid fa-network-wired"></i> Cisco / Réseau
+                    </button>
+                    <button type="button" class="filter-pill" data-category="cyber">
+                        <i class="fa-solid fa-user-secret"></i> Cyber / DFIR
+                    </button>
+                    <button type="button" class="filter-pill" data-category="windows">
+                        <i class="fa-brands fa-windows"></i> Windows & AD
+                    </button>
+                    <button type="button" class="filter-pill" data-category="docker">
+                        <i class="fa-brands fa-docker"></i> Docker
+                    </button>
+                    <button type="button" class="filter-pill" data-category="systeme">
+                        <i class="fa-solid fa-microchip"></i> Système & PXE
+                    </button>
+                </div>
+
+                <!-- Liste des Cartes de Notes -->
+                <div class="notes-list-container" id="notes-cards-list">
+                    <!-- Les cartes sont générées dynamiquement par JS/obsidian.js -->
+                </div>
+            </aside>
+
+            <!-- COLONNE DROITE : LECTEUR DE NOTES STYLE OBSIDIAN -->
+            <section class="vault-reader" id="vault-reader-view">
+                
+                <!-- Barre d'outils supérieure -->
+                <div class="reader-toolbar">
+                    <div class="reader-breadcrumbs">
+                        <i class="fa-solid fa-vault"></i>
+                        <span>Vault</span>
+                        <span class="sep">/</span>
+                        <span id="breadcrumb-filename">note.md</span>
+                    </div>
+
+                    <div class="reader-actions">
+                        <a href="#" download class="reader-btn" id="btn-download-note" title="Télécharger le fichier source Markdown (.md)">
+                            <i class="fa-solid fa-download"></i> Télécharger .md
+                        </a>
+                        <button type="button" class="reader-btn purple-btn" id="btn-copy-markdown" title="Copier le Markdown brut">
+                            <i class="fa-regular fa-copy"></i> Copier Markdown
+                        </button>
+                        <button type="button" class="reader-btn" id="btn-print-note" title="Imprimer ou enregistrer en PDF">
+                            <i class="fa-solid fa-print"></i> Imprimer / PDF
+                        </button>
+                        <button type="button" class="reader-btn" id="btn-focus-mode" title="Masquer la barre latérale pour la lecture">
+                            <i class="fa-solid fa-expand"></i> Focus
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contenu de la Note -->
+                <article class="reader-content-body">
+                    
+                    <!-- En-tête de la note active -->
+                    <div class="note-view-header">
+                        <div class="note-view-badges">
+                            <span class="note-view-cat" id="note-view-category">🐧 GNU/Linux</span>
+                            <div class="note-card-tags" id="note-view-tags">
+                                <!-- Tags injectés dynamiquement -->
+                            </div>
+                        </div>
+
+                        <h2 class="note-view-title" id="note-view-title">Titre de la Note</h2>
+
+                        <div class="note-view-info-bar">
+                            <span class="note-view-info-item">
+                                <i class="fa-regular fa-user"></i> Mathis Dubos
+                            </span>
+                            <span class="note-view-info-item">
+                                <i class="fa-regular fa-calendar"></i> <span id="note-view-date">--</span>
+                            </span>
+                            <span class="note-view-info-item">
+                                <i class="fa-regular fa-clock"></i> <span id="note-view-readtime">--</span> de lecture
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Sommaire Interactif / Table des matières -->
+                    <div class="note-toc-box" id="note-toc-box">
+                        <div class="note-toc-title">
+                            <i class="fa-solid fa-list-ul"></i> Sommaire de la fiche
+                        </div>
+                        <ul class="note-toc-list" id="note-toc-list">
+                            <!-- Généré automatiquement à partir des balises h2 et h3 -->
+                        </ul>
+                    </div>
+
+                    <!-- Corps de la note rendu en Markdown -->
+                    <div class="markdown-rendered-area" id="markdown-rendered-body">
+                        <!-- Contenu généré dynamiquement -->
+                    </div>
+
+                </article>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ================= MODAL AJOUT / IMPORTATION DE NOTE OBSIDIAN ================= -->
+    <div class="obsidian-modal-overlay" id="obsidian-import-modal">
+        <div class="obsidian-modal-card">
+            
+            <div class="modal-header-obsidian">
+                <div class="modal-title-obsidian">
+                    <i class="fa-solid fa-feather-pointed"></i>
+                    <span>Ajouter une Note Obsidian au Vault</span>
+                </div>
+                <button type="button" class="modal-close-btn" id="modal-close-btn" title="Fermer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="modal-body-obsidian">
+                
+                <!-- Zone de Drag & Drop pour fichier .md -->
+                <div class="drop-zone-obsidian" id="modal-drop-zone">
+                    <div class="drop-zone-icon">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <strong style="color: #ffffff; display: block; margin-bottom: 0.35rem;">Glissez-déposez un fichier Markdown (.md) ici</strong>
+                    <span style="font-size: 0.82rem; color: var(--text-muted);">ou cliquez pour sélectionner un fichier de votre coffre Obsidian</span>
+                    <input type="file" id="modal-file-input" accept=".md,.markdown,.txt" style="display: none;">
+                </div>
+
+                <div class="form-group-obsidian">
+                    <label class="form-label-obsidian" for="note-input-title">Titre de la fiche technique</label>
+                    <input type="text" id="note-input-title" class="form-input-obsidian" placeholder="Ex: Configuration VPN WireGuard sous Debian 12">
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-6 form-group-obsidian">
+                        <label class="form-label-obsidian" for="note-input-category">Catégorie</label>
+                        <select id="note-input-category" class="form-select-obsidian">
+                            <option value="linux">🐧 GNU/Linux</option>
+                            <option value="reseau">🌐 Réseaux & Cisco</option>
+                            <option value="cyber">🛡️ Cyber & DFIR</option>
+                            <option value="windows">🪟 Windows & AD</option>
+                            <option value="docker">🐳 Docker & Conteneurs</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 form-group-obsidian">
+                        <label class="form-label-obsidian" for="note-input-tags">Tags (séparés par des virgules)</label>
+                        <input type="text" id="note-input-tags" class="form-input-obsidian" placeholder="Ex: WireGuard, VPN, Sécurité, Debian">
+                    </div>
+                </div>
+
+                <div class="form-group-obsidian">
+                    <label class="form-label-obsidian" for="note-input-content">
+                        Contenu Markdown (supporte les titres, tableaux, blocs de code et callouts <code>&gt; [!NOTE]</code>)
+                    </label>
+                    <textarea id="note-input-content" class="form-textarea-obsidian" placeholder="# Mon Titre&#10;&#10;> [!NOTE]&#10;> Explication ici...&#10;&#10;```bash&#10;sudo systemctl status&#10;```"></textarea>
+                </div>
+
+                <div style="background: rgba(139, 92, 246, 0.08); border: 1px solid rgba(139, 92, 246, 0.25); border-radius: 8px; padding: 0.85rem 1.1rem; font-size: 0.82rem; color: var(--obsidian-light-purple);">
+                    <i class="fa-solid fa-circle-info me-2"></i>
+                    <strong>Astuce :</strong> La note importée s'affiche instantanément dans votre interface. Pour la rendre permanente, ajoutez-la simplement dans le tableau <code>initialNotes</code> du fichier <code>JS/obsidian.js</code>.
+                </div>
+
+            </div>
+
+            <div class="modal-footer-obsidian">
+                <button type="button" class="btn-secondary-obsidian" id="modal-cancel-btn">Annuler</button>
+                <button type="button" class="btn-primary-obsidian" id="modal-save-btn">
+                    <i class="fa-solid fa-check"></i> Ajouter au Vault
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/load-nav.js"></script>
+    <script src="JS/vault-data.js"></script>
+    <script src="JS/obsidian.js"></script>
+</body>
+</html>

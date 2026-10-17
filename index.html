@@ -1,64 +1,433 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Acceuil | Présentation</title>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link href="CSS/index.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathis Dubos | Portfolio BTS SIO SISR</title>
+    <meta name="description" content="Portfolio professionnel de Mathis Dubos, étudiant en BTS SIO SISR (Solutions d'Infrastructure, Systèmes et Réseaux). Découvrez mes travaux pratiques, mes projets et ma veille technologique en cybersécurité.">
+    
+    <!-- Scripts & Bibliothèques -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Feuille de style dédiée à l'accueil -->
+    <link href="CSS/index.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- Menu -->
-<div id="nav-container"></div>
+    <!-- Barre de navigation globale (chargée dynamiquement via load-nav.js) -->
+    <div id="nav-container"></div>
 
-<!-- Slides CV -->
-<div class="slide profil" data-index="0">
-  <h1>Dubos Mathis</h1>
-  <h2>Etudiant en bts sio </h2>
-  <p>Passionné par le le réseaux informatique et les servers.</p>
-</div>
+    <!-- ================= HERO SECTION ================= -->
+    <header class="hero-section">
+        <div class="hero-container">
+            
+            <!-- Colonne gauche : Présentation -->
+            <div class="hero-content">
+                <div class="hero-badges-group">
+                    <span class="badge-tag"><i class="fas fa-server"></i> BTS SIO SISR • 2ème Année</span>
+                    <span class="badge-tag pulse-green">Disponible • Recherche Stage / Alternance</span>
+                </div>
 
-<div class="slide experience" data-index="1">
-  <h2>Expériences Professionnelles</h2>
-  <ul>
-    <li><strong>Stagiaire</strong> intermarché (2021)</li>
-  </ul>
-</div>
+                <h1 class="hero-title">
+                    Bonjour, je suis <br>
+                    <span class="gradient-name">Mathis Dubos</span>
+                </h1>
 
-<div class="slide competences" data-index="2">
-  <h2>Compétences</h2>
-  <ul>
-    <li>HTML5, CSS3, JavaScript (ES6+)</li>
-    <li>C, C++</li>
-    <li>MySQL, Python</li>
-    <li>Git, Docker</li>
-  </ul>
-</div>
+                <div class="hero-subtitle">
+                    <i class="fas fa-terminal"></i> Futur Administrateur Systèmes, Réseaux & Sécurité
+                </div>
 
-<div class="slide formation" data-index="3">
-  <h2>Formation</h2>
-  <ul>
-    <li><strong>BTS SIO</strong> – Option SISR (2025 - 2027)</li>
-    <li><strong>Baccalauréat technologique</strong> STI2D (2022)</li>
-  </ul>
-</div>
+                <p class="hero-description">
+                    Étudiant passionné par l'infrastructure informatique, l'administration des serveurs <strong>GNU/Linux</strong> & <strong>Windows</strong>, la commutation <strong>Cisco</strong>, la virtualisation et les démarches de sécurité offensive et défensive (<strong>Purple Teaming / DFIR</strong>).
+                </p>
 
-<div class="slide contact" data-index="4">
-  <h2>Contact</h2>
-  <p>Email : mathisdubos15@gmail.com </p>
-  <p>Téléphone : 06 46 72 60 .. </p>
-  <p>LinkedIn : aucun</p>
-</div>
+                <div class="hero-actions">
+                    <a href="TP.html" class="btn-primary-custom">
+                        <i class="fas fa-layer-group"></i> Explorer mes TPs & Labs
+                    </a>
+                    <a href="theme1.html" class="btn-secondary-custom">
+                        <i class="fas fa-shield-halved"></i> Ma Veille Technologique
+                    </a>
+                    <a href="cv.html" class="btn-secondary-custom">
+                        <i class="fas fa-file-invoice"></i> Voir mon CV
+                    </a>
+                </div>
 
-<!-- Navigation slides -->
-<div class="nav-buttons">
-  <button id="prev">◀ Précédent</button>
-  <button id="next">Suivant ▶</button>
-</div>
+                <div class="hero-stats-grid">
+                    <div class="stat-card-hero">
+                        <span class="stat-number">41</span>
+                        <span class="stat-label">Travaux Pratiques & Labs</span>
+                    </div>
+                    <div class="stat-card-hero">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Thèmes de Veille Cyber</span>
+                    </div>
+                    <div class="stat-card-hero">
+                        <span class="stat-number">ANSSI</span>
+                        <span class="stat-label">Certifié SecNumAcadémie</span>
+                    </div>
+                </div>
+            </div>
 
-<script src="JS/load-nav.js"></script>
-<script src="JS/script.js"></script>
+            <!-- Colonne droite : Mockup Terminal Neofetch -->
+            <div class="hero-visual">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">mathis@sisr-workstation: ~</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p><span class="term-prompt">mathis@sisr:~$</span> <span class="term-cmd">neofetch --profile</span></p>
+                        
+                        <div class="term-output">
+                            <p><strong>CANDIDAT :</strong> Mathis Dubos</p>
+                            <p><strong>FORMATION :</strong> BTS SIO Option SISR (Lycée Saint-Rémi, Amiens)</p>
+                            <p><strong>DIPLÔME PRÉÉCÉDENT :</strong> Bac STI2D SIN (Systèmes d'Information & Numérique)</p>
+                            <p><strong>OS DE LABORATOIRE :</strong> Debian, Ubuntu Server, CSI Linux 2024, Windows Server</p>
+                            <p><strong>HYPERVISEURS :</strong> Oracle VirtualBox, Proxmox VE, Docker</p>
+                            <p><strong>RÉSEAU :</strong> Cisco IOS, VLAN 802.1Q, Routage, SSH, Wireshark</p>
+                            <p><strong>SCRIPTING :</strong> Bash, PowerShell, SQL, Python</p>
+                            <p><strong>UPTIME DU LAB :</strong> <span id="terminal-uptime">2d 14h 28m 42s</span></p>
+                        </div>
 
+                        <div class="term-tags">
+                            <span class="term-tag">#SysAdmin</span>
+                            <span class="term-tag">#NetAdmin</span>
+                            <span class="term-tag">#Cisco</span>
+                            <span class="term-tag">#Linux</span>
+                            <span class="term-tag">#PurpleTeam</span>
+                        </div>
+
+                        <p style="margin-top: 1rem;">
+                            <span class="term-prompt">mathis@sisr:~$</span> <span class="term-cursor"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ================= SECTION COMPÉTENCES TECHNIQUES ================= -->
+    <section class="section-wrapper" id="competences">
+        <div class="section-head">
+            <span class="section-head-badge">Savoir-faire technique</span>
+            <h2>Domaines d'Expertise & Compétences</h2>
+            <p>
+                Un socle technique solide développé à travers des travaux pratiques réguliers, des projets concrets d'infrastructure et une veille active.
+            </p>
+        </div>
+
+        <div class="skills-grid">
+            
+            <!-- Carte 1 : Linux & Systèmes -->
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <div class="skill-icon-box icon-linux">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <div>
+                        <h3>Administration Linux</h3>
+                        <span style="font-size: 0.8rem; color: #fb923c; font-family: var(--font-mono);">Debian • Ubuntu • CSI Linux</span>
+                    </div>
+                </div>
+                <p>
+                    Maîtrise de l'arborescence FHS, gestion fine des utilisateurs et des permissions POSIX (chmod/chown, SUID/SGID), gestionnaire de paquets APT, gestion des services systemd et sécurisation du système.
+                </p>
+                <div class="skill-pills">
+                    <span class="skill-pill">Bash</span>
+                    <span class="skill-pill">Permissions POSIX</span>
+                    <span class="skill-pill">systemd</span>
+                    <span class="skill-pill">FHS</span>
+                    <span class="skill-pill">APT</span>
+                </div>
+            </div>
+
+            <!-- Carte 2 : Réseaux Cisco -->
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <div class="skill-icon-box icon-cisco">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <div>
+                        <h3>Réseaux & Commutation Cisco</h3>
+                        <span style="font-size: 0.8rem; color: #38bdf8; font-family: var(--font-mono);">Cisco IOS • Packet Tracer</span>
+                    </div>
+                </div>
+                <p>
+                    Segmentation réseau par VLANs (VLAN data, management), trunking 802.1Q, sécurisation des accès distants par SSHv2, configuration des interfaces et diagnostic par couches OSI.
+                </p>
+                <div class="skill-pills">
+                    <span class="skill-pill">Cisco Catalyst</span>
+                    <span class="skill-pill">VLAN 802.1Q</span>
+                    <span class="skill-pill">SSH v2</span>
+                    <span class="skill-pill">Trunk</span>
+                    <span class="skill-pill">Dépannage OSI</span>
+                </div>
+            </div>
+
+            <!-- Carte 3 : PowerShell -->
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <div class="skill-icon-box icon-ps">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <div>
+                        <h3>Automatisation PowerShell</h3>
+                        <span style="font-size: 0.8rem; color: #60a5fa; font-family: var(--font-mono);">PowerShell 5.1 & 7 • Scripts</span>
+                    </div>
+                </div>
+                <p>
+                    Exploitation du pipeline d'objets .NET, automatisation de la gestion des fichiers et des droits de sécurité NTFS, supervision proactive des processus et services, et expressions régulières (Regex).
+                </p>
+                <div class="skill-pills">
+                    <span class="skill-pill">Cmdlets</span>
+                    <span class="skill-pill">Pipeline .NET</span>
+                    <span class="skill-pill">Droits NTFS</span>
+                    <span class="skill-pill">Supervision</span>
+                    <span class="skill-pill">Regex</span>
+                </div>
+            </div>
+
+            <!-- Carte 4 : Cybersécurité & DFIR -->
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <div class="skill-icon-box icon-sec">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h3>Cybersécurité & Veille Cyber</h3>
+                        <span style="font-size: 0.8rem; color: #c084fc; font-family: var(--font-mono);">Purple Team • Forensic</span>
+                    </div>
+                </div>
+                <p>
+                    Sensibilisation aux menaces et bonnes pratiques ANSSI (SecNumAcadémie), investigation numérique sous CSI Linux (Volatility 3, Gateway isolée sous Tor) et simulation d'attaques MITRE ATT&CK.
+                </p>
+                <div class="skill-pills">
+                    <span class="skill-pill">CSI Linux</span>
+                    <span class="skill-pill">Volatility 3</span>
+                    <span class="skill-pill">MITRE ATT&CK</span>
+                    <span class="skill-pill">SecNumAcadémie</span>
+                    <span class="skill-pill">ANSSI</span>
+                </div>
+            </div>
+
+            <!-- Carte 5 : SQL & Bases de données -->
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <div class="skill-icon-box icon-sql">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div>
+                        <h3>Bases de Données (SQL)</h3>
+                        <span style="font-size: 0.8rem; color: #34d399; font-family: var(--font-mono);">MySQL • MariaDB • SGBD</span>
+                    </div>
+                </div>
+                <p>
+                    Conception et interrogation de schémas relationnels, maîtrise du LDD (CREATE/ALTER TABLE) et du LMD (SELECT, INSERT, UPDATE, DELETE), calculs statistiques GROUP BY et jointures multi-tables.
+                </p>
+                <div class="skill-pills">
+                    <span class="skill-pill">SELECT / JOIN</span>
+                    <span class="skill-pill">GROUP BY</span>
+                    <span class="skill-pill">Vues SQL</span>
+                    <span class="skill-pill">Intégrité Référentielle</span>
+                    <span class="skill-pill">MariaDB</span>
+                </div>
+            </div>
+
+            <!-- Carte 6 : Virtualisation & Web -->
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <div class="skill-icon-box icon-vm">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div>
+                        <h3>Virtualisation & Serveurs Web</h3>
+                        <span style="font-size: 0.8rem; color: #fbbf24; font-family: var(--font-mono);">VirtualBox • Proxmox • LAMP</span>
+                    </div>
+                </div>
+                <p>
+                    Dimensionnement et déploiement de machines virtuelles, gestion des modes réseaux (NAT, pont), installation de pilotes invités et mise en service complète de serveurs Web LAMP (Apache2, PHP).
+                </p>
+                <div class="skill-pills">
+                    <span class="skill-pill">VirtualBox</span>
+                    <span class="skill-pill">Proxmox VE</span>
+                    <span class="skill-pill">Apache2</span>
+                    <span class="skill-pill">PHP</span>
+                    <span class="skill-pill">VirtualHost</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= ACCÈS RAPIDE PORTFOLIO & RÉALISATIONS ================= -->
+    <section class="section-wrapper" style="border-top: 1px solid var(--border-color); padding-top: 4.5rem;">
+        <div class="section-head">
+            <span class="section-head-badge">Contenu du Portfolio</span>
+            <h2>Réalisations & Veilles Documentées</h2>
+            <p>
+                Accédez directement aux différentes rubriques de mon portfolio BTS SIO.
+            </p>
+        </div>
+
+        <div class="features-grid">
+            
+            <!-- Feature 1 : TPs -->
+            <div class="feature-card">
+                <span class="feature-badge">41 Travaux Pratiques</span>
+                <h3>Travaux Pratiques & Projets</h3>
+                <p>
+                    Consultez l'ensemble de mes travaux pratiques classés par thématique : Réseau Cisco, Systèmes Linux, Scripting PowerShell, Bases de données SQL et projet complet de serveur Web LAMP.
+                </p>
+                <a href="TP.html" class="feature-link">
+                    Découvrir les 41 TPs <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Feature 2 : Veille Purple Team -->
+            <div class="feature-card">
+                <span class="feature-badge">Veille Thème 1</span>
+                <h3>Purple Team & CSI Linux</h3>
+                <p>
+                    Dossier de veille technologique axé sur l'investigation numérique (DFIR) avec CSI Linux et la synergie collaborative entre équipes offensives (Red) et défensives (Blue).
+                </p>
+                <a href="theme1.html" class="feature-link">
+                    Consulter le Thème 1 <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Feature 3 : Veille DevOps -->
+            <div class="feature-card">
+                <span class="feature-badge">Veille Thème 2</span>
+                <h3>DevOps : Docker, K8s & Ansible</h3>
+                <p>
+                    Veille stratégique sur la conteneurisation Docker, l'orchestration résiliente Kubernetes et l'Infrastructure as Code (IaC) avec Ansible pour fiabiliser la production.
+                </p>
+                <a href="theme2.html" class="feature-link">
+                    Consulter le Thème 2 <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Feature 4 : Projets & Labs -->
+            <div class="feature-card">
+                <span class="feature-badge">Infrastructures & Labs</span>
+                <h3>Projets & Réalisations</h3>
+                <p>
+                    Galerie de réalisations personnelles, maquettes réseau, environnements virtuels configurés et scripts développés dans le cadre de mes études et auto-formations.
+                </p>
+                <a href="projet.html" class="feature-link">
+                    Voir les projets <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= PARCOURS & CERTIFICATIONS ================= -->
+    <section class="section-wrapper" style="border-top: 1px solid var(--border-color); padding-top: 4.5rem;">
+        <div class="section-head">
+            <span class="section-head-badge">Études & Certifications</span>
+            <h2>Parcours Académique & Formations</h2>
+            <p>
+                Une progression continue axée sur l'informatique, les systèmes et réseaux depuis le lycée technique.
+            </p>
+        </div>
+
+        <div class="timeline-wrapper">
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2025 – 2027 (En cours)</div>
+                <h4>BTS SIO (Services Informatiques aux Organisations)</h4>
+                <div class="timeline-institution"><i class="fas fa-school me-2"></i>Lycée Saint-Rémi • Amiens (80)</div>
+                <p>
+                    Option SISR (Solutions d'Infrastructure, Systèmes et Réseaux). Apprentissage de l'administration réseau, de la virtualisation, de la sécurisation des services et de la gestion de parc informatique.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2022</div>
+                <h4>Baccalauréat Technologique STI2D</h4>
+                <div class="timeline-institution"><i class="fas fa-graduation-cap me-2"></i>Lycée Polyvalent Jean Racine • Montdidier (80)</div>
+                <p>
+                    Spécialité SIN (Systèmes d'Information et Numérique). Initiation à l'électronique numérique, aux protocoles de communication et aux bases de la programmation.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Badges certifications -->
+        <div class="certifs-row">
+            <div class="certif-card">
+                <div class="certif-icon"><i class="fas fa-award"></i></div>
+                <div class="certif-info">
+                    <h5>SecNumAcadémie</h5>
+                    <span>ANSSI • Cybersécurité</span>
+                </div>
+            </div>
+
+            <div class="certif-card">
+                <div class="certif-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="certif-info">
+                    <h5>Sécurité des Terminaux</h5>
+                    <span>Cisco Networking Academy (NetAcad)</span>
+                </div>
+            </div>
+
+            <div class="certif-card">
+                <div class="certif-icon"><i class="fas fa-cubes"></i></div>
+                <div class="certif-info">
+                    <h5>Proxmox VE & Virtualisation</h5>
+                    <span>OpenClassrooms</span>
+                </div>
+            </div>
+
+            <div class="certif-card">
+                <div class="certif-icon"><i class="fab fa-linux"></i></div>
+                <div class="certif-info">
+                    <h5>Administration Linux</h5>
+                    <span>OpenClassrooms</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER CONTACT ================= -->
+    <footer class="footer-cta" id="contact">
+        <div class="footer-container">
+            <h2>Prêt à échanger autour d'un projet ou d'un stage ?</h2>
+            <p>
+                Je suis actuellement à la recherche d'opportunités professionnelles (stage / alternance) dans le domaine de l'administration systèmes, réseaux et cybersécurité.
+            </p>
+
+            <div class="contact-badges-list">
+                <a href="mailto:mathisdubos15@gmail.com" class="contact-badge-item" id="btn-copy-email">
+                    <i class="fas fa-envelope"></i> mathisdubos15@gmail.com
+                </a>
+                <a href="tel:0646726062" class="contact-badge-item">
+                    <i class="fas fa-phone"></i> 06 46 72 60 62
+                </a>
+                <span class="contact-badge-item">
+                    <i class="fas fa-map-marker-alt"></i> Amiens / Rosières-en-Santerre
+                </span>
+                <a href="cv.html" class="contact-badge-item" style="border-color: var(--primary); color: #93c5fd;">
+                    <i class="fas fa-id-card"></i> Voir CV & Lettre
+                </a>
+            </div>
+
+            <p class="copyright-text">
+                © 2025 - 2026 • Mathis Dubos • Portfolio BTS SIO SISR • Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts Bootstrap bundle, chargement du menu dynamique et script d'accueil -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/load-nav.js"></script>
+    <script src="JS/index.js"></script>
 </body>
 </html>

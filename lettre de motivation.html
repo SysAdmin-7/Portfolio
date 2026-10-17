@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lettre de Motivation | Mathis Dubos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="CSS/lettre de motivation.css">
+</head>
+<body>
+    <!-- Menu -->
+    <div id="nav-container"></div>
+
+    <div class="paper">
+        
+        <header>
+            <div class="my-info">
+                <h1>Mathis Dubos</h1>
+                <h2>Étudiant BTS SIO • Option SISR</h2>
+            </div>
+            <div class="contact-info">
+                <p><i class="fa-solid fa-phone"></i> 06 46 72 60 62</p>
+                <p><i class="fa-solid fa-envelope"></i> mathisdubos15@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Rosières-en-Santerre (80170)</p>
+                <p><i class="fa-brands fa-linkedin"></i> Mathis Dubos</p>
+            </div>
+        </header>
+
+        <div class="recipient-section">
+            <div class="company-info">
+                <p>À l'attention du <strong>Responsable Recrutement</strong></p>
+                <p>Service Informatique / DSI</p>
+                <p>Administration Systèmes & Réseaux</p>
+            </div>
+            <div class="date">
+                <p>Fait à Amiens, le <span id="current-date"></span></p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="subject">
+                Objet : Candidature à un stage / alternance en Administration Systèmes & Réseaux
+            </div>
+
+            <p>Madame, Monsieur,</p>
+
+            <p>
+                Actuellement étudiant en 2ème année de BTS SIO (Services Informatiques aux Organisations), option SISR (Solutions d'Infrastructure, Systèmes et Réseaux) au Lycée Saint-Rémi (Amiens), je suis à la recherche d'une opportunité professionnelle (stage / alternance). Votre structure, reconnue pour la rigueur de ses infrastructures et ses exigences de sécurité, représente l'environnement idéal pour mettre en pratique mes compétences et m'investir concrètement.
+            </p>
+
+            <p>
+                Au cours de mon cursus et de mes travaux pratiques, j'ai développé une solide maîtrise technique de l'administration système et réseau : configuration de commutateurs <strong>Cisco Catalyst (VLANs, routage, SSH)</strong>, déploiement et durcissement de serveurs <strong>GNU/Linux (Debian, Ubuntu)</strong> et <strong>Windows Server</strong>, virtualisation sous <strong>Proxmox VE et VirtualBox</strong>, ainsi que l'automatisation par scripts <strong>PowerShell et Bash</strong>.
+            </p>
+
+            <p>
+                Particulièrement sensible aux enjeux de cybersécurité opérationnelle, je me forme continuellement à travers ma certification <strong>ANSSI SecNumAcadémie</strong> et une veille technologique active sur les démarches <strong>Purple Teaming</strong> et l'investigation numérique sous <strong>CSI Linux</strong>.
+            </p>
+
+            <p>
+                Rigoureux, autonome et doté d'un esprit d'analyse méthodique pour le dépannage et la résolution d'incidents, je suis motivé à apporter une réelle valeur ajoutée à votre équipe technique tout en approfondissant mon expertise au contact de vos projets.
+            </p>
+
+            <p>
+                Je me tiens à votre entière disposition pour convenir d'un entretien afin de vous détailler mon parcours, mes réalisations et mes motivations.
+            </p>
+
+            <p>
+                Dans cette attente, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.
+            </p>
+        </div>
+
+        <div class="signature">
+            <p>Mathis Dubos</p>
+        </div>
+
+    </div>
+
+    <div class="actions">
+        <a href="Assets/fichier pdf/Lettre_De_Motivation_Dubos_Mathis.pdf" download="Lettre_Motivation_Mathis_Dubos.pdf" class="btn-download">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span>Télécharger la lettre (PDF)</span>
+        </a>
+    </div>
+
+    <script>
+        const dateElement = document.getElementById('current-date');
+        if (dateElement) {
+            const today = new Date();
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            dateElement.textContent = today.toLocaleDateString('fr-FR', options);
+        }
+    </script>
+    <script src="JS/load-nav.js"></script>
+    <script src="JS/lettre de motivation.js"></script>
+</body>
+</html>

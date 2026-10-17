@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique | Purple Team & CSI Linux (DFIR)</title>
+    <meta name="description" content="Veille technologique BTS SIO SISR sur la synergie Purple Team et les investigations numériques sous CSI Linux : émulation d'adversaire, forensic mémoire et détection active.">
+    
+    <!-- Scripts & Bibliothèques -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Feuille de style dédiée au thème 1 -->
+    <link rel="stylesheet" href="CSS/theme1.css">
+</head>
+<body>
+
+    <!-- Barre de Navigation Globale (chargée via load-nav.js) -->
+    <div id="nav-container"></div>
+
+    <!-- Header Hero Banner -->
+    <header class="hero-header">
+        <div class="hero-container">
+            <div class="badge-wrapper">
+                <span class="badge-cyber red"><i class="fa-solid fa-skull-crossbones"></i> Red Team</span>
+                <span class="badge-cyber"><i class="fa-solid fa-arrows-split-up-and-left"></i> Purple Teaming</span>
+                <span class="badge-cyber blue"><i class="fa-solid fa-shield-halved"></i> Blue Team & DFIR</span>
+            </div>
+            
+            <h1>Purple Teaming & Investigations Numériques sous CSI Linux</h1>
+            <p class="subtitle">
+                De l'émulation d'attaques sous Linux à l'analyse forensic post-incident : comment la synergie offensive/défensive optimise la sécurité et la résilience des infrastructures.
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-value">8</span>
+                    <span class="stat-label">Analyses Détaillées</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Focus Linux & DFIR</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">MITRE</span>
+                    <span class="stat-label">Matrice ATT&CK Linux</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">E4 / E6</span>
+                    <span class="stat-label">Cadre BTS SIO SISR</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contexte & Problématique -->
+    <div class="problem-card">
+        <h3><i class="fa-solid fa-circle-question"></i> Problématique de Veille (BTS SIO)</h3>
+        <p>
+            <strong>Problématique :</strong> <em>« Face à la sophistication croissante des menaces ciblant les serveurs Linux, en quoi l'approche Purple Team combinée à une distribution d'investigation spécialisée comme CSI Linux permet-elle d'identifier les failles, d'analyser les traces d'intrusion en profondeur et de renforcer continuellement la détection ? »</em>
+            <br><br>
+            Dans les infrastructures modernes, les attaques n'exploitent plus seulement des vulnérabilités logicielles mais s'appuient sur des techniques furtives en mémoire (fileless malware) et l'abus de privilèges locaux. Cette veille explore le pont entre les tests d'intrusion réalistes (Red Team) et la réponse à incident rapide couplée au forensic (Blue Team).
+        </p>
+    </div>
+
+    <!-- 1. Les 3 Piliers de la Veille -->
+    <section class="pillars-section">
+        <div class="section-header">
+            <div class="section-title">
+                <i class="fa-solid fa-network-wired"></i>
+                <h2>Les 3 Piliers Fondamentaux</h2>
+            </div>
+        </div>
+        
+        <div class="pillars-grid">
+            <!-- Pilier 1 : Red Team -->
+            <div class="pillar-card red-side">
+                <div class="pillar-header">
+                    <div class="pillar-icon-box">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <div>
+                        <h3>Émulation d'Adversaire</h3>
+                        <span class="pillar-role">Red Side • Offensive</span>
+                    </div>
+                </div>
+                <p>
+                    Simulation contrôlée de tactiques, techniques et procédures (TTPs) basées sur la matrice MITRE ATT&CK. Test des mécanismes d'élévation de privilèges (GTFOBins, sudoers), de persistance (cron, systemd) et d'évasion de détection sous Linux.
+                </p>
+                <div class="pillar-tools">
+                    <span class="tool-tag">Atomic Red Team</span>
+                    <span class="tool-tag">Caldera</span>
+                    <span class="tool-tag">GTFOBins</span>
+                    <span class="tool-tag">Bash / Python</span>
+                </div>
+            </div>
+
+            <!-- Pilier 2 : CSI Linux DFIR -->
+            <div class="pillar-card csi-side">
+                <div class="pillar-header">
+                    <div class="pillar-icon-box">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <div>
+                        <h3>CSI Linux & Forensics</h3>
+                        <span class="pillar-role">Investigation • DFIR</span>
+                    </div>
+                </div>
+                <p>
+                    Arsenal complet pour l'investigation numérique : analyse post-mortem de disque, capture et examen de mémoire vive (LiME, Volatility), tri d'artefacts d'attaques et navigation sécurisée/anonymisée via la passerelle isolée CSI Linux Gateway sous Tor.
+                </p>
+                <div class="pillar-tools">
+                    <span class="tool-tag">CSI Linux Analyst</span>
+                    <span class="tool-tag">CSI Gateway</span>
+                    <span class="tool-tag">Volatility 3</span>
+                    <span class="tool-tag">Autopsy</span>
+                </div>
+            </div>
+
+            <!-- Pilier 3 : Blue Team -->
+            <div class="pillar-card blue-side">
+                <div class="pillar-header">
+                    <div class="pillar-icon-box">
+                        <i class="fa-solid fa-shield-virus"></i>
+                    </div>
+                    <div>
+                        <h3>Détection & Durcissement</h3>
+                        <span class="pillar-role">Blue Side • Défense Active</span>
+                    </div>
+                </div>
+                <p>
+                    Exploitation de la télémétrie bas-niveau (auditd, Sysmon for Linux, eBPF Tetragon). Corrélation d'événements dans Wazuh SIEM, rédaction de règles de détection Sigma et durcissement des systèmes (Kernel Lockdown, AppArmor, moindre privilège).
+                </p>
+                <div class="pillar-tools">
+                    <span class="tool-tag">Wazuh SIEM</span>
+                    <span class="tool-tag">eBPF Tetragon</span>
+                    <span class="tool-tag">Règles Sigma</span>
+                    <span class="tool-tag">Sysmon Linux</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Flux d'Actualités & Analyses Détaillées -->
+    <section class="feed-section">
+        <div class="section-header">
+            <div class="section-title">
+                <i class="fa-solid fa-newspaper"></i>
+                <h2>Actualités & Fiches d'Analyse Pratiques</h2>
+            </div>
+        </div>
+
+        <!-- Barre d'outils avec filtres et recherche instantanée -->
+        <div class="feed-toolbar">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" class="search-input" placeholder="Rechercher une analyse, outil ou TTP...">
+            </div>
+
+            <div class="filter-tags">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="red">Red Team</button>
+                <button class="filter-btn" data-filter="csi">CSI Linux & DFIR</button>
+                <button class="filter-btn" data-filter="blue">Blue Team</button>
+                <button class="filter-btn" data-filter="purple">Purple Team</button>
+            </div>
+        </div>
+
+        <!-- Grille des articles -->
+        <div class="articles-grid" id="articles-container">
+            
+            <!-- Article 1 -->
+            <article class="article-card" data-category="csi">
+                <div class="article-card-header">
+                    <div class="article-meta">
+                        <span><i class="fa-regular fa-calendar"></i> 18 Fév 2025</span>
+                        <span class="category-pill cat-csi">DFIR / Forensic</span>
+                    </div>
+                    <h3 class="article-title">CSI Linux 2024 & Forensic Mémoire : Extraction et analyse d'artefacts d'attaques</h3>
+                    <p class="article-snippet">
+                        Exploration des capacités d'investigation en mémoire vive avec Volatility 3 et LiME sous CSI Linux. Repérage des processus cachés et des injections de code mémoires lors d'une attaque fileless.
+                    </p>
+                </div>
+                <div class="article-footer">
+                    <div class="article-tags">
+                        <span class="article-tag">#Volatility3</span>
+                        <span class="article-tag">#RAMDump</span>
+                        <span class="article-tag">#CSILinux</span>
+                    </div>
+                    <button class="btn-open-analysis" data-id="1">
+                        Lire l'analyse <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="article-card" data-category="red">
+                <div class="article-card-header">
+                    <div class="article-meta">
+                        <span><i class="fa-regular fa-calendar"></i> 04 Fév 2025</span>
+                        <span class="category-pill cat-red">Red Team</span>
+                    </div>
+                    <h3 class="article-title">Atomic Red Team & MITRE ATT&CK sous Linux : Automatiser l'émulation d'adversaire</h3>
+                    <p class="article-snippet">
+                        Automatisation de tests unitaires offensifs pour valider la chaîne de détection d'un parc Linux. Scénarios réels d'élévation de privilèges via sudo et scripts de persistance cron.
+                    </p>
+                </div>
+                <div class="article-footer">
+                    <div class="article-tags">
+                        <span class="article-tag">#MITRE</span>
+                        <span class="article-tag">#AtomicRedTeam</span>
+                        <span class="article-tag">#SudoAbuse</span>
+                    </div>
+                    <button class="btn-open-analysis" data-id="2">
+                        Lire l'analyse <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-card" data-category="csi">
+                <div class="article-card-header">
+                    <div class="article-meta">
+                        <span><i class="fa-regular fa-calendar"></i> 22 Jan 2025</span>
+                        <span class="category-pill cat-csi">CSI Gateway</span>
+                    </div>
+                    <h3 class="article-title">CSI Linux Gateway & Isolation Tor : Sécuriser la posture de l'analyste cyber</h3>
+                    <p class="article-snippet">
+                        Comment l'architecture à deux VM de CSI Linux empêche toute fuite d'adresse IP de l'analyste lors des phases d'investigation en sources ouvertes (OSINT) et de connexion à des serveurs C2 suspects.
+                    </p>
+                </div>
+                <div class="article-footer">
+                    <div class="article-tags">
+                        <span class="article-tag">#Anonymat</span>
+                        <span class="article-tag">#TorGateway</span>
+                        <span class="article-tag">#KillSwitch</span>
+                    </div>
+                    <button class="btn-open-analysis" data-id="3">
+                        Lire l'analyse <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="article-card" data-category="blue">
+                <div class="article-card-header">
+                    <div class="article-meta">
+                        <span><i class="fa-regular fa-calendar"></i> 12 Jan 2025</span>
+                        <span class="category-pill cat-blue">Blue Team</span>
+                    </div>
+                    <h3 class="article-title">Télémétrie eBPF vs auditd : La révolution de la détection Blue Team sous Linux</h3>
+                    <p class="article-snippet">
+                        Comparaison technique approfondie entre auditd traditionnel et les sondes eBPF (Tetragon). Pourquoi eBPF résiste aux techniques de dissimulation tout en réduisant drastiquement l'empreinte CPU.
+                    </p>
+                </div>
+                <div class="article-footer">
+                    <div class="article-tags">
+                        <span class="article-tag">#eBPF</span>
+                        <span class="article-tag">#Tetragon</span>
+                        <span class="article-tag">#Syscalls</span>
+                    </div>
+                    <button class="btn-open-analysis" data-id="4">
+                        Lire l'analyse <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="article-card" data-category="purple">
+                <div class="article-card-header">
+                    <div class="article-meta">
+                        <span><i class="fa-regular fa-calendar"></i> 19 Déc 2024</span>
+                        <span class="category-pill cat-purple">Purple Team</span>
+                    </div>
+                    <h3 class="article-title">Cycle d'amélioration Purple Team : Méthodologie d'exercice collaboratif</h3>
+                    <p class="article-snippet">
+                        Guide méthodologique pour instaurer un cycle d'émulation continu : de l'attaque simulée jusqu'à la création de règles Sigma pour SIEM et le durcissement du serveur en environnement d'entreprise.
+                    </p>
+                </div>
+                <div class="article-footer">
+                    <div class="article-tags">
+                        <span class="article-tag">#PurpleTeaming</span>
+                        <span class="article-tag">#SigmaRules</span>
+                        <span class="article-tag">#Wazuh</span>
+                    </div>
+                    <button class="btn-open-analysis" data-id="5">
+                        Lire l'analyse <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="article-card" data-category="csi">
+                <div class="article-card-header">
+                    <div class="article-meta">
+                        <span><i class="fa-regular fa-calendar"></i> 05 Déc 2024</span>
+                        <span class="category-pill cat-csi">Rootkits & LKM</span>
+                    </div>
+                    <h3 class="article-title">Détection de Rootkits noyau Linux avec CSI Linux et rkhunter/chkrootkit</h3>
+                    <p class="article-snippet">
+                        Investigation sur les modules noyau malveillants (LKM) altérant la table des appels système. Démarche d'audit d'intégrité et isolation de la machine compromise pour extraction d'images disques.
+                    </p>
+                </div>
+                <div class="article-footer">
+                    <div class="article-tags">
+                        <span class="article-tag">#LKM</span>
+                        <span class="article-tag">#RootkitDetection</span>
+                        <span class="article-tag">#SyscallHook</span>
+                    </div>
+                    <button class="btn-open-analysis" data-id="6">
+                        Lire l'analyse <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Article 7 -->
+            <article class="article-card" data-category="purple">
+                <div class="article-card-header">
+                    <div class="article-meta">
+                        <span><i class="fa-regular fa-calendar"></i> 15 Mars 2025</span>
+                        <span class="category-pill cat-purple">Purple Team & NIDS</span>
+                    </div>
+                    <h3 class="article-title">Suricata 7 & Détection NIDS : Corrélation des Flux C2 et Empreintes Réseau MITRE ATT&CK</h3>
+                    <p class="article-snippet">
+                        Déploiement et calibration d'un NIDS moderne avec inspection multi-threadée et décodage TLS/HTTP/2. Détection en temps réel des flux de balisage (C2 beaconing) et des scans furtifs dans un exercice collaboratif Purple Team.
+                    </p>
+                </div>
+                <div class="article-footer">
+                    <div class="article-tags">
+                        <span class="article-tag">#Suricata7</span>
+                        <span class="article-tag">#NIDS</span>
+                        <span class="article-tag">#C2Beaconing</span>
+                        <span class="article-tag">#ThreatHunting</span>
+                    </div>
+                    <button class="btn-open-analysis" data-id="7">
+                        Lire l'analyse <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Article 8 -->
+            <article class="article-card" data-category="csi">
+                <div class="article-card-header">
+                    <div class="article-meta">
+                        <span><i class="fa-regular fa-calendar"></i> 08 Avril 2025</span>
+                        <span class="category-pill cat-csi">Forensic & Incident Response</span>
+                    </div>
+                    <h3 class="article-title">Investigation Forensic sur Attaques Ransomware Linux : Triage Rapide avec CSI Linux & UAC</h3>
+                    <p class="article-snippet">
+                        Méthodologie d'intervention post-chiffrement sur serveurs Linux : collecte forensique d'artefacts à chaud avec UAC (Unix-like Artifacts Collector), détection de l'exfiltration et analyse de binaires malveillants sous CSI Linux.
+                    </p>
+                </div>
+                <div class="article-footer">
+                    <div class="article-tags">
+                        <span class="article-tag">#RansomwareLinux</span>
+                        <span class="article-tag">#UAC</span>
+                        <span class="article-tag">#ForensicTriage</span>
+                        <span class="article-tag">#CSILinux</span>
+                    </div>
+                    <button class="btn-open-analysis" data-id="8">
+                        Lire l'analyse <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- 3. Méthodologie de Veille Technologique (BTS SIO) -->
+    <section class="methodology-section">
+        <div class="section-header">
+            <div class="section-title">
+                <i class="fa-solid fa-brain"></i>
+                <h2>Méthodologie de Veille Technologique (BTS SIO)</h2>
+            </div>
+        </div>
+
+        <div class="method-grid">
+            <div class="method-step">
+                <div class="step-num">01</div>
+                <h4>Sourcing & Collecte (Push)</h4>
+                <p>Abonnement à des flux RSS spécialisés via <strong>Inoreader</strong> (CSI Linux Blog, MITRE ATT&CK, The Hacker News), alertes <strong>Google Alerts</strong> ciblées et bulletins de sécurité CERT-FR / ANSSI.</p>
+            </div>
+
+            <div class="method-step">
+                <div class="step-num">02</div>
+                <h4>Recherche Active (Pull)</h4>
+                <p>Veille documentaire régulière sur les dépôts GitHub de cybersécurité (Atomic Red Team, SigmaHQ, GTFOBins), whitepapers du <strong>SANS DFIR Institute</strong> et documentation officielle CSI Linux.</p>
+            </div>
+
+            <div class="method-step">
+                <div class="step-num">03</div>
+                <h4>Expérimentation en Lab Virtuel</h4>
+                <p>Mise en situation pratique sur un environnement virtualisé dédié (VirtualBox) : déploiement de <strong>CSI Linux Analyst</strong>, <strong>CSI Gateway</strong> et machines cibles Linux pour reproduire et observer les attaques.</p>
+            </div>
+
+            <div class="method-step">
+                <div class="step-num">04</div>
+                <h4>Synthèse & Restitution E4/E6</h4>
+                <p>Rédaction de fiches d'analyse techniques, fiches MITRE ATT&CK et capitalisation des bonnes pratiques pour l'épreuve orale du BTS SIO SISR.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Sources Officielles & Outils de Référence -->
+    <section class="sources-section">
+        <div class="section-header">
+            <div class="section-title">
+                <i class="fa-solid fa-book-bookmark"></i>
+                <h2>Bibles Techniques & Sources Officielles</h2>
+            </div>
+        </div>
+
+        <div class="sources-grid">
+            <a href="https://csilinux.com" target="_blank" rel="noopener noreferrer" class="source-card">
+                <div class="source-icon"><i class="fa-brands fa-linux"></i></div>
+                <div class="source-info">
+                    <h4>CSI Linux Official</h4>
+                    <p>Distribution DFIR, documentation officielle et mises à jour.</p>
+                </div>
+            </a>
+
+            <a href="https://attack.mitre.org/matrices/enterprise/linux/" target="_blank" rel="noopener noreferrer" class="source-card">
+                <div class="source-icon"><i class="fa-solid fa-table-cells"></i></div>
+                <div class="source-info">
+                    <h4>MITRE ATT&CK for Linux</h4>
+                    <p>Matrice officielle des tactiques et techniques d'attaque sous Linux.</p>
+                </div>
+            </a>
+
+            <a href="https://www.cert.ssi.gouv.fr" target="_blank" rel="noopener noreferrer" class="source-card">
+                <div class="source-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="source-info">
+                    <h4>CERT-FR / ANSSI</h4>
+                    <p>Alertes de vulnérabilités, menaces et recommandations nationales.</p>
+                </div>
+            </a>
+
+            <a href="https://www.atomicredteam.io" target="_blank" rel="noopener noreferrer" class="source-card">
+                <div class="source-icon"><i class="fa-solid fa-atom"></i></div>
+                <div class="source-info">
+                    <h4>Atomic Red Team</h4>
+                    <p>Bibliothèque de tests d'attaque unitaires open-source.</p>
+                </div>
+            </a>
+
+            <a href="https://volatilityfoundation.org" target="_blank" rel="noopener noreferrer" class="source-card">
+                <div class="source-icon"><i class="fa-solid fa-microchip"></i></div>
+                <div class="source-info">
+                    <h4>Volatility Foundation</h4>
+                    <p>Framework d'analyse de la mémoire vive pour investigations forensic.</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/SigmaHQ/sigma" target="_blank" rel="noopener noreferrer" class="source-card">
+                <div class="source-icon"><i class="fa-solid fa-code"></i></div>
+                <div class="source-info">
+                    <h4>SigmaHQ Standard</h4>
+                    <p>Format générique de règles de détection pour systèmes SIEM.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Modal Interactive d'Analyse Détaillée -->
+    <div class="modal-overlay" id="analysis-modal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <div>
+                    <h3 id="modal-article-title">Titre de l'analyse</h3>
+                    <p style="font-size: 0.8rem; color: var(--purple-light); margin-top: 0.3rem;" id="modal-article-meta"></p>
+                </div>
+                <button class="modal-close-btn" id="modal-close-btn" aria-label="Fermer la modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h4><i class="fa-solid fa-bullseye"></i> TTPs MITRE ATT&CK</h4>
+                    <p id="modal-article-mitre" style="font-family: var(--font-mono); color: #fca5a5;"></p>
+                </div>
+
+                <div class="modal-section">
+                    <h4><i class="fa-solid fa-toolbox"></i> Outils & Arsenal Mobilisés</h4>
+                    <p id="modal-article-tools" style="font-family: var(--font-mono); color: #93c5fd;"></p>
+                </div>
+
+                <div class="modal-section">
+                    <h4><i class="fa-solid fa-triangle-exclamation"></i> Problématique Technique</h4>
+                    <p id="modal-article-problem"></p>
+                </div>
+
+                <div class="modal-section">
+                    <h4><i class="fa-solid fa-microchip"></i> Analyse Technique & Démarche Pratique</h4>
+                    <div id="modal-article-tech"></div>
+                </div>
+
+                <div class="modal-section">
+                    <h4><i class="fa-solid fa-check-double"></i> Préconisations & Démarche d'Amélioration (SISR)</h4>
+                    <ul id="modal-article-recom"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-veille">
+        <div class="footer-content">
+            <p><strong>Portfolio BTS SIO - Option SISR</strong> • Mathis Dubos</p>
+            <p>© 2025-2026 - Veille Technologique Cyber : Purple Team, CSI Linux & Forensics</p>
+        </div>
+    </footer>
+
+    <!-- Scripts Bootstrap bundle, chargement du menu et script du thème -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/load-nav.js"></script>
+    <script src="JS/theme1.js"></script>
+</body>
+</html>

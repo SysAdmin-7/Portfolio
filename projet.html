@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets & Labs Techniques | Mathis Dubos • BTS SIO SISR</title>
+    <meta name="description" content="Découvrez les réalisations, architectures de virtualisation, conteneurs Docker, scripts d'automatisation et maquettes Cisco téléchargeables de Mathis Dubos en BTS SIO SISR.">
+    
+    <!-- Bibliothèques & Polices -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Feuille de styles Projets & Labs (Thème Sombre Professionnel) -->
+    <link rel="stylesheet" href="CSS/projet.css">
+</head>
+<body>
+
+    <!-- Barre de Navigation Globale (Chargée dynamiquement ou intégrée par défaut) -->
+    <div id="nav-container">
+        <!-- Fallback Navigation -->
+        <nav>
+            <ul class="menu-left">
+              <li><a href="index.html" class="nav-brand"><i class="fas fa-terminal me-2"></i>Mathis Dubos</a></li>
+            </ul>
+            <ul class="menu-right">
+              <li><a href="index.html">Accueil</a></li>
+              <li>
+                <a href="#">Portfolio <i class="fas fa-chevron-down nav-arrow"></i></a>
+                <ul>
+                  <li><a href="TP.html"><i class="fas fa-layer-group me-2"></i>TPs & Labs</a></li>
+                  <li><a href="projet.html"><i class="fas fa-server me-2"></i>Projets</a></li>
+                  <li><a href="Stage sio1.html"><i class="fas fa-briefcase me-2"></i>Stage SIO 1</a></li>
+                  <li><a href="Stage sio2.html"><i class="fas fa-building me-2"></i>Stage SIO 2</a></li>
+                  <li><a href="obsidian.html"><i class="fa-solid fa-book-bookmark me-2"></i>Notes Obsidian</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Documents <i class="fas fa-chevron-down nav-arrow"></i></a>
+                <ul>
+                  <li><a href="cv.html"><i class="fas fa-id-card me-2"></i>CV</a></li>
+                  <li><a href="lettre de motivation.html"><i class="fas fa-envelope-open-text me-2"></i>Lettre de Motivation</a></li>
+                  <li><a href="Convention sio1.html"><i class="fas fa-file-contract me-2"></i>Convention SIO 1</a></li>
+                  <li><a href="convention sio2.html"><i class="fas fa-file-signature me-2"></i>Convention SIO 2</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Veille Techno <i class="fas fa-chevron-down nav-arrow"></i></a>
+                <ul>
+                  <li><a href="theme1.html"><i class="fas fa-shield-halved me-2"></i>Thème 1 : Purple Team & CSI</a></li>
+                  <li><a href="theme2.html"><i class="fa-solid fa-infinity me-2"></i>Thème 2 : DevOps (Docker, K8s, Ansible)</a></li>
+                </ul>
+              </li>
+              <li><a href="contact.html" class="nav-contact-btn"><i class="fas fa-paper-plane me-1"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- ================= HAUT DE PAGE : HERO BANNER ================= -->
+    <header class="hero-projects">
+        <div class="hero-inner">
+            
+            <!-- Fil d'Ariane -->
+            <div class="hero-breadcrumb">
+                <a href="index.html"><i class="fas fa-home me-1"></i> Accueil</a>
+                <i class="fas fa-chevron-right breadcrumb-sep"></i>
+                <a href="#">Portfolio</a>
+                <i class="fas fa-chevron-right breadcrumb-sep"></i>
+                <span class="active">Projets & Labs</span>
+            </div>
+
+            <!-- Badges de Statut -->
+            <div class="hero-badges-wrapper">
+                <span class="hero-pill">
+                    <i class="fas fa-server"></i> BTS SIO SISR • Mathis Dubos
+                </span>
+                <span class="hero-pill live-status">
+                    <span class="pulse-dot"></span> 14 Réalisations Disponibles
+                </span>
+                <span class="hero-pill dl-ready">
+                    <i class="fas fa-download"></i> Téléchargements Directs Activés
+                </span>
+            </div>
+
+            <!-- Titre & Sous-titre -->
+            <h1>Mes Projets & <span class="gradient-title">Labs Techniques</span></h1>
+            
+            <p class="hero-description">
+                Infrastructures virtualisées, conteneurs <strong>Docker</strong>, maquettes de commutation <strong>Cisco</strong>, 
+                systèmes durcis <strong>GNU/Linux</strong>, annuaires <strong>Windows Server</strong> et scripts d'automatisation. 
+                Tous les livrables, scripts et documentations sont téléchargeables directement ci-dessous.
+            </p>
+
+            <!-- Barre de Métriques Clés Épurée -->
+            <div class="hero-stats-bar">
+                <div class="stat-box">
+                    <span class="stat-num" id="stat-total-projects">14</span>
+                    <span class="stat-desc">Projets & Labs</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-desc">Fichiers Téléchargeables</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">Blocs 1 & 2</span>
+                    <span class="stat-desc">Compétences SISR</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">Cisco • Linux • Windows</span>
+                    <span class="stat-desc">Environnements Clés</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ================= BARRE DE RECHERCHE & FILTRES INTERACTIFS ================= -->
+    <section class="controls-wrapper">
+        <div class="controls-card">
+            
+            <div class="search-and-meta-row">
+                <div class="search-input-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="search-projects-input" placeholder="Rechercher par mot-clé (ex: Cisco, Debian, Docker, Grafana, VPN, PowerShell, FOG, Sécurité)..." autocomplete="off">
+                    <button class="clear-search-btn" id="clear-search-btn" title="Effacer la recherche">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <span class="results-counter-badge" id="results-counter-badge">14 projets affichés</span>
+            </div>
+
+            <!-- Onglets de Catégories -->
+            <div class="category-tabs-row">
+                <button class="category-tab-btn active" data-category="all">
+                    <i class="fas fa-th-large"></i> Tout afficher <span class="tab-count">14</span>
+                </button>
+                <button class="category-tab-btn" data-category="vm">
+                    <i class="fas fa-server"></i> VMs & Systèmes <span class="tab-count">7</span>
+                </button>
+                <button class="category-tab-btn" data-category="network">
+                    <i class="fas fa-route"></i> Réseau Cisco & Infra <span class="tab-count">2</span>
+                </button>
+                <button class="category-tab-btn" data-category="bot">
+                    <i class="fas fa-robot"></i> Automatisation & Scripts <span class="tab-count">3</span>
+                </button>
+                <button class="category-tab-btn" data-category="app">
+                    <i class="fas fa-laptop-code"></i> Supervision & Web <span class="tab-count">2</span>
+                </button>
+            </div>
+
+            <!-- Filtres rapides par technologies -->
+            <div class="tech-pills-row">
+                <span class="tech-filter-label">Filtres Rapides :</span>
+                <button class="tech-filter-chip" data-tag="Docker"><i class="fab fa-docker me-1"></i> Docker</button>
+                <button class="tech-filter-chip" data-tag="Linux"><i class="fab fa-linux me-1"></i> Linux</button>
+                <button class="tech-filter-chip" data-tag="Cisco"><i class="fas fa-route me-1"></i> Cisco</button>
+                <button class="tech-filter-chip" data-tag="Debian"><i class="fas fa-shield-alt me-1"></i> Debian</button>
+                <button class="tech-filter-chip" data-tag="PowerShell"><i class="fab fa-windows me-1"></i> PowerShell</button>
+                <button class="tech-filter-chip" data-tag="Python"><i class="fab fa-python me-1"></i> Python</button>
+                <button class="tech-filter-chip" data-tag="Grafana"><i class="fas fa-chart-line me-1"></i> Grafana</button>
+                <button class="tech-filter-chip" data-tag="WireGuard"><i class="fas fa-network-wired me-1"></i> WireGuard</button>
+                <button class="tech-filter-chip" data-tag="Sécurité"><i class="fas fa-lock me-1"></i> Sécurité</button>
+                <button class="tech-filter-chip" data-tag="Apache2"><i class="fas fa-globe me-1"></i> Apache2</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= GRILLE PRINCIPALE DES PROJETS & TÉLÉCHARGEMENTS ================= -->
+    <main class="projects-container">
+        
+        <div class="gallery-grid" id="gallery">
+
+            <!-- 1. VM Debian Hardened -->
+            <article class="project-card" data-id="debian-hardened" data-category="vm" data-tags="Debian UFW Fail2Ban Bash Sécurité Linux">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-shield-halved"></i> Système & Sécurité</span>
+                    <span class="status-badge-custom ready">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> Ready to Clone
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>VM Debian Hardened (Security Baseline)</h3>
+                    </div>
+                    <p class="card-desc-text">Modèle de machine virtuelle Debian durcie selon les recommandations ANSSI. Pare-feu UFW restrictif, Fail2Ban actif et SSH sécurisé.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Pare-feu UFW pré-configuré (politique Drop par défaut)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Authentification SSH durcie (clés Ed25519 uniquement, port custom)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Fail2Ban avec détection d'attaques brute-force et jail active</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">Debian</span>
+                        <span class="tech-tag-badge">UFW</span>
+                        <span class="tech-tag-badge">Fail2Ban</span>
+                        <span class="tech-tag-badge">Bash</span>
+                        <span class="tech-tag-badge">Sécurité</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="debian-hardened">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="Assets/projets/debian_hardened_setup.sh" download="debian_hardened_setup.sh" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.sh)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 2. Cisco VLANs & SSH -->
+            <article class="project-card" data-id="cisco-vlan-ssh" data-category="network" data-tags="Cisco VLAN SSH Switching Réseau 802.1Q">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-route"></i> Réseaux & Commutation</span>
+                    <span class="status-badge-custom tested">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> Lab Validé
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-route"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Architecture Réseau Cisco : VLANs 802.1Q & SSH</h3>
+                    </div>
+                    <p class="card-desc-text">Conception et déploiement d'une infrastructure commutée Cisco avec segmentation VLAN, routage Inter-VLAN et accès distant SSH v2 chiffré.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Segmentation par VLANs métiers (Admin, Employés, Serveurs, Guest)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Trunking 802.1Q et sécurisation des ports non utilisés</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Administration distante chiffrée via SSH v2 avec clés RSA 2048</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">Cisco</span>
+                        <span class="tech-tag-badge">VLAN</span>
+                        <span class="tech-tag-badge">SSH</span>
+                        <span class="tech-tag-badge">Switching</span>
+                        <span class="tech-tag-badge">Réseau</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="cisco-vlan-ssh">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="Assets/fichier pdf/2ème anné/lab1_fondation_vlan_ssh_packet_tracer.pkt" download="lab1_fondation_vlan_ssh_packet_tracer.pkt" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.pkt)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 3. Stack Monitoring -->
+            <article class="project-card" data-id="monitoring-stack" data-category="app" data-tags="Grafana Prometheus Docker NodeExporter Linux">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-chart-line"></i> Supervision & Monitoring</span>
+                    <span class="status-badge-custom lab">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> Lab Homelab
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Stack Monitoring Prometheus & Grafana</h3>
+                    </div>
+                    <p class="card-desc-text">Supervision complète d'un parc de serveurs et conteneurs avec Prometheus pour la collecte métrique et Grafana pour la visualisation en temps réel.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Collecte métrique CPU, RAM, Disque et Réseau via Node Exporter</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Dashboards interactifs Grafana avec alertes temps réel</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Déploiement conteneurisé automatisé avec Docker Compose</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">Grafana</span>
+                        <span class="tech-tag-badge">Prometheus</span>
+                        <span class="tech-tag-badge">Docker</span>
+                        <span class="tech-tag-badge">Linux</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="monitoring-stack">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="Assets/projets/docker_monitoring_stack.yml" download="docker_monitoring_stack.yml" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.yml)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 4. Passerelle WireGuard Easy -->
+            <article class="project-card" data-id="wireguard-easy" data-category="vm" data-tags="WireGuard VPN Docker Réseau Sécurité Web UI">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-network-wired"></i> Réseau & VPN</span>
+                    <span class="status-badge-custom tested">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> Testé & Actif
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Passerelle VPN WireGuard Easy</h3>
+                    </div>
+                    <p class="card-desc-text">Serveur VPN WireGuard à très haute performance couplé à une interface d'administration Web pour générer des configurations et QR codes clients en 1 clic.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Chiffrement de pointe ChaCha20-Poly1305 avec WireGuard</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Génération instantanée de profils mobiles via QR Code</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Isolation des conteneurs et routage IP Forwarding sécurisé</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">WireGuard</span>
+                        <span class="tech-tag-badge">VPN</span>
+                        <span class="tech-tag-badge">Docker</span>
+                        <span class="tech-tag-badge">Sécurité</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="wireguard-easy">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="Assets/projets/wireguard_easy_docker.sh" download="wireguard_easy_docker.sh" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.sh)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 5. Serveur FOG Project -->
+            <article class="project-card" data-id="fog-pxe-server" data-category="vm" data-tags="FOG PXE Linux Windows Clonage SysAdmin">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-clone"></i> Déploiement & Clonage</span>
+                    <span class="status-badge-custom prod">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> En Prod (Stage)
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-clone"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Serveur de Déploiement PXE d'Images FOG</h3>
+                    </div>
+                    <p class="card-desc-text">Mise en place d'une solution FOG Project sous Linux pour la capture, le stockage et le masterisation en masse de postes de travail via le démarrage réseau PXE.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Déploiement d'images Windows 10/11 en Multicast et Unicast</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Intégration DHCP / PXE TFTP avec gestion des drivers Sysprep</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Automatisation de l'intégration au domaine Active Directory</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">FOG</span>
+                        <span class="tech-tag-badge">PXE</span>
+                        <span class="tech-tag-badge">Linux</span>
+                        <span class="tech-tag-badge">Windows</span>
+                        <span class="tech-tag-badge">SysAdmin</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="fog-pxe-server">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="02_Stage_1ère_Année/06_deploiment_d'image_système_avec_FOG.md" download="06_deploiment_d_image_systeme_avec_FOG.md" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.md)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 6. PowerShell Active Directory -->
+            <article class="project-card" data-id="ad-automation-ps" data-category="bot" data-tags="PowerShell Active Directory Windows Scripting Audit">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-terminal"></i> Automatisation & Scripting</span>
+                    <span class="status-badge-custom ready">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> Validé
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Automatisation Active Directory & Audit PowerShell</h3>
+                    </div>
+                    <p class="card-desc-text">Scripts d'administration système PowerShell pour la création en masse de comptes Active Directory depuis fichier CSV et l'audit des comptes inactifs.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Intégration automatique d'utilisateurs avec mot de passe et OU cible</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Détection des comptes orphelins ou inactifs depuis plus de 90 jours</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Export des rapports de sécurité au format CSV et console</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">PowerShell</span>
+                        <span class="tech-tag-badge">Active Directory</span>
+                        <span class="tech-tag-badge">Windows</span>
+                        <span class="tech-tag-badge">Scripting</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="ad-automation-ps">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="Assets/projets/active_directory_automation.ps1" download="active_directory_automation.ps1" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.ps1)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 7. Bot Discord Support -->
+            <article class="project-card" data-id="discord-bot" data-category="bot" data-tags="Python Discord.py SQLite Docker AsyncIO">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-robot"></i> Automatisation Python</span>
+                    <span class="status-badge-custom prod">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> En Prod
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Bot Discord Support & Gestion de Tickets</h3>
+                    </div>
+                    <p class="card-desc-text">Bot Discord développé en Python pour gérer le support technique. Salons privés éphémères, base SQLite, archivage des logs et exports HTML.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Création automatisée de channels de support avec permissions privées</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Génération de transcripts complets des conversations au format HTML</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Gestion de tickets avec base de données SQLite et persistance</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">Python</span>
+                        <span class="tech-tag-badge">Discord.py</span>
+                        <span class="tech-tag-badge">SQLite</span>
+                        <span class="tech-tag-badge">Docker</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="discord-bot">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="Assets/projets/discord_ticket_bot.py" download="discord_ticket_bot.py" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.py)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 8. VM Serveur Web LAMP -->
+            <article class="project-card" data-id="vm-lamp-server" data-category="vm" data-tags="Apache2 PHP VirtualBox Debian VirtualHost Linux">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-server"></i> Systèmes & Serveurs Web</span>
+                    <span class="status-badge-custom ready">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> Guide Complet
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-server"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Déploiement VM Linux & Serveur Web LAMP (7 Étapes)</h3>
+                    </div>
+                    <p class="card-desc-text">Projet structuré en 7 étapes : création d'une VM sous VirtualBox, installation Xubuntu/Debian, Guest Additions, utilisateurs, outils et serveur Apache2/PHP.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Guide complet pas à pas rédigé en 7 étapes d'ingénierie</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Configuration fine des VirtualHosts Apache2 et modules PHP</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Politiques de sécurité des utilisateurs et des permissions UNIX</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">Apache2</span>
+                        <span class="tech-tag-badge">PHP</span>
+                        <span class="tech-tag-badge">VirtualBox</span>
+                        <span class="tech-tag-badge">Debian</span>
+                        <span class="tech-tag-badge">Linux</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="vm-lamp-server">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="Assets/fichier pdf/projet/VM ETAPE7 SERVEUR WEB COMPLET(1).docx" download="VM_ETAPE7_SERVEUR_WEB_COMPLET.docx" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.docx)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 9. CSI Linux Lab -->
+            <article class="project-card" data-id="csi-linux-lab" data-category="vm" data-tags="CSI Linux DFIR Forensics Volatility Sécurité OSINT">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-user-secret"></i> Cybersécurité & DFIR</span>
+                    <span class="status-badge-custom lab">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> Lab Recherche
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Laboratoire Cyber Forensics (CSI Linux 2024)</h3>
+                    </div>
+                    <p class="card-desc-text">Station d'analyse numérique et réponse à incident déployée sous CSI Linux 2024. Analyse de dumps mémoire RAM avec Volatility 3 et examen de disques Autopsy.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Environnement sandboxé et isolé pour l'analyse de preuves numériques</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Extraction d'artefacts mémoire et analyse de processus cachés</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Intégration d'outils OSINT pour le renseignement sur les menaces</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">CSI Linux</span>
+                        <span class="tech-tag-badge">DFIR</span>
+                        <span class="tech-tag-badge">Forensics</span>
+                        <span class="tech-tag-badge">Volatility</span>
+                        <span class="tech-tag-badge">Sécurité</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="csi-linux-lab">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="Assets/projets/csi_linux_lab_guide.md" download="csi_linux_lab_guide.md" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.md)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 10. Minecraft Docker -->
+            <article class="project-card" data-id="minecraft-docker" data-category="vm" data-tags="Docker Ubuntu SysAdmin Bash Sauvegarde">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-cubes"></i> Conteneurisation Docker</span>
+                    <span class="status-badge-custom tested">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> Conteneurisé
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Serveur Dédié Minecraft Conteneurisé</h3>
+                    </div>
+                    <p class="card-desc-text">Environnement de serveur de jeu sous Ubuntu entièrement conteneurisé. Isolation complète, gestion fine de la mémoire vive et scripts de sauvegarde cron.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Isolation des processus au sein d'un conteneur Docker étanche</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Contrôle strict des quotas CPU et allocation RAM (Memory Limit)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Sauvegardes automatisées rdiff des données de monde</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">Docker</span>
+                        <span class="tech-tag-badge">Ubuntu</span>
+                        <span class="tech-tag-badge">SysAdmin</span>
+                        <span class="tech-tag-badge">Bash</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="minecraft-docker">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="Assets/projets/minecraft_docker_compose.yml" download="minecraft_docker_compose.yml" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.yml)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 11. PaperMC Tuning -->
+            <article class="project-card" data-id="minecraft-papermc" data-category="vm" data-tags="Java Linux Gaming Tuning Docker">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-cube"></i> Optimisation & Performance</span>
+                    <span class="status-badge-custom prod">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> Terminé
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Serveur PaperMC Haute Performance (Tuning JVM)</h3>
+                    </div>
+                    <p class="card-desc-text">Serveur applicatif haute performance basé sur le fork PaperMC avec application des flags JVM Aikar pour minimiser les temps de pause du Garbage Collector.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Flags JVM Aikar personnalisés pour le Garbage Collector G1</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Tuning réseau (TCP no delay, buffer size) et élimination du lag</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Protection contre les requêtes malformées et anti-DDoS</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">Java</span>
+                        <span class="tech-tag-badge">Linux</span>
+                        <span class="tech-tag-badge">Gaming</span>
+                        <span class="tech-tag-badge">Tuning</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="minecraft-papermc">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="Assets/projets/papermc_performance_launch.sh" download="papermc_performance_launch.sh" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.sh)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 12. Montage Workstation -->
+            <article class="project-card" data-id="workstation-montage" data-category="vm" data-tags="Hardware Workstation Virtualisation Architecture Matériel">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-microchip"></i> Matériel & Architecture</span>
+                    <span class="status-badge-custom ready">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> Dossier Validé
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Conception & Assemblage Station Workstation SISR</h3>
+                    </div>
+                    <p class="card-desc-text">Étude de dimensionnement, sélection des composants matériels et assemblage complet d'une station de travail puissante pour la virtualisation et les labs SISR.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Sélection des composants CPU multi-cœurs et mémoire vive ECC / haute cadence</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Architecture du stockage en NVMe PCIe 4.0 et disques redondants</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Optimisation du flux d'air, alimentation certifiée et tests de stabilité</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">Hardware</span>
+                        <span class="tech-tag-badge">Workstation</span>
+                        <span class="tech-tag-badge">Virtualisation</span>
+                        <span class="tech-tag-badge">Matériel</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="workstation-montage">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="Assets/fichier pdf/TP/Montag_PC dubos mathis.pdf" download="Montage_PC_Workstation_Mathis_Dubos.pdf" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.pdf)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 13. Cisco Diagnostic Packet Tracer -->
+            <article class="project-card" data-id="cisco-diagnostic-lab" data-category="network" data-tags="Cisco Packet Tracer IPv4 Routage NAT Diagnostic">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-network-wired"></i> Réseaux & Diagnostic</span>
+                    <span class="status-badge-custom tested">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> Maquette .PKT
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Maquette Diagnostic Réseau Cisco Packet Tracer</h3>
+                    </div>
+                    <p class="card-desc-text">Topologie complète de simulation Packet Tracer modélisant un réseau multi-sites avec sous-réseaux IPv4, passerelles par défaut, NAT et routage statique.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Topologie de simulation Packet Tracer prête à ouvrir (.pkt)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Tests de connectivité de bout en bout (ICMP, ARP, DNS)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Résolution d'incidents de connectivité et diagnostic des tables de routage</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">Cisco</span>
+                        <span class="tech-tag-badge">Packet Tracer</span>
+                        <span class="tech-tag-badge">IPv4</span>
+                        <span class="tech-tag-badge">Routage</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="cisco-diagnostic-lab">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="Assets/fichier pdf/TP/tp.pkt" download="tp_cisco_diagnostic.pkt" class="btn-custom btn-download-action">
+                        <i class="fas fa-download"></i> Télécharger (.pkt)
+                    </a>
+                </div>
+            </article>
+
+            <!-- 14. macOS Tahoe Rice -->
+            <article class="project-card" data-id="macos-tahoe" data-category="vm" data-tags="Ubuntu GNOME Rice UI/UX Linux">
+                <div class="card-header-banner">
+                    <div class="header-pattern-bg"></div>
+                    <span class="category-indicator"><i class="fas fa-desktop"></i> UI/UX & Custom Linux</span>
+                    <span class="status-badge-custom rice">
+                        <span class="pulse-dot" style="width:6px; height:6px;"></span> Custom Rice
+                    </span>
+                    <div class="card-icon-container">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-group">
+                        <h3>Ubuntu Desktop macOS Tahoe (Custom Rice)</h3>
+                    </div>
+                    <p class="card-desc-text">Transformation esthétique intégrale d'un environnement Ubuntu pour répliquer le concept visuel macOS Tahoe : GNOME 44+, thème GTK personnalisé et dock fluide.</p>
+                    <ul class="card-highlights">
+                        <li><i class="fas fa-check-circle"></i> <span>Personnalisation en profondeur du compositeur d'affichage GNOME</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Intégration d'effets de flou d'arrière-plan et polices typographiques SF Pro</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Pack d'icônes vectorielles et widgets d'indicateurs système Conky</span></li>
+                    </ul>
+                    <div class="card-tags-list">
+                        <span class="tech-tag-badge">Ubuntu</span>
+                        <span class="tech-tag-badge">GNOME</span>
+                        <span class="tech-tag-badge">Rice</span>
+                        <span class="tech-tag-badge">UI/UX</span>
+                    </div>
+                </div>
+                <div class="card-actions-footer">
+                    <button class="btn-custom btn-primary-action btn-open-modal" data-id="macos-tahoe">
+                        <i class="fas fa-circle-info"></i> Détails & Fiche
+                    </button>
+                    <a href="https://drive.google.com/drive/folders/1FWM_vpFIWbepzvbFTYor6MNsmkcrACrq?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-custom btn-download-action">
+                        <i class="fas fa-cloud-arrow-down"></i> Télécharger (Drive)
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- État vide si aucun résultat de recherche -->
+        <div class="empty-results-box" id="empty-results-box">
+            <i class="fas fa-search-minus empty-icon"></i>
+            <h3>Aucun projet trouvé</h3>
+            <p>Aucun projet ni lab ne correspond à vos critères de recherche actuels.</p>
+            <button class="btn-custom btn-primary-action" id="reset-filters-btn">
+                <i class="fas fa-rotate-left"></i> Réinitialiser tous les filtres
+            </button>
+        </div>
+
+    </main>
+
+    <!-- ================= MODAL INTERACTIVE DES DÉTAILS D'UN PROJET ================= -->
+    <div class="modal-overlay-custom" id="project-modal-overlay">
+        <div class="modal-window-custom">
+            
+            <!-- En-tête de la Modal -->
+            <div class="modal-header-custom">
+                <div class="modal-title-group">
+                    <h2 id="modal-project-title">Titre du Projet</h2>
+                    <div class="modal-meta-badges" id="modal-meta-badges">
+                        <!-- Badges dynamiques injectés par JS -->
+                    </div>
+                </div>
+                <button class="modal-close-btn" id="modal-close-btn" title="Fermer la fenêtre (Échap)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Corps de la Modal -->
+            <div class="modal-body-custom">
+                
+                <!-- Bloc Contexte -->
+                <div class="modal-section-block">
+                    <h4><i class="fas fa-align-left"></i> Contexte & Objectifs du Lab</h4>
+                    <p id="modal-project-desc">Description détaillée du projet...</p>
+                </div>
+
+                <!-- Bloc Fiche Technique -->
+                <div class="modal-section-block">
+                    <h4><i class="fas fa-microchip"></i> Spécifications Techniques & Environnement</h4>
+                    <div class="modal-specs-table" id="modal-specs-grid">
+                        <!-- Cellules de spécifications injectées par JS -->
+                    </div>
+                </div>
+
+                <!-- Bloc Compétences SISR -->
+                <div class="modal-section-block">
+                    <h4><i class="fas fa-graduation-cap"></i> Compétences BTS SIO SISR Couvertes</h4>
+                    <ul class="competences-list-styled" id="modal-competences-list">
+                        <!-- Liste des compétences validées -->
+                    </ul>
+                </div>
+
+                <!-- Bloc Commandes / Déploiement -->
+                <div class="modal-section-block">
+                    <h4><i class="fas fa-terminal"></i> Commandes Clés & Déploiement</h4>
+                    <div class="code-snippet-container">
+                        <div class="snippet-top-bar">
+                            <span><i class="fas fa-code me-1"></i> Bash / CLI / Docker</span>
+                            <button class="copy-snippet-btn" id="copy-snippet-btn">
+                                <i class="far fa-copy"></i> Copier
+                            </button>
+                        </div>
+                        <pre class="snippet-code-box"><code id="modal-snippet-code"># Chargement du script...</code></pre>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pied de page de la Modal avec TÉLÉCHARGEMENT DIRECT -->
+            <div class="modal-footer-custom">
+                <button class="btn-custom btn-outline-action" id="modal-footer-close-btn" onclick="document.getElementById('modal-close-btn').click();">
+                    <i class="fas fa-times"></i> Fermer
+                </button>
+                <a href="#" id="modal-action-download" download class="btn-custom btn-download-action">
+                    <i class="fas fa-download"></i> Télécharger le livrable du projet
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast de notification -->
+    <div class="toast-notice" id="toast-notice">
+        <i class="fas fa-check-circle" style="color: #10b981;"></i>
+        <span class="toast-message">Action effectuée avec succès !</span>
+    </div>
+
+    <!-- ================= FOOTER CONTACT HARMONISÉ ================= -->
+    <footer class="footer-cta" id="contact">
+        <div class="footer-container">
+            <h2>Prêt à échanger autour d'un projet ou d'un stage ?</h2>
+            <p>
+                Je suis actuellement à la recherche d'opportunités professionnelles (stage / alternance) dans le domaine de l'administration systèmes, réseaux et cybersécurité.
+            </p>
+
+            <div class="contact-badges-list">
+                <a href="mailto:mathisdubos15@gmail.com" class="contact-badge-item">
+                    <i class="fas fa-envelope"></i> mathisdubos15@gmail.com
+                </a>
+                <a href="tel:0646726062" class="contact-badge-item">
+                    <i class="fas fa-phone"></i> 06 46 72 60 62
+                </a>
+                <span class="contact-badge-item">
+                    <i class="fas fa-map-marker-alt"></i> Amiens / Rosières-en-Santerre
+                </span>
+                <a href="cv.html" class="contact-badge-item" style="border-color: var(--primary); color: #93c5fd;">
+                    <i class="fas fa-id-card"></i> Voir mon CV & Parcours
+                </a>
+            </div>
+
+            <p class="copyright-text">
+                © 2025 - 2026 • Mathis Dubos • Portfolio BTS SIO SISR • Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts Bootstrap bundle, chargement du menu dynamique et script projets -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/load-nav.js"></script>
+    <script src="JS/projet.js"></script>
+</body>
+</html>

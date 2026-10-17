@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | Mathis Dubos</title>
+    <meta name="description" content="Formulaire de contact et coordonnées professionnelles de Mathis Dubos, étudiant en BTS SIO SISR.">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="CSS/contact.css" rel="stylesheet">
+</head>
+<body>
+    <div id="nav-container"></div>
+
+    <div class="main-content">
+        <div class="contact-wrapper">
+            
+            <div class="contact-info-panel">
+                <div>
+                    <h3>Mes Coordonnées</h3>
+                    <p class="intro-text">Un projet, une question ou une proposition de stage / alternance ? N'hésitez pas à me contacter.</p>
+                    
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>06 46 72 60 62</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:mathisdubos15@gmail.com">mathisdubos15@gmail.com</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Rosières-en-Santerre / Amiens (80)</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/mathis-dubos-0217a8385/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/SysAdmin-7" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form-panel">
+                <h2>Envoyer un message</h2>
+                <form action="https://formspree.io/f/xrbnyanb" method="POST">
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Nom</label>
+                            <input type="text" name="nom" placeholder="Votre nom" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Prénom</label>
+                            <input type="text" name="prenom" placeholder="Votre prénom" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Adresse Email</label>
+                        <input type="email" name="email" placeholder="nom@exemple.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Objet du message</label>
+                        <input type="text" name="sujet" placeholder="Opportunité de stage, question..." required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="4" placeholder="Votre message..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-send">
+                        Envoyer le message <i class="fa-solid fa-paper-plane ms-2"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; background: #090d16;">
+        <p>© 2025 - 2026 • Mathis Dubos • Portfolio BTS SIO SISR</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/load-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travaux Pratiques & Projets | Portfolio BTS SIO SISR</title>
+    <meta name="description"
+        content="Portfolio technique de Mathis Dubos en BTS SIO SISR : Travaux pratiques Cisco, systèmes Linux, scripting PowerShell, bases de données SQL et projets de virtualisation.">
+
+    <!-- Scripts & Bibliothèques -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Feuilles de styles -->
+    <link href="CSS/tp.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Barre de navigation globale (chargée dynamiquement via load-nav.js) -->
+    <div id="nav-container"></div>
+
+    <!-- Hero Banner -->
+    <header class="tp-hero">
+        <div class="hero-inner">
+            <span class="hero-badge"><i class="fas fa-laptop-code"></i> Portfolio BTS SIO • Option SISR</span>
+            <h1>Travaux Pratiques & Projets Techniques</h1>
+            <p>
+                Ensemble des réalisations pratiques, maquettes réseaux, scripts d'automatisation et projets
+                d'infrastructure validés au cours du cursus BTS SIO SISR.
+            </p>
+
+            <div class="hero-stats-bar">
+                <div class="stat-box">
+                    <span class="stat-num" id="total-tp-count">41</span>
+                    <span class="stat-desc">TPs & Projets</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">7</span>
+                    <span class="stat-desc">Domaines Techniques</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">Bloc 1 & 2 & 3</span>
+                    <span class="stat-desc">Compétences SISR</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-desc">Documents Disponibles</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barre d'outils : Recherche instantanée & Filtres par catégorie -->
+    <div class="tp-controls">
+        <div class="controls-card">
+            <div class="search-row">
+                <div class="tp-search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="tp-search-input" class="tp-search-input"
+                        placeholder="Rechercher par mot-clé (ex: VLAN, Routage, Active Directory, Proxmox, Nmap, PowerShell, SQL)...">
+                </div>
+                <span class="search-meta" id="results-count">41 TPs affichés</span>
+            </div>
+
+            <div class="filter-categories">
+                <button class="category-tab active" data-category="all">
+                    <i class="fas fa-th-large"></i> Tous <span class="tab-badge">41</span>
+                </button>
+                <button class="category-tab" data-category="cisco">
+                    <i class="fas fa-route"></i> Réseau Cisco <span class="tab-badge">9</span>
+                </button>
+                <button class="category-tab" data-category="linux">
+                    <i class="fab fa-linux"></i> Systèmes & Linux <span class="tab-badge">7</span>
+                </button>
+                <button class="category-tab" data-category="windows">
+                    <i class="fab fa-windows"></i> Windows & AD <span class="tab-badge">2</span>
+                </button>
+                <button class="category-tab" data-category="security">
+                    <i class="fas fa-shield-halved"></i> Audit & Sécurité <span class="tab-badge">1</span>
+                </button>
+                <button class="category-tab" data-category="powershell">
+                    <i class="fas fa-terminal"></i> PowerShell <span class="tab-badge">5</span>
+                </button>
+                <button class="category-tab" data-category="sql">
+                    <i class="fas fa-database"></i> SQL & BDD <span class="tab-badge">10</span>
+                </button>
+                <button class="category-tab" data-category="vm">
+                    <i class="fas fa-server"></i> Projet VM Web <span class="tab-badge">7</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= AVERTISSEMENT & CADRE ÉDUCATIF ================= -->
+    <div class="tp-disclaimer-container">
+        <div class="tp-disclaimer-card">
+            <div class="tp-disclaimer-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="tp-disclaimer-content">
+                <div class="tp-disclaimer-header">
+                    <span class="tp-disclaimer-badge"><i class="fas fa-shield-halved me-1"></i> Cadre Éthique & Légal</span>
+                    <h3>Travaux Pratiques & Labs à But Purement Éducatif</h3>
+                </div>
+                <p>
+                    L'ensemble des travaux pratiques, maquettes Packet Tracer, configurations d'équipements Cisco, déploiements de serveurs Windows / Linux, scripts d'administration et audits de sécurité (Nmap, ACL, durcissement) présentés sur cette page sont réalisés <strong>strictement et exclusivement à des fins pédagogiques et d'apprentissage académique</strong> dans le cadre de ma formation en BTS SIO (option SISR).
+                </p>
+                <p class="tp-disclaimer-note">
+                    <i class="fas fa-scale-balanced me-1"></i> Ces exercices ont pour unique objectif l'assimilation des compétences du référentiel national, la maîtrise de l'administration réseau et la défense des infrastructures d'entreprise. Conformément aux dispositions des <strong>articles 323-1 et suivants du Code pénal français</strong>, toute utilisation malveillante ou reproduction non autorisée de ces configurations et techniques est rigoureusement interdite.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteneur principal des TPs -->
+    <main class="tp-container">
+
+        <!-- ================= SECTION 1 : CISCO & RÉSEAU ================= -->
+        <section class="tp-section" id="section-cisco">
+            <div class="tp-section-header">
+                <div class="section-title">
+                    <div class="section-icon-badge badge-cisco"><i class="fas fa-route"></i></div>
+                    <h2>Réseaux & Commutation Cisco</h2>
+                </div>
+            </div>
+
+            <div class="tp-grid">
+                <!-- TP Cisco 1 -->
+                <div class="tp-card" data-category="cisco"
+                    data-modal-title="TP 6.1 a : Commandes CMD Essentielles du Support Informatique"
+                    data-modal-category="Réseau & Diagnostic" data-modal-level="Débutant"
+                    data-modal-desc="Apprentissage méthodique des outils en ligne de commande pour le diagnostic et le dépannage réseau sous environnement Windows : ipconfig, ping, tracert, nslookup, netstat, arp."
+                    data-modal-competences="Diagnostic et résolution d'incidents de connectivité; Analyse des adresses IPv4/masques; Vérification des caches ARP et résolutions DNS."
+                    data-modal-tools="CMD Windows, Protocole ICMP, Requêtes DNS, Commutateur">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-debutant">Débutant</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TP 6.1 a : Commandes CMD du Support</h3>
+                        <p class="tp-card-desc">Maîtrise des commandes fondamentales de diagnostic réseau (ipconfig,
+                            ping, tracert, nslookup) pour le support utilisateur niveau 1.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Diagnostic IP</span>
+                            <span class="skill-tag">Ping & Tracert</span>
+                            <span class="skill-tag">Support N1</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/cisco/TP_6.1_a__Commandes_CMD_Essentielles_du_Support_Informatique.pdf"
+                            download="TP_6.1_Commandes_Support_Cisco.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TP Cisco 2 -->
+                <div class="tp-card" data-category="cisco"
+                    data-modal-title="TP 5.2 A : Diagnostic d’un Problème de Connexion Réseau"
+                    data-modal-category="Réseau & Diagnostic" data-modal-level="Intermédiaire"
+                    data-modal-desc="Démarche systématique d'investigation en couches OSI pour identifier la cause d'une panne réseau : problème de câble/port, configuration IP statique erronée, bail DHCP expiré ou passerelle injoignable."
+                    data-modal-competences="Dépannage méthodique par couches; Contrôle de l'attribution DHCP; Analyse des configurations de passerelle par défaut."
+                    data-modal-tools="TCP/IP, DHCP, Wireshark, CLI Windows">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TP 5.2 A : Diagnostic Connexion Réseau</h3>
+                        <p class="tp-card-desc">Méthodologie de dépannage réseau par couches : baux DHCP, configuration
+                            de la passerelle et tests de bout en bout.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Dépannage OSI</span>
+                            <span class="skill-tag">Baux DHCP</span>
+                            <span class="skill-tag">Passerelle</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/cisco/TP_5.2_A_–_Diagnostic_d’un_problème_de_connexion_réseau.pdf"
+                            download="TP_5.2_Diagnostic_Connexion.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TP Cisco 3 : Lab VLAN & SSH -->
+                <div class="tp-card" data-category="cisco"
+                    data-modal-title="Lab 1 : Fondations VLAN, Segmentation & Configuration SSH Switch Cisco"
+                    data-modal-category="Commutation & Sécurité" data-modal-level="Intermédiaire"
+                    data-modal-desc="Configuration d'un commutateur Cisco Catalyst : création des VLANs data et administration, configuration des ports d'accès et trunk 802.1Q, et sécurisation de l'accès distant via SSH v2 chiffré."
+                    data-modal-competences="Segmentation du réseau local (VLAN 802.1Q); Configuration des trunks de commutation; Sécurisation des accès d'administration via SSH."
+                    data-modal-tools="Cisco IOS, Cisco Catalyst, SSHv2, VLANs, Packet Tracer">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Lab 1 : VLAN, Trunk & Accès SSH Switch</h3>
+                        <p class="tp-card-desc">Création de VLANs, trunking 802.1Q et sécurisation d'un switch Cisco
+                            Catalyst via SSH crypté.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Cisco IOS</span>
+                            <span class="skill-tag">VLAN & Trunk</span>
+                            <span class="skill-tag">SSH v2</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/2ème anné/Lab1_Fondations_VLAN_SSH.pdf"
+                            download="Lab_Fondations_VLAN_SSH.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TP Cisco 4 : Fichier Packet Tracer -->
+                <div class="tp-card" data-category="cisco"
+                    data-modal-title="Simulation Packet Tracer : Maquette Switch Cisco & VLANs"
+                    data-modal-category="Simulation Réseau" data-modal-level="Intermédiaire"
+                    data-modal-desc="Fichier de simulation Cisco Packet Tracer (.pkt) complet contenant la topologie de laboratoire avec switchs, postes clients et liaisons trunk opérationnelles."
+                    data-modal-competences="Conception et simulation de topologies réseau d'entreprise; Validation des flux inter-VLANs."
+                    data-modal-tools="Cisco Packet Tracer, Cisco IOS">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pkt"><i class="fas fa-network-wired"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PKT</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Maquette Packet Tracer : Lab VLAN</h3>
+                        <p class="tp-card-desc">Fichier de laboratoire virtuel Packet Tracer complet avec topologie de
+                            switchs Cisco et clients configurés.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Packet Tracer</span>
+                            <span class="skill-tag">Lab Virtuel</span>
+                            <span class="skill-tag">Fichier .PKT</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/2ème anné/lab1_fondation_vlan_ssh_packet_tracer.pkt"
+                            download="lab1_vlan_ssh.pkt" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TP Cisco 5 : Lab 2 TravelHorizon -->
+                <div class="tp-card" data-category="cisco"
+                    data-modal-title="Lab 2 : Infrastructure Cisco VLANs, Routage Inter-VLAN & DHCP TravelHorizon"
+                    data-modal-category="Commutation & Routage" data-modal-level="Intermédiaire"
+                    data-modal-desc="Déploiement complet d'une infrastructure d'entreprise distribuée sur 3 commutateurs Cisco Catalyst et un routeur Cisco 1941 : segmentation par VLANs (Direction, Commercial, Technique, Administration), agrégation trunk 802.1Q, sous-interfaces Router-on-a-Stick, serveur DHCP multi-pools et sécurisation distante via SSHv2."
+                    data-modal-competences="Segmentation réseau (VLAN 802.1Q); Configuration des trunks d'agrégation; Routage inter-VLAN Router-on-a-Stick; Configuration de pools DHCP d'entreprise; Sécurisation des accès d'administration SSHv2."
+                    data-modal-tools="Cisco IOS, Cisco 1941, Catalyst 2960, 802.1Q, Router-on-a-Stick, DHCP, SSHv2">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Lab 2 : Cisco VLANs & Routage Inter-VLAN</h3>
+                        <p class="tp-card-desc">Architecture multi-switchs, trunk 802.1Q, sous-interfaces
+                            Router-on-a-Stick, DHCP multi-pools et sécurisation SSHv2.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Router-on-a-Stick</span>
+                            <span class="skill-tag">VLAN 802.1Q</span>
+                            <span class="skill-tag">DHCP Multi-Pools</span>
+                            <span class="skill-tag">SSHv2</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/2ème anné/LAB2_Cisco_VLANs_Infrastructure_TravelHorizon_(1).pdf"
+                            download="Lab2_Cisco_VLANs_TravelHorizon.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TP Cisco 6 : Packet Tracer Lab 2 -->
+                <div class="tp-card" data-category="cisco"
+                    data-modal-title="Simulation Packet Tracer : Topologie Complète Lab 2 TravelHorizon"
+                    data-modal-category="Simulation Réseau" data-modal-level="Intermédiaire"
+                    data-modal-desc="Fichier de simulation Cisco Packet Tracer (.pkt) complet contenant la topologie de laboratoire TravelHorizon avec 3 switches Catalyst, routeur Cisco 1941, liaisons trunk opérationnelles et distribution automatique d'adresses IP."
+                    data-modal-competences="Modélisation d'infrastructures commutées multi-niveaux; Test et validation des flux inter-VLANs et de la distribution DHCP."
+                    data-modal-tools="Cisco Packet Tracer, Topologie Multi-Switches, Cisco 1941, Catalyst 2960">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pkt"><i class="fas fa-network-wired"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PKT</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Maquette Packet Tracer : Lab 2 TravelHorizon</h3>
+                        <p class="tp-card-desc">Laboratoire virtuel Cisco Packet Tracer complet avec topologie de 3
+                            switchs, routeur 1941 et postes clients configurés.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Packet Tracer</span>
+                            <span class="skill-tag">Fichier .PKT</span>
+                            <span class="skill-tag">Lab Virtuel</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/2ème anné/lab2.pkt" download="lab2_travelhorizon.pkt"
+                            class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TP Cisco 7 : Lab Routage Statique -->
+                <div class="tp-card" data-category="cisco"
+                    data-modal-title="Lab Cisco : Routage Statique Multi-Routeurs & Sommarisation (Exolab CERTA)"
+                    data-modal-category="Routage Cisco" data-modal-level="Intermédiaire"
+                    data-modal-desc="Interconnexion de 3 à 4 réseaux d'entreprise via 2 à 3 routeurs Cisco 1941 : interprétation des tables de routage (codes C, L, S), métriques [1/0], configuration de routes statiques via next-hop joignable, sommarisation CIDR /15 et démarche méthodique de diagnostic des pannes de routage aller-retour."
+                    data-modal-competences="Conception et configuration de plans de routage IPv4; Interprétation des tables de routage Cisco; Sommarisation de sous-réseaux (super-netting); Diagnostic de connectivité par couches OSI."
+                    data-modal-tools="Cisco IOS, Cisco 1941, Tables de routage, ip route, Sommarisation CIDR, Tracert">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Lab Routage Statique Cisco Multi-Routeurs</h3>
+                        <p class="tp-card-desc">Interconnexion de réseaux d'entreprise avec routeurs Cisco 1941,
+                            configuration de routes statiques, sommarisation CIDR /15 et diagnostic aller/retour.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Routage Statique</span>
+                            <span class="skill-tag">Tables de Routage</span>
+                            <span class="skill-tag">Sommarisation</span>
+                            <span class="skill-tag">Next-Hop</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/2ème anné/Lab-Routage-Statique-SISR_v_etudiant.pdf"
+                            download="Lab_Routage_Statique_Cisco_SISR.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TP Cisco 8 : Lab Routage Dynamique RIPv2 -->
+                <div class="tp-card is-expert" data-category="cisco"
+                    data-modal-title="Lab Cisco : Routage Dynamique RIP v2 & Convergence Réseau"
+                    data-modal-category="Routage Dynamique" data-modal-level="Expert"
+                    data-modal-desc="Déploiement complet du protocole de routage dynamique à vecteur de distance RIP v2 (Routing Information Protocol) sur routeurs Cisco : découverte automatique des routes, annonces multicast 224.0.0.9, convergence de topologie, métrique basée sur le nombre de sauts (hop count), gestion du découpage VLSM et validation des flux."
+                    data-modal-competences="Configuration de protocoles de routage dynamique IGP; Analyse de la convergence réseau; Gestion des métriques et des masques à longueur variable (VLSM)."
+                    data-modal-tools="Cisco IOS, RIPv2, Multicast 224.0.0.9, VLSM, Cisco 1941">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-zip"><i class="fas fa-file-zipper"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-expert">Expert</span>
+                            <span class="badge-format">.ZIP</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Lab Routage Dynamique RIP v2 Cisco</h3>
+                        <p class="tp-card-desc">Configuration du protocole dynamique RIPv2, découverte automatique des
+                            routes, métrique par sauts et validation de convergence.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Routage Dynamique</span>
+                            <span class="skill-tag">RIP v2</span>
+                            <span class="skill-tag">Convergence</span>
+                            <span class="skill-tag">Cisco IOS</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/2ème anné/Lab_RIP_Dubos_Mathis_SISR2.zip"
+                            download="Lab_RIP_Dubos_Mathis_SISR2.zip" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TP Cisco 9 : TP 6 ACL Cisco -->
+                <div class="tp-card is-expert" data-category="cisco"
+                    data-modal-title="TP 6 : Filtrage Réseau & Sécurité avec les ACL Cisco (Standard, Étendues & Nommées)"
+                    data-modal-category="Sécurité & Filtrage Réseau" data-modal-level="Expert"
+                    data-modal-desc="Mise en œuvre approfondie de la politique de filtrage et de sécurisation périmétrique sur routeurs Cisco : conception et calcul de masques génériques (wildcard masks), déploiement d'ACL IPv4 standard numérotées au plus près de la destination, d'ACL étendues numérotées au plus près de la source, d'ACL nommées avec gestion fine des séquences de règles, gestion du filtrage sans état (stateless) avec les options TCP 'established' et ICMP 'echo-reply', restriction d'administration des lignes VTY et diagnostic méthodique des pannes de filtrage par compteurs de correspondances."
+                    data-modal-competences="Conception et déploiement de politiques de sécurité réseau; Filtrage par ACL IPv4 standard, étendues et nommées Cisco; Calcul de wildcard masks; Sécurisation des accès d'administration VTY; Analyse des compteurs de règles et dépannage de flux."
+                    data-modal-tools="Cisco IOS, Cisco 2911/1941, Packet Tracer, ACL Standard, ACL Étendues, ACL Nommées, Wildcard Masks, established, VTY Access-Class">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-expert">Expert</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TP 6 : Filtrage Réseau & ACL Cisco</h3>
+                        <p class="tp-card-desc">Sécurisation du réseau par ACL IPv4 standard, étendues et nommées : wildcard masks, filtrage sans état (established), règles VTY et diagnostic.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">ACL IPv4</span>
+                            <span class="skill-tag">Wildcard Mask</span>
+                            <span class="skill-tag">Filtrage Stateless</span>
+                            <span class="skill-tag">Cisco IOS</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/2ème anné/TP06_ACL_Filtrage_reseau.pdf"
+                            download="TP6_Cisco_ACL_Filtrage_Securite.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 2 : SYSTÈMES & LINUX ================= -->
+        <section class="tp-section" id="section-linux">
+            <div class="tp-section-header">
+                <div class="section-title">
+                    <div class="section-icon-badge badge-linux"><i class="fab fa-linux"></i></div>
+                    <h2>Systèmes d'Exploitation & Linux</h2>
+                </div>
+            </div>
+
+            <div class="tp-grid">
+                <!-- Linux LAB 1 -->
+                <div class="tp-card" data-category="linux"
+                    data-modal-title="LAB 1 Linux : Commandes Fondamentales & Arborescence"
+                    data-modal-category="Système Linux" data-modal-level="Débutant"
+                    data-modal-desc="Prise en main de l'interpréteur de commandes Bash : navigation dans la norme FHS, manipulation de fichiers (cp, mv, rm, mkdir), redirections de flux et filtres (cat, grep, less)."
+                    data-modal-competences="Utilisation fluide de la CLI Linux; Compréhension de l'arborescence FHS; Manipulation des flux d'entrée/sortie standard."
+                    data-modal-tools="Bash, Ubuntu/Debian, FHS, GNU Coreutils">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-debutant">Débutant</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">LAB 1 Linux : Commandes Fondamentales</h3>
+                        <p class="tp-card-desc">Navigation dans l'arborescence FHS, manipulation de fichiers,
+                            redirections de flux et filtres sous terminal Bash.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Bash CLI</span>
+                            <span class="skill-tag">Norme FHS</span>
+                            <span class="skill-tag">Redirections</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/2ème anné/LAB1_Linux_Commandes_Fondamentales_Debutant.pdf"
+                            download="LAB1_Linux_Fondamentaux.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- Linux LAB 2 -->
+                <div class="tp-card" data-category="linux"
+                    data-modal-title="LAB 2 Linux : Gestion des Utilisateurs, Groupes & Droits"
+                    data-modal-category="Sécurité Système" data-modal-level="Intermédiaire"
+                    data-modal-desc="Gestion complète des identités sous GNU/Linux : création de comptes, gestion des groupes secondaires, permissions POSIX en octal et symbolique (chmod, chown) et droits spéciaux SUID/SGID/Sticky."
+                    data-modal-competences="Gestion des accès locaux et des groupes; Application des politiques de moindre privilège; Paramétrage des répertoires partagés sécurisés."
+                    data-modal-tools="useradd, usermod, groupadd, chmod, chown, SUID/SGID">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">LAB 2 Linux : Utilisateurs & Permissions</h3>
+                        <p class="tp-card-desc">Gestion des comptes, groupes, permissions POSIX (chmod/chown) et droits
+                            spéciaux pour sécuriser le système.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Permissions POSIX</span>
+                            <span class="skill-tag">Groupes & Droits</span>
+                            <span class="skill-tag">SUID/SGID</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/2ème anné/LAB2_Linux_Utilisateurs_Groupes_Debutant.pdf"
+                            download="LAB2_Linux_Utilisateurs.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- Hardware Montage PC -->
+                <div class="tp-card" data-category="linux"
+                    data-modal-title="TP Hardware : Montage PC & Architecture Matérielle"
+                    data-modal-category="Architecture Matérielle" data-modal-level="Débutant"
+                    data-modal-desc="Dossier technique complet sur l'architecture matérielle d'une station de travail : sélection des composants, sockets processeur, mémoire vive, interfaces de stockage NVMe/SATA et protocole d'assemblage pas-à-pas."
+                    data-modal-competences="Identification et diagnostic des composants matériels; Assemblage de station de travail; Maintenance préventive et corrective."
+                    data-modal-tools="Composants PC, UEFI/BIOS, Architecture x86">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-debutant">Débutant</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TP Hardware : Montage PC & Composants</h3>
+                        <p class="tp-card-desc">Étude des composants internes d'un ordinateur (CPU, RAM, Carte mère,
+                            NVMe) et procédure d'assemblage physique.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Hardware</span>
+                            <span class="skill-tag">Assemblage PC</span>
+                            <span class="skill-tag">Architecture</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/TP/Montag_PC dubos mathis.pdf" download="TP_Montage_PC.pdf"
+                            class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- CMD Windows -->
+                <div class="tp-card" data-category="linux"
+                    data-modal-title="TP Explorateur de l’Invite de Commandes CMD"
+                    data-modal-category="Administration Windows" data-modal-level="Débutant"
+                    data-modal-desc="Exploration approfondie du terminal Windows CMD : gestion des disques et partitions, scripts batch d'automatisation et personnalisation des variables d'environnement."
+                    data-modal-competences="Automatisation des opérations de maintenance sous Windows; Utilisation des commandes système avancées."
+                    data-modal-tools="CMD, Batch .bat, Variables système">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-debutant">Débutant</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TP CMD : Invite de Commandes Windows</h3>
+                        <p class="tp-card-desc">Exploration des commandes Windows pour l'administration système et la
+                            création de scripts Batch automatisés.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">CMD Windows</span>
+                            <span class="skill-tag">Scripts Batch</span>
+                            <span class="skill-tag">Support</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/TP/TP_Explorateurs_de_l’invite_de_commandes_modifier .pdf"
+                            download="TP_CMD_Windows.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TP Systèmes Virtualisation -->
+                <div class="tp-card" data-category="linux"
+                    data-modal-title="TP Systèmes : Virtualisation & Environnements Virtuels"
+                    data-modal-category="Virtualisation" data-modal-level="Intermédiaire"
+                    data-modal-desc="Déploiement et gestion d'environnements virtualisés avec Oracle VirtualBox : configuration des cartes réseaux (NAT, pont, réseau interne) et partages de ressources."
+                    data-modal-competences="Gestion d'hyperviseur Type 2; Configuration des modes de réseaux virtuels; Déploiement de machines de test."
+                    data-modal-tools="VirtualBox, Hyperviseur, NAT, Réseau interne">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TP Virtualisation & Systèmes</h3>
+                        <p class="tp-card-desc">Mise en place de machines virtuelles de test et configuration des modes
+                            de connectivité réseau sous VirtualBox.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">VirtualBox</span>
+                            <span class="skill-tag">Hyperviseur</span>
+                            <span class="skill-tag">Réseau Virtuel</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/TP/TP_42.pdf" download="TP_Virtualisation_Systeme.pdf"
+                            class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TP Expert Système -->
+                <div class="tp-card is-expert" data-category="linux"
+                    data-modal-title="TP Systèmes & Réseaux Avancé [Expert]" data-modal-category="Système Avancé"
+                    data-modal-level="Expert"
+                    data-modal-desc="Exercice de niveau expert mobilisant l'analyse des journaux d'événements, la résolution de conflits de services et la reconfiguration à chaud."
+                    data-modal-competences="Résolution d'incidents complexes; Analyse des crashs système et restauration du service."
+                    data-modal-tools="VirtualBox, CLI Système, Dépannage">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-star" style="color: #d97706;"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-expert">Expert</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TP Systèmes & Réseaux [Expert]</h3>
+                        <p class="tp-card-desc">Travaux pratiques approfondis orientés administration système et
+                            résolution de pannes complexes.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Niveau Expert</span>
+                            <span class="skill-tag">Dépannage Avancé</span>
+                            <span class="skill-tag">Système</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/TP/TP_42_Expert.pdf" download="TP_Expert_Systemes.pdf"
+                            class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TP Initiation CMD & PowerShell -->
+                <div class="tp-card" data-category="linux"
+                    data-modal-title="TP 05 : Initiation aux Lignes de Commandes Windows CMD & PowerShell"
+                    data-modal-category="Administration Systèmes" data-modal-level="Débutant"
+                    data-modal-desc="Prise en main comparative des interpréteurs de commandes Windows (Invite de commandes CMD classique et PowerShell orienté objet) : gestion des fichiers, manipulation de variables, arborescences de répertoires et automatisation de support N1."
+                    data-modal-competences="Utilisation fluide de la CLI Windows; Automatisation des tâches de support utilisateur; Comparaison des environnements CMD et PowerShell."
+                    data-modal-tools="CMD Windows, Windows PowerShell, CLI, Variables d'environnement">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-debutant">Débutant</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TP Initiation : CMD & PowerShell</h3>
+                        <p class="tp-card-desc">Prise en main comparative des invites de commandes Windows CMD et
+                            PowerShell pour l'administration et le support.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">CMD Windows</span>
+                            <span class="skill-tag">PowerShell</span>
+                            <span class="skill-tag">Support N1</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/TP/TP05_Initiation_CMD_PS.pdf"
+                            download="TP_Initiation_CMD_PowerShell.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 3 : WINDOWS SERVER, ACTIVE DIRECTORY & PROXMOX ================= -->
+        <section class="tp-section" id="section-windows">
+            <div class="tp-section-header">
+                <div class="section-title">
+                    <div class="section-icon-badge badge-windows"><i class="fab fa-windows"></i></div>
+                    <h2>Windows Server, Active Directory & Virtualisation</h2>
+                </div>
+            </div>
+
+            <div class="tp-grid">
+                <!-- TP Windows Server AD -->
+                <div class="tp-card" data-category="windows"
+                    data-modal-title="TP Réseau Client-Serveur : Windows Server Active Directory (AD DS) & Client Windows 11"
+                    data-modal-category="Administration Windows & Annuaires" data-modal-level="Intermédiaire"
+                    data-modal-desc="Déploiement complet d'une infrastructure d'entreprise centralisée avec Windows Server et Active Directory Domain Services (AD DS) : promotion du contrôleur de domaine (DC), configuration du DNS intégré, jonction d'un client Windows 11, authentification Kerberos, organisation hiérarchique en Unités Organisationnelles (OU), gestion des comptes et groupes de sécurité (AGDLP), déploiement de partages de fichiers SMB sécurisés avec ACLs NTFS et accès distant Bureau à distance (RDP) sécurisé."
+                    data-modal-competences="Installation et promotion d'un contrôleur de domaine AD DS; Jonction de postes de travail au domaine d'entreprise; Gestion centralisée des identités et des accès (IAM); Déploiement de partages de fichiers SMB et sécurisation NTFS; Sécurisation des accès d'administration à distance RDP."
+                    data-modal-tools="Windows Server 2022, Windows 11, AD DS, Kerberos, DNS Windows, Droits NTFS, Partages SMB, RDP, PowerShell">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TP Windows Server Active Directory & Win 11</h3>
+                        <p class="tp-card-desc">Contrôleur de domaine AD DS, jonction poste Windows 11, authentification
+                            Kerberos, organisation en OUs, partages SMB sécurisés NTFS et RDP.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Active Directory</span>
+                            <span class="skill-tag">Windows Server</span>
+                            <span class="skill-tag">Droits NTFS</span>
+                            <span class="skill-tag">Kerberos</span>
+                            <span class="skill-tag">RDP Sécurisé</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/2ème anné/TP_Réseau_Client-Serveur_WinServeur_Ad_Win11_v3_.pdf"
+                            download="TP_Windows_Server_Active_Directory_Win11.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TP Proxmox VE Windows 11 -->
+                <div class="tp-card" data-category="windows"
+                    data-modal-title="TP Virtualisation Proxmox VE : Déploiement Durci Windows 11 Enterprise & Pilotes VirtIO"
+                    data-modal-category="Virtualisation d'Entreprise" data-modal-level="Intermédiaire"
+                    data-modal-desc="Mise en œuvre d'une machine virtuelle Windows 11 Enterprise sous hyperviseur bare-metal Proxmox VE (Type 1) conforme aux prérequis matériels stricts : BIOS UEFI OVMF, disque EFI virtuel, composant vTPM 2.0 virtuel, paravirtualisation haute performance VirtIO-SCSI et réseau NetKVM, injection des pilotes et installation de l'agent invité QEMU (clean shutdown et snapshots VSS)."
+                    data-modal-competences="Administration d'un hyperviseur bare-metal Type 1 Proxmox VE; Configuration de firmwares UEFI et modules TPM 2.0 virtuels; Optimisation par paravirtualisation VirtIO (SCSI/Réseau); Intégration de l'agent QEMU pour le maintien en conditions opérationnelles."
+                    data-modal-tools="Proxmox VE, KVM / QEMU, Windows 11 Enterprise, OVMF UEFI, vTPM 2.0, VirtIO-SCSI, NetKVM, QEMU Guest Agent">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TP Proxmox VE : Windows 11 & Pilotes VirtIO</h3>
+                        <p class="tp-card-desc">Déploiement sous Proxmox VE : firmware UEFI OVMF, module de sécurité
+                            vTPM 2.0, paravirtualisation VirtIO-SCSI, NetKVM et QEMU Guest Agent.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Proxmox VE</span>
+                            <span class="skill-tag">vTPM 2.0</span>
+                            <span class="skill-tag">VirtIO-SCSI</span>
+                            <span class="skill-tag">UEFI OVMF</span>
+                            <span class="skill-tag">QEMU Agent</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/2ème anné/TP3_Windows11_Proxmox_Enrichi.pdf"
+                            download="TP_Windows11_Proxmox_VirtIO.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 4 : AUDIT DE SÉCURITÉ & CYBERSÉCURITÉ ================= -->
+        <section class="tp-section" id="section-security">
+            <div class="tp-section-header">
+                <div class="section-title">
+                    <div class="section-icon-badge badge-security"><i class="fas fa-shield-halved"></i></div>
+                    <h2>Cybersécurité & Audit Réseau</h2>
+                </div>
+            </div>
+
+            <div class="tp-grid">
+                <!-- Lab Nmap -->
+                <div class="tp-card is-expert" data-category="security"
+                    data-modal-title="Lab Cybersécurité : Cartographie Réseau, Audit de Vulnérabilités & Scanner Nmap"
+                    data-modal-category="Audit & Cybersécurité" data-modal-level="Expert"
+                    data-modal-desc="Audit complet de la surface d'exposition réseau d'une infrastructure avec l'outil de référence Nmap : analyse approfondie des états de ports (open, closed, filtered), scan furtif TCP SYN half-open (-sS), détection des versions de services et bannières applicatives (-sV), détection de systèmes d'exploitation (-O), étude de la politique DROP des pare-feux Windows Defender, utilisation de leurres IP (-D) et automatisation d'audits avec les scripts NSE (Nmap Scripting Engine)."
+                    data-modal-competences="Audit de vulnérabilités et cartographie d'infrastructure réseau; Analyse du comportement des pare-feux et des règles de filtrage (DROP vs REJECT); Utilisation avancée des scripts NSE pour la détection de failles; Rédaction de rapports d'audit de sécurité."
+                    data-modal-tools="Nmap, TCP SYN Scan, Scripts NSE, Wireshark, Pare-feu Windows, Linux, Reconnaissance réseau">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-star" style="color: #ef4444;"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-expert">Expert</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Lab Nmap : Cartographie Réseau & Audit</h3>
+                        <p class="tp-card-desc">Scan furtif TCP SYN (-sS), détection de versions de services (-sV),
+                            analyse du comportement face aux pare-feux Windows DROP et scripts NSE.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Nmap</span>
+                            <span class="skill-tag">Audit Sécurité</span>
+                            <span class="skill-tag">Scan SYN (-sS)</span>
+                            <span class="skill-tag">Pare-feu DROP</span>
+                            <span class="skill-tag">Scripts NSE</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/2ème anné/Lab_Nmap_BTS_SIO_SISR_(1).pdf"
+                            download="Lab_Nmap_Audit_Securite_Reseau.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 5 : POWERSHELL ================= -->
+        <section class="tp-section" id="section-powershell">
+            <div class="tp-section-header">
+                <div class="section-title">
+                    <div class="section-icon-badge badge-ps"><i class="fas fa-terminal"></i></div>
+                    <h2>Scripting & Automatisation PowerShell</h2>
+                </div>
+            </div>
+
+            <div class="tp-grid">
+                <!-- PS 1 -->
+                <div class="tp-card" data-category="powershell"
+                    data-modal-title="PS 1 : Fondamentaux & Cmdlets PowerShell" data-modal-category="Automatisation"
+                    data-modal-level="Débutant"
+                    data-modal-desc="Découverte de la logique orientée objet de PowerShell : syntaxe Verbe-Nom, système d'aide Get-Help, découverte des cmdlets et manipulation du pipeline d'objets .NET."
+                    data-modal-competences="Utilisation du pipeline PowerShell; Manipulation d'objets typés; Recherche autonome de commandes via Get-Command."
+                    data-modal-tools="PowerShell 5.1/7, Get-Help, Get-Command, Pipeline">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-debutant">Débutant</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">PS 1 : Les bases & Cmdlets</h3>
+                        <p class="tp-card-desc">Syntaxe Verbe-Nom, utilisation du pipeline d'objets .NET et exploration
+                            du système d'aide intégré.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Cmdlets</span>
+                            <span class="skill-tag">Pipeline .NET</span>
+                            <span class="skill-tag">Get-Help</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/Powershell/TP01_PS_cmdlets.pdf" download="TP01_PS_Cmdlets.pdf"
+                            class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- PS 2 -->
+                <div class="tp-card" data-category="powershell"
+                    data-modal-title="PS 2 : Fichiers, Dossiers & Droits NTFS" data-modal-category="Automatisation"
+                    data-modal-level="Intermédiaire"
+                    data-modal-desc="Création de scripts d'archivage automatique, manipulation de l'arborescence de fichiers et gestion des listes de contrôle d'accès NTFS via Get-Acl et Set-Acl."
+                    data-modal-competences="Automatisation de la gestion documentaire; Application programmatique des permissions NTFS."
+                    data-modal-tools="PowerShell, Get-ChildItem, Get-Acl, Set-Acl">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">PS 2 : Fichiers & Droits NTFS</h3>
+                        <p class="tp-card-desc">Script de tri automatique des dossiers et gestion programmatique des
+                            permissions de sécurité NTFS.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Système de fichiers</span>
+                            <span class="skill-tag">Sécurité NTFS</span>
+                            <span class="skill-tag">Get-Acl</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/Powershell/TP02_PS_script.pdf" download="TP02_PS_Script.pdf"
+                            class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- PS 3 -->
+                <div class="tp-card" data-category="powershell" data-modal-title="PS 3 : Processus & Services Système"
+                    data-modal-category="Supervision & Automatisation" data-modal-level="Intermédiaire"
+                    data-modal-desc="Surveillance proactive de la charge machine : détection et arrêt contrôlé des processus consommateurs d'UC ou de RAM, et redémarrage automatique des services critiques."
+                    data-modal-competences="Supervision de la disponibilité des services; Scripts d'auto-remédiation et maintien opérationnel."
+                    data-modal-tools="Get-Process, Stop-Process, Get-Service, Restart-Service">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">PS 3 : Processus & Services</h3>
+                        <p class="tp-card-desc">Supervision proactive, détection des processus consommateurs et
+                            redémarrage automatisé des services vitaux.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Supervision</span>
+                            <span class="skill-tag">Services Windows</span>
+                            <span class="skill-tag">MCO</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/Powershell/TP03_Exos_script.pdf"
+                            download="TP03_PS_Processus_Services.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- PS 4 -->
+                <div class="tp-card" data-category="powershell"
+                    data-modal-title="PS 4 : Fonctions PowerShell & Gestion Réseau"
+                    data-modal-category="Scripting Avancé" data-modal-level="Intermédiaire"
+                    data-modal-desc="Développement de fonctions réutilisables avec paramètres typés, tests de connectivité réseau automatisés (Test-NetConnection) et requêtes DNS ciblées."
+                    data-modal-competences="Modularité du code avec des fonctions; Automatisation des audits de connectivité réseau."
+                    data-modal-tools="PowerShell Functions, Test-NetConnection, Resolve-DnsName">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-intermediaire">Intermédiaire</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">PS 4 : Fonctions & Gestion Réseau</h3>
+                        <p class="tp-card-desc">Développement de fonctions PowerShell personnalisées et tests
+                            automatisés de disponibilité des ports réseau.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Fonctions avancées</span>
+                            <span class="skill-tag">Audit Réseau</span>
+                            <span class="skill-tag">Test-NetConnection</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/Powershell/TP04_Fonctions_PS.pdf"
+                            download="TP04_PS_Fonctions_Reseau.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- PS 5 -->
+                <div class="tp-card is-expert" data-category="powershell"
+                    data-modal-title="PS 5 : Expressions Régulières (Regex) & Traitement de Logs [Expert]"
+                    data-modal-category="Traitement de Données" data-modal-level="Expert"
+                    data-modal-desc="Exploitation des expressions régulières (-match, regex) pour extraire des adresses IP, adresses emails et patterns de menaces depuis des journaux d'événements bruts."
+                    data-modal-competences="Parsing de fichiers de logs complexes; Utilisation des patterns Regex avancés."
+                    data-modal-tools="Regex, Select-String, Opérateur -match">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-star" style="color: #d97706;"></i></div>
+                        <div class="card-badges">
+                            <span class="badge-level level-expert">Expert</span>
+                            <span class="badge-format">.PDF</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">PS 5 : Expressions Régulières (Regex)</h3>
+                        <p class="tp-card-desc">Traitement avancé de chaînes et extraction d'adresses IP et d'erreurs
+                            dans les logs via expressions régulières.</p>
+                        <div class="tp-skills-tags">
+                            <span class="skill-tag">Regex</span>
+                            <span class="skill-tag">Parsing Logs</span>
+                            <span class="skill-tag">Expert</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/Powershell/TP04b_Expression régulière.pdf"
+                            download="TP05_PS_Regex.pdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger
+                        </a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 4 : BASES DE DONNÉES SQL ================= -->
+        <section class="tp-section" id="section-sql">
+            <div class="tp-section-header">
+                <div class="section-title">
+                    <div class="section-icon-badge badge-sql"><i class="fas fa-database"></i></div>
+                    <h2>Bases de Données Relationnelles (SQL)</h2>
+                </div>
+            </div>
+
+            <div class="tp-grid">
+                <!-- TD 1 -->
+                <div class="tp-card" data-category="sql"
+                    data-modal-title="TD n°1 BD : Cours & Découverte du Langage SQL"
+                    data-modal-category="Base de Données" data-modal-level="Débutant"
+                    data-modal-desc="Introduction au modèle relationnel, clés primaires et étrangères, syntaxe des requêtes d'extraction SELECT simples avec conditions."
+                    data-modal-competences="Compréhension du modèle relationnel; Écriture de requêtes SELECT de base."
+                    data-modal-tools="MySQL / MariaDB, phpMyAdmin">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges"><span class="badge-level level-debutant">Débutant</span><span
+                                class="badge-format">.PDF</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TD n°1 BD : Cours & SELECT</h3>
+                        <p class="tp-card-desc">Introduction aux bases de données relationnelles et premières requêtes
+                            d'interrogation SELECT.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">SQL</span><span
+                                class="skill-tag">SELECT</span><span class="skill-tag">Modèle relationnel</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/BD/Cours_SIO1_SQL_VE.pdf" download class="btn-download"><i
+                                class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TD 2 -->
+                <div class="tp-card" data-category="sql"
+                    data-modal-title="TD n°2 BD : Regroupement & Fonctions d'Agrégation"
+                    data-modal-category="Base de Données" data-modal-level="Intermédiaire"
+                    data-modal-desc="Calculs statistiques avec COUNT, SUM, AVG, MIN, MAX et regroupement des enregistrements via la clause GROUP BY et filtre HAVING."
+                    data-modal-competences="Extraction de statistiques agrégées; Restitution de données consolidées."
+                    data-modal-tools="MySQL, GROUP BY, HAVING">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges"><span class="badge-level level-intermediaire">Intermédiaire</span><span
+                                class="badge-format">.PDF</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TD n°2 BD : GROUP BY & Agrégations</h3>
+                        <p class="tp-card-desc">Fonctions de calcul (COUNT, SUM, AVG) et regroupements statistiques avec
+                            GROUP BY et HAVING.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">GROUP BY</span><span
+                                class="skill-tag">Statistiques</span><span class="skill-tag">HAVING</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/BD/PresentationSQL_Le_regroupement.pdf" download
+                            class="btn-download"><i class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TD 3 -->
+                <div class="tp-card" data-category="sql"
+                    data-modal-title="TD n°3 BD : Mise à Jour de Données avec UPDATE"
+                    data-modal-category="Base de Données" data-modal-level="Débutant"
+                    data-modal-desc="Modification sécurisée des enregistrements existants, gestion des clauses WHERE strictes et prévention des mises à jour globales accidentelles."
+                    data-modal-competences="Maintien de l'intégrité des données; Modification ciblée d'enregistrements."
+                    data-modal-tools="MySQL, UPDATE, WHERE">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges"><span class="badge-level level-debutant">Débutant</span><span
+                                class="badge-format">.PDF</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TD n°3 BD : Commande UPDATE</h3>
+                        <p class="tp-card-desc">Mise à jour sécurisée des valeurs en base de données et conditions WHERE
+                            restrictives.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">UPDATE</span><span
+                                class="skill-tag">Modification</span><span class="skill-tag">SQL</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/BD/Copie_de_PresentationSQL_UPDATE.pdf" download
+                            class="btn-download"><i class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TD 4 -->
+                <div class="tp-card" data-category="sql" data-modal-title="TD n°4 BD : Insertion de Données avec INSERT"
+                    data-modal-category="Base de Données" data-modal-level="Débutant"
+                    data-modal-desc="Alimentation des tables par insertion unitaire ou multiple en respectant les contraintes d'unicité et de types de données."
+                    data-modal-competences="Alimentation contrôlée des tables; Respect de l'intégrité de domaine."
+                    data-modal-tools="MySQL, INSERT INTO">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges"><span class="badge-level level-debutant">Débutant</span><span
+                                class="badge-format">.PDF</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TD n°4 BD : Commande INSERT</h3>
+                        <p class="tp-card-desc">Alimentation des tables relationnelles et vérification des contraintes
+                            d'intégrité à l'insertion.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">INSERT INTO</span><span
+                                class="skill-tag">Alimentation</span><span class="skill-tag">SQL</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/BD/Copie_de_PresentationSQL_INSERT.pdf" download
+                            class="btn-download"><i class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TD 5 -->
+                <div class="tp-card" data-category="sql"
+                    data-modal-title="TD n°5 BD : Suppression de Données avec DELETE"
+                    data-modal-category="Base de Données" data-modal-level="Intermédiaire"
+                    data-modal-desc="Suppression sélective d'enregistrements et impact des clés étrangères et comportements en cascade (ON DELETE CASCADE)."
+                    data-modal-competences="Purge de données; Préservation de la cohérence relationnelle."
+                    data-modal-tools="MySQL, DELETE FROM, Clés étrangères">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges"><span class="badge-level level-intermediaire">Intermédiaire</span><span
+                                class="badge-format">.PDF</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TD n°5 BD : Commande DELETE</h3>
+                        <p class="tp-card-desc">Suppression contrôlée d'enregistrements et gestion de l'intégrité
+                            référentielle en cascade.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">DELETE</span><span
+                                class="skill-tag">Cascade</span><span class="skill-tag">Intégrité</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/BD/Copie_de_PresentationSQL_DELETE.pdf" download
+                            class="btn-download"><i class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TD 6 -->
+                <div class="tp-card" data-category="sql"
+                    data-modal-title="TD n°6 BD : Langage de Définition de Données (LDD)"
+                    data-modal-category="Base de Données" data-modal-level="Intermédiaire"
+                    data-modal-desc="Création et modification de structures de tables (CREATE TABLE, ALTER TABLE, DROP) avec contraintes PRIMARY KEY et FOREIGN KEY."
+                    data-modal-competences="Création physique de schémas de données relationnels."
+                    data-modal-tools="CREATE TABLE, ALTER TABLE, SQL">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges"><span class="badge-level level-intermediaire">Intermédiaire</span><span
+                                class="badge-format">.PDF</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TD n°6 BD : Schémas & LDD</h3>
+                        <p class="tp-card-desc">Création et altération de tables, contraintes de clés primaires et
+                            étrangères avec CREATE/ALTER TABLE.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">CREATE TABLE</span><span
+                                class="skill-tag">LDD</span><span class="skill-tag">Schémas</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/BD/delete.pdf" download class="btn-download"><i
+                                class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TD 7 -->
+                <div class="tp-card" data-category="sql" data-modal-title="TD n°7 BD : Jointures Multi-Tables (Exo 6)"
+                    data-modal-category="Base de Données" data-modal-level="Intermédiaire"
+                    data-modal-desc="Mise en relation de tables avec INNER JOIN et LEFT JOIN pour reconstituer des données réparties sur un schéma complexe."
+                    data-modal-competences="Extraction de rapports relationnels multi-tables."
+                    data-modal-tools="INNER JOIN, LEFT JOIN, MariaDB">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges"><span class="badge-level level-intermediaire">Intermédiaire</span><span
+                                class="badge-format">.PDF</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TD n°7 BD : Jointures SQL</h3>
+                        <p class="tp-card-desc">Exploitation des jointures relationnelles INNER JOIN et LEFT JOIN pour
+                            croiser les données métier.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">Jointures</span><span
+                                class="skill-tag">INNER JOIN</span><span class="skill-tag">SQL</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/BD/exo6.pdf" download class="btn-download"><i
+                                class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TD 8 -->
+                <div class="tp-card" data-category="sql"
+                    data-modal-title="TD n°8 BD : Vues Relationnelles (CREATE VIEW)"
+                    data-modal-category="Base de Données" data-modal-level="Intermédiaire"
+                    data-modal-desc="Création et gestion de vues SQL (CREATE VIEW) pour simplifier les requêtes complexes et restreindre la visibilité des données sensibles."
+                    data-modal-competences="Sécurisation logique de l'accès aux données par des vues."
+                    data-modal-tools="CREATE VIEW, SQL, MySQL">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges"><span class="badge-level level-intermediaire">Intermédiaire</span><span
+                                class="badge-format">.PDF</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TD n°8 BD : Gestion des Vues</h3>
+                        <p class="tp-card-desc">Création de vues virtuelles avec CREATE VIEW pour encapsuler les
+                            requêtes relationnelles complexes.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">Vues SQL</span><span
+                                class="skill-tag">CREATE VIEW</span><span class="skill-tag">Sécurité</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/BD/exo7.pdf" download class="btn-download"><i
+                                class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TD 9 -->
+                <div class="tp-card" data-category="sql"
+                    data-modal-title="TD n°9 BD : Pratique Intensive de l'Insertion"
+                    data-modal-category="Base de Données" data-modal-level="Intermédiaire"
+                    data-modal-desc="Exercices complets de peuplement de tables avec des données réalistes de commandes, articles et clients."
+                    data-modal-competences="Alimentation de jeux d'essai pour applications de gestion."
+                    data-modal-tools="INSERT, SQL, MariaDB">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-file-pdf"></i></div>
+                        <div class="card-badges"><span class="badge-level level-intermediaire">Intermédiaire</span><span
+                                class="badge-format">.PDF</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TD n°9 BD : Cas Pratiques INSERT</h3>
+                        <p class="tp-card-desc">Mise en pratique approfondie des opérations d'insertion sur un schéma de
+                            gestion commerciale.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">Jeux d'essai</span><span
+                                class="skill-tag">INSERT</span><span class="skill-tag">Pratique</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/BD/insert.pdf" download class="btn-download"><i
+                                class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- TD 10 -->
+                <div class="tp-card is-expert" data-category="sql"
+                    data-modal-title="TD n°10 BD : Requêtes Avancées & UPDATE Complexes [Expert]"
+                    data-modal-category="Base de Données Avancée" data-modal-level="Expert"
+                    data-modal-desc="Scénarios d'actualisation de données complexes avec jointures dans l'UPDATE et sous-requêtes imbriquées de calcul."
+                    data-modal-competences="Résolution de problématiques avancées de manipulation de données."
+                    data-modal-tools="UPDATE, Sous-requêtes, MySQL">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-pdf"><i class="fas fa-star" style="color: #d97706;"></i></div>
+                        <div class="card-badges"><span class="badge-level level-expert">Expert</span><span
+                                class="badge-format">.PDF</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">TD n°10 BD : UPDATE Complexe [Expert]</h3>
+                        <p class="tp-card-desc">Mise à jour conditionnelle avancée et utilisation de sous-requêtes
+                            imbriquées dans les opérations DML.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">Sous-requêtes</span><span
+                                class="skill-tag">UPDATE Avancé</span><span class="skill-tag">Expert</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/BD/update.pdf" download class="btn-download"><i
+                                class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 5 : PROJET VM XUBUNTU & WEB ================= -->
+        <section class="tp-section" id="section-vm">
+            <div class="tp-section-header">
+                <div class="section-title">
+                    <div class="section-icon-badge badge-vm"><i class="fas fa-server"></i></div>
+                    <h2>Projet d'Infrastructure VM & Serveur Web Xubuntu</h2>
+                </div>
+            </div>
+
+            <div class="tp-grid">
+                <!-- Étape 1 -->
+                <div class="tp-card" data-category="vm"
+                    data-modal-title="Projet VM - Étape 1 : Création & Dimensionnement de la Machine Virtuelle"
+                    data-modal-category="Virtualisation" data-modal-level="Débutant"
+                    data-modal-desc="Dimensionnement matériel d'une VM sous VirtualBox : allocation de la mémoire vive, configuration des processeurs virtuels et création du disque dynamique VDI."
+                    data-modal-competences="Dimensionnement des ressources virtualisées; Configuration d'un hyperviseur Type 2."
+                    data-modal-tools="Oracle VirtualBox, Disque VDI">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-word"><i class="fas fa-file-word"></i></div>
+                        <div class="card-badges"><span class="badge-level level-debutant">Débutant</span><span
+                                class="badge-format">.DOCX</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Étape 1 : Création de la VM</h3>
+                        <p class="tp-card-desc">Création et dimensionnement de la machine virtuelle sous VirtualBox
+                            (RAM, vCPU, disque VDI).</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">VirtualBox</span><span
+                                class="skill-tag">Dimensionnement</span><span class="skill-tag">Disque VDI</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/projet/VM ETAPE1 INSTALLATION.docx" download class="btn-download"><i
+                                class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- Étape 2 -->
+                <div class="tp-card" data-category="vm"
+                    data-modal-title="Projet VM - Étape 2 : Installation du Système d'Exploitation Xubuntu"
+                    data-modal-category="Déploiement OS" data-modal-level="Débutant"
+                    data-modal-desc="Procédure d'installation de Xubuntu Linux à partir de l'image ISO : partitionnement du disque virtuel, sélection de la langue et initialisation du système."
+                    data-modal-competences="Installation et partitionnement d'un système d'exploitation GNU/Linux."
+                    data-modal-tools="Xubuntu LTS, Environnement XFCE">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-word"><i class="fas fa-file-word"></i></div>
+                        <div class="card-badges"><span class="badge-level level-debutant">Débutant</span><span
+                                class="badge-format">.DOCX</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Étape 2 : Installation Xubuntu</h3>
+                        <p class="tp-card-desc">Installation de l'OS GNU/Linux Xubuntu, partitionnement du disque et
+                            paramétrage régional.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">Xubuntu LTS</span><span
+                                class="skill-tag">Partitionnement</span><span class="skill-tag">Installation</span>
+                        </div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/projet/VM ETAPE2 XUBUNTU.docx" download class="btn-download"><i
+                                class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- Étape 3 -->
+                <div class="tp-card" data-category="vm"
+                    data-modal-title="Projet VM - Étape 3 : Première Connexion & Mise à Jour du Système"
+                    data-modal-category="Maintenance Système" data-modal-level="Débutant"
+                    data-modal-desc="Première connexion post-installation, mise à niveau complète des paquets de la distribution (apt update, apt upgrade) et test de la connexion réseau."
+                    data-modal-competences="Maintien en conditions opérationnelles de sécurité; Utilisation du gestionnaire de paquets APT."
+                    data-modal-tools="APT, Bash, Réseau">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-word"><i class="fas fa-file-word"></i></div>
+                        <div class="card-badges"><span class="badge-level level-debutant">Débutant</span><span
+                                class="badge-format">.DOCX</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Étape 3 : Première Connexion & Mises à Jour</h3>
+                        <p class="tp-card-desc">Première ouverture de session, mise à jour intégrale des paquets APT et
+                            validation de l'accès réseau.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">APT Update</span><span
+                                class="skill-tag">Mise à jour</span><span class="skill-tag">Post-install</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/projet/VM ETAPE3 PREMIERE CONNEXION.docx" download
+                            class="btn-download"><i class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- Étape 4 -->
+                <div class="tp-card" data-category="vm"
+                    data-modal-title="Projet VM - Étape 4 : Déploiement des Guest Additions"
+                    data-modal-category="Intégration Virtualisation" data-modal-level="Intermédiaire"
+                    data-modal-desc="Installation des modules VirtualBox Guest Additions pour optimiser l'affichage, le partage de dossiers et le copier-coller bidirectionnel."
+                    data-modal-competences="Amélioration de l'ergonomie et de la communication hôte/machine invitée."
+                    data-modal-tools="Guest Additions, Noyau Linux">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-word"><i class="fas fa-file-word"></i></div>
+                        <div class="card-badges"><span class="badge-level level-intermediaire">Intermédiaire</span><span
+                                class="badge-format">.DOCX</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Étape 4 : Guest Additions</h3>
+                        <p class="tp-card-desc">Installation des pilotes invités VirtualBox pour activer la résolution
+                            dynamique et les dossiers partagés.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">Guest Additions</span><span
+                                class="skill-tag">Pilotes VM</span><span class="skill-tag">Intégration</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/projet/VM ETAPE4 GUESTADDITIONS.docx" download
+                            class="btn-download"><i class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- Étape 5 -->
+                <div class="tp-card" data-category="vm"
+                    data-modal-title="Projet VM - Étape 5 : Gestion des Utilisateurs & Droits Sudo"
+                    data-modal-category="Sécurité Système" data-modal-level="Intermédiaire"
+                    data-modal-desc="Création des utilisateurs d'exploitation, affectation aux groupes de privilèges et sécurisation des accès root via le fichier sudoers."
+                    data-modal-competences="Administration des comptes et droits; Application du moindre privilège."
+                    data-modal-tools="adduser, sudo, visudo">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-word"><i class="fas fa-file-word"></i></div>
+                        <div class="card-badges"><span class="badge-level level-intermediaire">Intermédiaire</span><span
+                                class="badge-format">.DOCX</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Étape 5 : Gestion des Utilisateurs</h3>
+                        <p class="tp-card-desc">Création des comptes d'administration, gestion des groupes secondaires
+                            et paramétrage des privilèges sudo.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">Utilisateurs</span><span
+                                class="skill-tag">Sudo</span><span class="skill-tag">Sécurité</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/projet/VM ETAPE5 GESTION UTILISATEURS.docx" download
+                            class="btn-download"><i class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- Étape 6 -->
+                <div class="tp-card" data-category="vm"
+                    data-modal-title="Projet VM - Étape 6 : Outils Essentiels d'Administration"
+                    data-modal-category="Outils Système" data-modal-level="Intermédiaire"
+                    data-modal-desc="Installation des logiciels et utilitaires de diagnostic et d'exploitation nécessaires : htop, curl, git, net-tools, vim et paramétrage de l'environnement."
+                    data-modal-competences="Préparation d'un environnement serveur opérationnel; Outils de supervision."
+                    data-modal-tools="htop, curl, net-tools, vim">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-word"><i class="fas fa-file-word"></i></div>
+                        <div class="card-badges"><span class="badge-level level-intermediaire">Intermédiaire</span><span
+                                class="badge-format">.DOCX</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Étape 6 : Outils Essentiels</h3>
+                        <p class="tp-card-desc">Déploiement des utilitaires indispensables pour l'administration et le
+                            monitoring (htop, curl, net-tools).</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">htop</span><span
+                                class="skill-tag">Monitoring</span><span class="skill-tag">Utilitaires</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/projet/VM ETAPE6 OUTILS ESSENTIELS.docx" download
+                            class="btn-download"><i class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+
+                <!-- Étape 7 -->
+                <div class="tp-card" data-category="vm"
+                    data-modal-title="Projet VM - Étape 7 : Serveur Web Complet (Apache & PHP)"
+                    data-modal-category="Services Réseau" data-modal-level="Intermédiaire"
+                    data-modal-desc="Installation, paramétrage et sécurisation d'un serveur HTTP Apache2 avec support du module PHP, création d'un VirtualHost et publication d'une page Web de test."
+                    data-modal-competences="Déploiement et administration d'un service d'hébergement Web; Configuration des hôtes virtuels Apache."
+                    data-modal-tools="Apache2, PHP, VirtualHost, HTTP, ufw">
+                    <div class="card-top">
+                        <div class="file-type-icon icon-word"><i class="fas fa-file-word"></i></div>
+                        <div class="card-badges"><span class="badge-level level-intermediaire">Intermédiaire</span><span
+                                class="badge-format">.DOCX</span></div>
+                    </div>
+                    <div class="tp-card-content">
+                        <h3 class="tp-card-title">Étape 7 : Serveur Web LAMP</h3>
+                        <p class="tp-card-desc">Déploiement complet d'un serveur Web Apache2 et PHP, création d'un
+                            VirtualHost et validation des tests d'accès.</p>
+                        <div class="tp-skills-tags"><span class="skill-tag">Apache2</span><span
+                                class="skill-tag">PHP</span><span class="skill-tag">VirtualHost</span></div>
+                    </div>
+                    <div class="tp-card-actions">
+                        <a href="Assets/fichier pdf/projet/VM ETAPE7 SERVEUR WEB COMPLET(1).docx" download
+                            class="btn-download"><i class="fas fa-download"></i> Télécharger</a>
+                        <button class="btn-details"><i class="fas fa-circle-info"></i> Détails</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Interactive des Détails du TP -->
+    <div class="tp-modal-overlay" id="tp-modal">
+        <div class="tp-modal-window">
+            <div class="tp-modal-header">
+                <div>
+                    <h3 id="tp-modal-title">Titre du TP</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;" id="tp-modal-meta">
+                    </p>
+                </div>
+                <button class="tp-modal-close" id="tp-modal-close" aria-label="Fermer la modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="tp-modal-body">
+                <div class="tp-modal-section">
+                    <h4><i class="fas fa-align-left"></i> Description & Contexte</h4>
+                    <p id="tp-modal-desc"></p>
+                </div>
+
+                <div class="tp-modal-section">
+                    <h4><i class="fas fa-graduation-cap"></i> Compétences BTS SIO SISR Visées</h4>
+                    <ul id="tp-modal-competences"></ul>
+                </div>
+
+                <div class="tp-modal-section">
+                    <h4><i class="fas fa-tools"></i> Outils & Technologies Utilisés</h4>
+                    <p id="tp-modal-tools"
+                        style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--primary-dark);">
+                    </p>
+                </div>
+            </div>
+            <div class="tp-modal-footer">
+                <a href="#" id="tp-modal-download" class="btn-download" download>
+                    <i class="fas fa-download"></i> Télécharger le document
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de fin de page -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/load-nav.js"></script>
+    <script src="JS/tp.js"></script>
+</body>
+
+</html>

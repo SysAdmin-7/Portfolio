@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage SIO 1 | Mathis Dubos - BTS SIO SISR</title>
+    <!-- jQuery & Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link href="CSS/index.css" rel="stylesheet">
+    <link href="CSS/stage.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Barre de navigation dynamique -->
+    <div id="nav-container"></div>
+
+    <!-- Hero Header -->
+    <header class="stage-hero">
+        <div class="hero-inner">
+            <div class="stage-badge-group">
+                <span class="badge-tag"><i class="fas fa-graduation-cap"></i> BTS SIO Option SISR</span>
+                <span class="badge-tag"><i class="fas fa-calendar-check"></i> Mai - Juin 2026 • 4 Semaines de stage</span>
+                <span class="badge-tag"><i class="fas fa-server"></i> Support & Systèmes d'Information</span>
+            </div>
+            <h1>Rapport de Stage de 1ère Année</h1>
+            <p>
+                Immersion professionnelle au cœur d'un service informatique opérationnel : déploiement massif d'images système via PXE, administration des accès Active Directory, maintenance préventive/curative du parc et maintien de la continuité réseau.
+            </p>
+            <div class="stage-stats-bar">
+                <div class="stat-item">
+                    <span class="stat-val">4</span>
+                    <span class="stat-lbl">Semaines de stage</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">60+</span>
+                    <span class="stat-lbl">Postes déployés & upgradés</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">6</span>
+                    <span class="stat-lbl">Missions majeures</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">100%</span>
+                    <span class="stat-lbl">Objectifs E4 validés</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fiche Synthèse Contexte -->
+    <section class="stage-container" style="padding-top: 0; padding-bottom: 2rem;">
+        <div class="stage-context-card">
+            <div class="context-box">
+                <span class="context-label"><i class="fas fa-building"></i> Structure d'Accueil</span>
+                <span class="context-val">Service Informatique Pédagogique</span>
+                <span class="context-desc">Gestion de l'infrastructure réseau et du parc matériel pour 150+ utilisateurs.</span>
+            </div>
+            <div class="context-box">
+                <span class="context-label"><i class="fas fa-user-tie"></i> Encadrement</span>
+                <span class="context-val">Responsable Technique & Réseau</span>
+                <span class="context-desc">Tuteur de stage dédié, accompagnement sur les méthodologies et la sécurité.</span>
+            </div>
+            <div class="context-box">
+                <span class="context-label"><i class="fas fa-desktop"></i> Parc Informatique</span>
+                <span class="context-val">150+ Postes Mixtes</span>
+                <span class="context-desc">PC Tout-en-Un HP, tours d'administration, imprimantes d'entreprise HP M506.</span>
+            </div>
+            <div class="context-box">
+                <span class="context-label"><i class="fas fa-network-wired"></i> Environnement</span>
+                <span class="context-val">Debian • Windows 10 • Cisco</span>
+                <span class="context-desc">Serveur FOG (PXE/iPXE), Active Directory Domain Services, switchs administrables.</span>
+            </div>
+        </div>
+
+        <!-- En-tête des missions -->
+        <div class="section-head">
+            <div>
+                <h2><i class="fas fa-microchip" style="color: var(--primary);"></i> Réalisations & Missions Techniques</h2>
+                <p>Synthèse détaillée des activités menées en production et consignées dans le dossier technique de stage.</p>
+            </div>
+            <span class="badge-tag"><i class="fas fa-check-circle" style="color: #10b981;"></i> Épreuve E4 - BTS SIO</span>
+        </div>
+
+        <!-- =========================================================================
+             MISSION 1 : DÉPLOIEMENT FOG
+             ========================================================================= -->
+        <article class="mission-card">
+            <div class="mission-header">
+                <div class="mission-title-group">
+                    <div class="mission-icon-box">
+                        <i class="fas fa-clone"></i>
+                    </div>
+                    <div>
+                        <span class="mission-number">Mission 01 • Clonage & Industrialisation</span>
+                        <h3>Déploiement Automatisé d'Images Système avec FOG Project</h3>
+                    </div>
+                </div>
+                <span class="mission-badge"><i class="fas fa-check"></i> Déploiement Réseau PXE</span>
+            </div>
+
+            <div class="mission-grid">
+                <div class="mission-text-col">
+                    <div class="mission-block">
+                        <h4><i class="fas fa-bullseye"></i> Contexte & Problématique</h4>
+                        <p>
+                            La réinstallation individuelle des postes informatiques par clé USB prenait un temps considérable et générait des disparités logicielles. L'objectif était de mettre en œuvre une solution de déploiement centralisée via le réseau pour cloner rapidement des salles entières avec une image Windows 10 standardisée.
+                        </p>
+                    </div>
+
+                    <div class="mission-block">
+                        <h4><i class="fas fa-cogs"></i> Méthodologie & Réalisation</h4>
+                        <ul>
+                            <li><strong>Mise en place de l'infrastructure FOG :</strong> Exploitation d'un serveur FOG sous Debian Linux couplé aux services TFTP, DHCP et iPXE pour l'amorçage réseau sans support externe.</li>
+                            <li><strong>Préparation de l'Image Master :</strong> Installation d'un poste référence (Windows 10 Pro, mises à jour, logiciels métiers, profils par défaut), puis exécution de <code>Sysprep</code> pour supprimer les identifiants uniques (SID).</li>
+                            <li><strong>Capture d'image (Partclone) :</strong> Configuration en mode <em>Single Disk - Resizable</em> pour adapter automatiquement les partitions aux différentes capacités de stockage du parc.</li>
+                            <li><strong>Amorçage & Enregistrement :</strong> Démarrage PXE sur les postes cibles, enregistrement rapide via adresse MAC et déploiement multicast/unicast.</li>
+                            <li><strong>Automatisation post-clonage :</strong> Intégration du client FOG pour le renommage automatique de la machine et la jonction transparente au domaine Active Directory.</li>
+                        </ul>
+                        <div class="code-step">
+                            # Préparation du Master avant capture FOG :<br>
+                            C:\Windows\System32\Sysprep\sysprep.exe /generalize /oobe /shutdown
+                        </div>
+                    </div>
+
+                    <div class="mission-block">
+                        <h4><i class="fas fa-wrench"></i> Environnement Technologique</h4>
+                        <div class="mission-tools">
+                            <span class="mission-tool-tag">FOG Project</span>
+                            <span class="mission-tool-tag">Debian Linux</span>
+                            <span class="mission-tool-tag">Partclone</span>
+                            <span class="mission-tool-tag">iPXE / TFTP</span>
+                            <span class="mission-tool-tag">Sysprep</span>
+                            <span class="mission-tool-tag">DHCP Options 66/67</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-media-col">
+                    <div class="media-card" onclick="openLightbox('02_Stage_1ère_Année/images/06_deploiment_d\'image_système_avec_FOG/20260615_151640.jpg', 'Atelier FOG : banc de test avec 4 postes clonés en simultané via PXE (Partclone), serveur FOG et baie de brassage murale')">
+                        <img src="02_Stage_1ère_Année/images/06_deploiment_d'image_système_avec_FOG/20260615_151640.jpg" alt="Atelier FOG complet avec postes clients et serveur">
+                        <div class="media-caption">
+                            <span><i class="fas fa-search-plus"></i> Atelier FOG : banc de déploiement</span>
+                            <small>Banc PXE Multicast</small>
+                        </div>
+                    </div>
+                    <div class="media-card" onclick="openLightbox('02_Stage_1ère_Année/images/06_deploiment_d\'image_système_avec_FOG/Snapchat-179870581.jpg', 'Supervision FOG : tableau de bord du serveur FOG (gauche) et restauration d\'image NVMe en temps réel via Partclone PXE (droite)')">
+                        <img src="02_Stage_1ère_Année/images/06_deploiment_d'image_système_avec_FOG/Snapchat-179870581.jpg" alt="Console Web FOG et restauration Partclone en direct">
+                        <div class="media-caption">
+                            <span><i class="fas fa-search-plus"></i> Console FOG & Restauration Partclone</span>
+                            <small>Partclone & Web UI</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- =========================================================================
+             MISSION 2 : DOMAINE ACTIVE DIRECTORY
+             ========================================================================= -->
+        <article class="mission-card">
+            <div class="mission-header">
+                <div class="mission-title-group">
+                    <div class="mission-icon-box">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div>
+                        <span class="mission-number">Mission 02 • Administration Système</span>
+                        <h3>Jonction au Domaine Active Directory & Conventions de Nommage</h3>
+                    </div>
+                </div>
+                <span class="mission-badge"><i class="fas fa-check"></i> Sécurité & Gestion d'Accès</span>
+            </div>
+
+            <div class="mission-grid">
+                <div class="mission-text-col">
+                    <div class="mission-block">
+                        <h4><i class="fas fa-bullseye"></i> Contexte & Problématique</h4>
+                        <p>
+                            Garantir que l'ensemble des nouveaux postes soient rigoureusement intégrés à l'annuaire Active Directory de l'établissement afin d'appliquer les stratégies de groupe (GPO), contrôler les droits d'accès et permettre aux utilisateurs de retrouver leurs sessions itinérantes sur n'importe quel ordinateur.
+                        </p>
+                    </div>
+
+                    <div class="mission-block">
+                        <h4><i class="fas fa-cogs"></i> Méthodologie & Réalisation</h4>
+                        <ul>
+                            <li><strong>Vérification DNS préalable :</strong> Contrôle de la résolution des noms de domaine et de la communication avec les contrôleurs de domaine (DC).</li>
+                            <li><strong>Convention de nommage normalisée :</strong> Renommage systématique des machines selon la nomenclature du parc (ex: <code>SALLE-NUMPOSTE</code>) facilitant le repérage dans les consoles d'administration.</li>
+                            <li><strong>Procédure de rattachement :</strong> Utilisation de l'outil <code>sysdm.cpl</code> (Propriétés système Windows), sélection du domaine cible et authentification avec des identifiants d'administrateur délégué.</li>
+                            <li><strong>Affectation aux Unités d'Organisation (OU) :</strong> Déplacement de l'objet ordinateur dans l'OU correspondante pour l'application immédiate des GPO adaptées (droits restreints, raccourcis pédagogiques, lecteurs réseau).</li>
+                        </ul>
+                        <div class="code-step">
+                            # Accès rapide aux propriétés système :<br>
+                            sysdm.cpl -> Onglet 'Nom de l'ordinateur' -> Modifier -> Membre de 'Domaine'
+                        </div>
+                    </div>
+
+                    <div class="mission-block">
+                        <h4><i class="fas fa-wrench"></i> Environnement Technologique</h4>
+                        <div class="mission-tools">
+                            <span class="mission-tool-tag">Active Directory (AD DS)</span>
+                            <span class="mission-tool-tag">Windows 10 Pro</span>
+                            <span class="mission-tool-tag">sysdm.cpl</span>
+                            <span class="mission-tool-tag">GPO (Stratégies de groupe)</span>
+                            <span class="mission-tool-tag">DNS Client</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-media-col">
+                    <div class="media-card contain-fit" onclick="openLightbox('02_Stage_1ère_Année/images/01_Entrée_dans_un_domaine_et_modification_du_nom_du_pc_AC_Windows_10/Pasted image 20260625095225.png', 'Console sysdm.cpl : onglet Nom de l\'ordinateur avec bouton Modifier pour configurer le nom et le domaine')">
+                        <img src="02_Stage_1ère_Année/images/01_Entrée_dans_un_domaine_et_modification_du_nom_du_pc_AC_Windows_10/Pasted image 20260625095225.png" alt="Propriétés système sysdm.cpl nom de l'ordinateur">
+                        <div class="media-caption">
+                            <span><i class="fas fa-search-plus"></i> Console sysdm.cpl</span>
+                            <small>Nom de machine</small>
+                        </div>
+                    </div>
+                    <div class="media-card contain-fit" onclick="openLightbox('02_Stage_1ère_Année/images/01_Entrée_dans_un_domaine_et_modification_du_nom_du_pc_AC_Windows_10/Pasted image 20260625095532.png', 'Fenêtre de saisie du nouveau nom d\'ordinateur normalisé et rattachement au domaine')">
+                        <img src="02_Stage_1ère_Année/images/01_Entrée_dans_un_domaine_et_modification_du_nom_du_pc_AC_Windows_10/Pasted image 20260625095532.png" alt="Dialogue modification nom et domaine">
+                        <div class="media-caption">
+                            <span><i class="fas fa-search-plus"></i> Jonction au Domaine AD</span>
+                            <small>Configuration</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- =========================================================================
+             MISSION 3 : IMPRIMANTES RÉSEAU HP
+             ========================================================================= -->
+        <article class="mission-card">
+            <div class="mission-header">
+                <div class="mission-title-group">
+                    <div class="mission-icon-box">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <div>
+                        <span class="mission-number">Mission 03 • Périphériques Réseau</span>
+                        <h3>Configuration & Déploiement d'Imprimantes Réseau HP Enterprise M506</h3>
+                    </div>
+                </div>
+                <span class="mission-badge"><i class="fas fa-check"></i> Adressage IP & Impression TCP/IP</span>
+            </div>
+
+            <div class="mission-grid">
+                <div class="mission-text-col">
+                    <div class="mission-block">
+                        <h4><i class="fas fa-bullseye"></i> Contexte & Problématique</h4>
+                        <p>
+                            Remplacement et intégration de nouvelles imprimantes laser d'entreprise HP LaserJet Enterprise M506 pour les bureaux administratifs et les salles de professeurs, avec garantie de fiabilité et élimination des blocages liés aux requêtes d'état réseau.
+                        </p>
+                    </div>
+
+                    <div class="mission-block">
+                        <h4><i class="fas fa-cogs"></i> Méthodologie & Réalisation</h4>
+                        <ul>
+                            <li><strong>Attribution d'une adresse IP Statique :</strong> Configuration directe depuis l'écran de contrôle de l'imprimante dans le plan d'adressage réseau dédié (VLAN imprimantes/bureautique), avec passerelle et masque de sous-réseau.</li>
+                            <li><strong>Création d'un port TCP/IP standard :</strong> Ajout sur les postes clients via la console d'impression avec le protocole RAW (port 9100).</li>
+                            <li><strong>Désactivation de la requête SNMP :</strong> Décochage impératif de l'option « Activer l'état SNMP » dans les propriétés du port pour prévenir les faux blocages d'impression constatés sous Windows 10 lors d'instabilités de filtrage.</li>
+                            <li><strong>Installation des pilotes PCL6 officiels :</strong> Intégration manuelle du fichier <code>.inf</code> fourni par le constructeur afin d'assurer l'impression recto-verso et la gestion fine du bac papier.</li>
+                        </ul>
+                        <div class="code-step">
+                            # Paramétrage port d'impression TCP/IP :<br>
+                            Protocole: RAW | Port: 9100 | SNMP Status: Désactivé (Résolution erreurs offline)
+                        </div>
+                    </div>
+
+                    <div class="mission-block">
+                        <h4><i class="fas fa-wrench"></i> Environnement Technologique</h4>
+                        <div class="mission-tools">
+                            <span class="mission-tool-tag">HP LaserJet Enterprise M506</span>
+                            <span class="mission-tool-tag">TCP/IP Port RAW (9100)</span>
+                            <span class="mission-tool-tag">Pilotes PCL6 / INF</span>
+                            <span class="mission-tool-tag">Protocole SNMP</span>
+                            <span class="mission-tool-tag">Print Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-media-col">
+                    <div class="media-card" onclick="openLightbox('02_Stage_1ère_Année/images/02_installation_imprimante_réseaux/Pasted image 20260625105437.png', 'Imprimante réseau HP LaserJet Enterprise M506 installée, raccordée au réseau local et opérationnelle en salle permanente')">
+                        <img src="02_Stage_1ère_Année/images/02_installation_imprimante_réseaux/Pasted image 20260625105437.png" alt="Imprimante HP LaserJet Enterprise M506 en situation">
+                        <div class="media-caption">
+                            <span><i class="fas fa-search-plus"></i> HP LaserJet Enterprise M506</span>
+                            <small>Matériel déployé</small>
+                        </div>
+                    </div>
+                    <div class="media-card" onclick="openLightbox('02_Stage_1ère_Année/images/06_deploiment_d\'image_système_avec_FOG/20260619_133326.jpg', 'Propriétés d\'impression Windows : configuration du port TCP/IP standard (192.168.10.236) et pilote HP LaserJet M506 PCL 6 pour l\'imprimante Salle Perm (Lycée Saint-Rémi)')">
+                        <img src="02_Stage_1ère_Année/images/06_deploiment_d'image_système_avec_FOG/20260619_133326.jpg" alt="Configuration du port TCP/IP 192.168.10.236 sous Windows">
+                        <div class="media-caption">
+                            <span><i class="fas fa-search-plus"></i> Port TCP/IP : 192.168.10.236</span>
+                            <small>Pilote PCL 6</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- =========================================================================
+             MISSION 4 : UPGRADE HARDWARE ALL-IN-ONE
+             ========================================================================= -->
+        <article class="mission-card">
+            <div class="mission-header">
+                <div class="mission-title-group">
+                    <div class="mission-icon-box">
+                        <i class="fas fa-memory"></i>
+                    </div>
+                    <div>
+                        <span class="mission-number">Mission 04 • Hardware & Optimisation</span>
+                        <h3>Optimisation Matérielle & Désossage de PC Tout-en-Un (All-in-One)</h3>
+                    </div>
+                </div>
+                <span class="mission-badge"><i class="fas fa-check"></i> Reconditionnement & RAM</span>
+            </div>
+
+            <div class="mission-grid">
+                <div class="mission-text-col">
+                    <div class="mission-block">
+                        <h4><i class="fas fa-bullseye"></i> Contexte & Problématique</h4>
+                        <p>
+                            Plusieurs dizaines de postes All-in-One présentaient d'importants ralentissements sous Windows 10 en raison d'une mémoire vive limitée à 4 Go, saturée dès l'ouverture simultanée du navigateur et de logiciels pédagogiques. Une opération de reconditionnement physique a été menée pour doubler la mémoire vive à moindre coût.
+                        </p>
+                    </div>
+
+                    <div class="mission-block">
+                        <h4><i class="fas fa-cogs"></i> Méthodologie & Réalisation</h4>
+                        <ul>
+                            <li><strong>Démontage minutieux du châssis :</strong> Retrait du pied de maintien, déclipsage des contours de la dalle sans endommager l'écran, et extraction du blindage métallique interne.</li>
+                            <li><strong>Diagnostic des slots d'extension :</strong> Identification de l'emplacement SO-DIMM secondaire libre et validation de la compatibilité des fréquences et voltages (DDR3L / DDR4).</li>
+                            <li><strong>Installation de mémoire vive :</strong> Insertion d'un module additionnel de 4 Go pour atteindre 8 Go et exploiter l'architecture <em>Dual Channel</em>.</li>
+                            <li><strong>Maintenance thermique préventive :</strong> Dépoussiérage intégral de la turbine d'extraction thermique et des grilles de ventilation à l'air sec comprimé.</li>
+                            <li><strong>Tests post-intervention :</strong> Démarrage dans le BIOS pour certifier la détection des 8 Go, contrôle de la stabilité sous charge et vérification sous Windows.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mission-block">
+                        <h4><i class="fas fa-wrench"></i> Environnement Technologique</h4>
+                        <div class="mission-tools">
+                            <span class="mission-tool-tag">PC HP All-in-One</span>
+                            <span class="mission-tool-tag">Mémoire RAM SO-DIMM</span>
+                            <span class="mission-tool-tag">Architecture Dual Channel</span>
+                            <span class="mission-tool-tag">Outillage ESD / Démontage</span>
+                            <span class="mission-tool-tag">Diagnostic BIOS/UEFI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-media-col">
+                    <div class="media-card" onclick="openLightbox('02_Stage_1ère_Année/images/04_boost_de_pc/20260609_104112.jpg', 'Démontage minutieux du châssis All-in-One HP : retrait du capot arrière et dépose de la cage de blindage métallique')">
+                        <img src="02_Stage_1ère_Année/images/04_boost_de_pc/20260609_104112.jpg" alt="Démontage du châssis PC All-in-One HP">
+                        <div class="media-caption">
+                            <span><i class="fas fa-search-plus"></i> Démontage Tout-en-Un HP</span>
+                            <small>Châssis & Blindage</small>
+                        </div>
+                    </div>
+                    <div class="media-card" onclick="openLightbox('02_Stage_1ère_Année/images/05_Maintenance/20260609_095511.jpg', 'Carte mère HP ProOne All-in-One : intégration du second module de RAM SO-DIMM DDR4 (upgrade 8 Go Dual Channel), caloduc en cuivre et turbine de refroidissement')">
+                        <img src="02_Stage_1ère_Année/images/05_Maintenance/20260609_095511.jpg" alt="Carte mère All-in-One avec les deux barrettes de RAM SO-DIMM installées">
+                        <div class="media-caption">
+                            <span><i class="fas fa-search-plus"></i> Carte mère & RAM Dual Channel</span>
+                            <small>SO-DIMM 8 Go</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- =========================================================================
+             MISSION 5 : PONT RÉSEAU SWITCH INTER-SALLES
+             ========================================================================= -->
+        <article class="mission-card">
+            <div class="mission-header">
+                <div class="mission-title-group">
+                    <div class="mission-icon-box">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <div>
+                        <span class="mission-number">Mission 05 • Réseau & Continuité d'Activité</span>
+                        <h3>Pont Réseau d'Urgence inter-salles lors d'un Épisode de Canicule</h3>
+                    </div>
+                </div>
+                <span class="mission-badge"><i class="fas fa-check"></i> Continuité de Service & Switching</span>
+            </div>
+
+            <div class="mission-grid">
+                <div class="mission-text-col">
+                    <div class="mission-block">
+                        <h4><i class="fas fa-bullseye"></i> Contexte & Problématique</h4>
+                        <p>
+                            En période de forte chaleur, la salle informatique standard (Salle 27) est devenue inutilisable pour les examens et cours. La décision a été prise de déménager en urgence une quinzaine de postes vers la salle climatisée (Salle 28), qui ne disposait pas d'assez de prises murales RJ45 pour tous les élèves.
+                        </p>
+                    </div>
+
+                    <div class="mission-block">
+                        <h4><i class="fas fa-cogs"></i> Méthodologie & Réalisation</h4>
+                        <ul>
+                            <li><strong>Déploiement d'un commutateur intermédiaire :</strong> Installation d'un switch Gigabit rackable pour étendre la connectivité réseau depuis la prise murale de distribution.</li>
+                            <li><strong>Raccordement et sécurisation physique :</strong> Câble réseau de 5m tiré vers le switch et câblage RJ45 Cat 6 vers les postes avec passage sécurisé pour éviter tout risque de chute ou d'arrachement accidentel.</li>
+                            <li><strong>Validation de la connectivité réseau :</strong> Contrôle de l'attribution des adresses IP par le serveur DHCP et tests de ping vers la passerelle et le contrôleur de domaine.</li>
+                            <li><strong>Continuité d'activité garantie :</strong> Tous les élèves ont pu ouvrir leur session Active Directory sans rupture, avec un accès fluide à leurs données et aux examens.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mission-block">
+                        <h4><i class="fas fa-wrench"></i> Environnement Technologique</h4>
+                        <div class="mission-tools">
+                            <span class="mission-tool-tag">Switch Gigabit Ethernet</span>
+                            <span class="mission-tool-tag">Câblage RJ45 Cat 6</span>
+                            <span class="mission-tool-tag">DHCP / DNS</span>
+                            <span class="mission-tool-tag">Continuité d'Activité (PCA)</span>
+                            <span class="mission-tool-tag">Topologie en étoile étendue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-media-col">
+                    <div class="media-card" onclick="openLightbox('02_Stage_1ère_Année/images/07_pont_avec_un_switch_entre_deux_salle/20260626_125131.jpg', 'Câble réseau de 5m tiré depuis la salle 27 vers le switch intermédiaire installé en salle 28')">
+                        <img src="02_Stage_1ère_Année/images/07_pont_avec_un_switch_entre_deux_salle/20260626_125131.jpg" alt="Liaison réseau et commutateur">
+                        <div class="media-caption">
+                            <span><i class="fas fa-search-plus"></i> Câble de pont 5m vers le switch</span>
+                            <small>Liaison inter-salles</small>
+                        </div>
+                    </div>
+                    <div class="media-card" onclick="openLightbox('02_Stage_1ère_Année/images/07_pont_avec_un_switch_entre_deux_salle/20260626_125139.jpg', 'Salle 28 opérationnelle : baie de brassage locale et postes élèves raccordés au switch avec accès aux sessions')">
+                        <img src="02_Stage_1ère_Année/images/07_pont_avec_un_switch_entre_deux_salle/20260626_125139.jpg" alt="Postes élèves et baie réseau en salle 28">
+                        <div class="media-caption">
+                            <span><i class="fas fa-search-plus"></i> Postes élèves & baie raccordés</span>
+                            <small>Continuité validée</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- =========================================================================
+             MISSION 6 : MAINTENANCE, RECYCLAGE & SUPPORT
+             ========================================================================= -->
+        <article class="mission-card">
+            <div class="mission-header">
+                <div class="mission-title-group">
+                    <div class="mission-icon-box">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <span class="mission-number">Mission 06 • Exploitation & Support</span>
+                        <h3>Maintenance Curative, Dépannage Support & Recyclage Matériel</h3>
+                    </div>
+                </div>
+                <span class="mission-badge"><i class="fas fa-check"></i> Helpdesk & Gestion de Parc</span>
+            </div>
+
+            <div class="mission-grid">
+                <div class="mission-text-col">
+                    <div class="mission-block">
+                        <h4><i class="fas fa-bullseye"></i> Contexte & Problématique</h4>
+                        <p>
+                            Assurer le support technique quotidien auprès des enseignants et personnels administratifs, maintenir le matériel en conditions opérationnelles et reconditionner les pièces fonctionnelles issues d'anciennes machines hors d'usage.
+                        </p>
+                    </div>
+
+                    <div class="mission-block">
+                        <h4><i class="fas fa-cogs"></i> Méthodologie & Réalisation</h4>
+                        <ul>
+                            <li><strong>Télé-assistance avec AnyDesk :</strong> Prise en main à distance rapide pour dépanner les dysfonctionnements logiciels (blocages Office, reconfigurations de session, soucis de profils).</li>
+                            <li><strong>Atelier de maintenance & diagnostic :</strong> Test des alimentations ATX, remplacement des cartes mères défaillantes et nettoyage haute pression des composants encrassés.</li>
+                            <li><strong>Récupération & recyclage de composants :</strong> Extraction et test de santé (S.M.A.R.T.) de disques durs et barrettes de RAM récupérés sur des tours réformées pour constituer un stock de pièces de rechange.</li>
+                            <li><strong>Audit et libération d'espace disque :</strong> Diagnostic des postes dont le disque système C: était saturé pour rétablir la stabilité et reconnecter les lecteurs réseau partagés (<code>\\STREMI02</code>).</li>
+                        </ul>
+                    </div>
+
+                    <div class="mission-block">
+                        <h4><i class="fas fa-wrench"></i> Environnement Technologique</h4>
+                        <div class="mission-tools">
+                            <span class="mission-tool-tag">Tours HP & Lenovo</span>
+                            <span class="mission-tool-tag">AnyDesk Remote</span>
+                            <span class="mission-tool-tag">Diagnostic S.M.A.R.T.</span>
+                            <span class="mission-tool-tag">Maintenance Curative</span>
+                            <span class="mission-tool-tag">Recyclage / Dépannage</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-media-col">
+                    <div class="media-card" onclick="openLightbox('02_Stage_1ère_Année/images/05_Maintenance/Snapchat-1098061332.jpg', 'Unité centrale HP ouverte en atelier : dépoussiérage, test des barrettes de RAM, diagnostic de l\'alimentation et récupération de disques durs')">
+                        <img src="02_Stage_1ère_Année/images/05_Maintenance/Snapchat-1098061332.jpg" alt="Unité centrale ouverte en atelier">
+                        <div class="media-caption">
+                            <span><i class="fas fa-search-plus"></i> Tour HP ouverte : diagnostic & RAM</span>
+                            <small>Maintenance interne</small>
+                        </div>
+                    </div>
+                    <div class="media-card" onclick="openLightbox('02_Stage_1ère_Année/images/05_Maintenance/20260602_110102.jpg', 'Parc de tours HP regroupées sur le banc de maintenance pour nettoyage complet, upgrade et déploiement')">
+                        <img src="02_Stage_1ère_Année/images/05_Maintenance/20260602_110102.jpg" alt="Stock de tours d'ordinateurs HP en atelier">
+                        <div class="media-caption">
+                            <span><i class="fas fa-search-plus"></i> Stock de tours HP en révision</span>
+                            <small>Parc matériel</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- =========================================================================
+             SECTION GALERIE PHOTOS IMMERSION & ATELIER
+             ========================================================================= -->
+        <div class="section-head" style="margin-top: 3.5rem;">
+            <div>
+                <h2><i class="fas fa-images" style="color: var(--cyan);"></i> Galerie d'Atelier & Immersion Professionnelle</h2>
+                <p>Aperçu photographique des autres interventions, audits matériels et équipements manipulés durant le stage.</p>
+            </div>
+        </div>
+
+        <div class="stage-gallery-grid">
+            <div class="gallery-card" onclick="openLightbox('02_Stage_1ère_Année/images/05_Maintenance/20260617_094427.jpg', 'Atelier : stock d\'imprimantes laser réseau réformées (Samsung Xpress, HP LaserJet P2055dn) pour récupération de pièces')">
+                <img src="02_Stage_1ère_Année/images/05_Maintenance/20260617_094427.jpg" alt="Stock d'imprimantes réformées en atelier">
+                <div class="gallery-info">
+                    <div class="gallery-title">Parc d'Imprimantes Réformées</div>
+                    <div class="gallery-desc">Imprimantes laser Samsung et HP retirées des bureaux pour pièces.</div>
+                </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('02_Stage_1ère_Année/images/05_Maintenance/20260617_160818 1.jpg', 'Chariot d\'anciennes unités centrales Lenovo ThinkCentre obsolètes prêtes pour le déclassement et le recyclage DEEE')">
+                <img src="02_Stage_1ère_Année/images/05_Maintenance/20260617_160818 1.jpg" alt="Chariot de PC réformés">
+                <div class="gallery-info">
+                    <div class="gallery-title">Déclassement & Recyclage DEEE</div>
+                    <div class="gallery-desc">Tours Lenovo réformées pour pièces et tri écologique DEEE.</div>
+                </div>
+            </div>
+
+            <div class="gallery-card contain-fit" onclick="openLightbox('02_Stage_1ère_Année/images/05_Maintenance/20260616_154329.jpg', 'Diagnostic de session locale : saturation critique du disque C: (4,94 Go libres) et liaison au lecteur réseau STREMI02')">
+                <img src="02_Stage_1ère_Année/images/05_Maintenance/20260616_154329.jpg" alt="Session Windows avec disque saturé">
+                <div class="gallery-info">
+                    <div class="gallery-title">Audit Stockage & Lecteurs Réseau</div>
+                    <div class="gallery-desc">Saturation du disque C: (4,94 Go restants) et partage \\STREMI02.</div>
+                </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('02_Stage_1ère_Année/images/05_Maintenance/20260609_131217.jpg', 'Composants de rechange : barrette mémoire Samsung 1 Go DDR3 PC3-10600U testée avant réaffectation')">
+                <img src="02_Stage_1ère_Année/images/05_Maintenance/20260609_131217.jpg" alt="Barrette mémoire Samsung DDR3 1 Go">
+                <div class="gallery-info">
+                    <div class="gallery-title">Diagnostic & Test Barrette RAM</div>
+                    <div class="gallery-desc">Module Samsung DDR3 1 Go récupéré sur tour réformée pour test.</div>
+                </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('02_Stage_1ère_Année/images/05_Maintenance/20260609_095436.jpg', 'Composant interne d\'un PC All-in-One : carte Wi-Fi Intel Dual Band M.2 et repérage de l\'adresse MAC matérielle')">
+                <img src="02_Stage_1ère_Année/images/05_Maintenance/20260609_095436.jpg" alt="Carte Wi-Fi Intel M.2 Tout-en-Un">
+                <div class="gallery-info">
+                    <div class="gallery-title">Composant Wi-Fi All-in-One</div>
+                    <div class="gallery-desc">Module Wi-Fi Intel M.2 et relevé d'adresse MAC pour l'inventaire.</div>
+                </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('02_Stage_1ère_Année/images/08_Formation/20260624_142606.jpg', 'Auto-formation continue et révision des protocoles de routage et commutation Cisco CCNA durant les temps calmes')">
+                <img src="02_Stage_1ère_Année/images/08_Formation/20260624_142606.jpg" alt="Notes de révision réseau Cisco">
+                <div class="gallery-info">
+                    <div class="gallery-title">Formation Continue Cisco CCNA</div>
+                    <div class="gallery-desc">Révisions approfondies du routage, commutation et adressage IP.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================================================================
+             TABLEAU DE SYNTHÈSE DES COMPÉTENCES BTS SIO (ÉPREUVE E4)
+             ========================================================================= -->
+        <div class="section-head" style="margin-top: 3.5rem;">
+            <div>
+                <h2><i class="fas fa-clipboard-check" style="color: #10b981;"></i> Matrice des Compétences E4 Couvertes</h2>
+                <p>Correspondance officielle avec le référentiel du BTS SIO SISR.</p>
+            </div>
+        </div>
+
+        <div class="competences-table-card">
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th style="width: 28%;">Domaine de Compétences</th>
+                        <th style="width: 42%;">Activités & Tâches Réalisées</th>
+                        <th style="width: 30%;">Statut Référentiel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Gérer le patrimoine informatique</strong></td>
+                        <td>
+                            Recensement du parc All-in-One et imprimantes, gestion du cycle de vie des composants, attribution d'adresses IP fixes, déploiement d'images de référence standardisées (FOG).
+                        </td>
+                        <td><span class="badge-valid"><i class="fas fa-check-circle"></i> Compétence Validée</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Répondre aux incidents & demandes</strong></td>
+                        <td>
+                            Diagnostic matériel en atelier, télé-assistance utilisateurs via AnyDesk, déblocage de files d'impression HP M506, remplacement à chaud de matériel défectueux.
+                        </td>
+                        <td><span class="badge-valid"><i class="fas fa-check-circle"></i> Compétence Validée</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Travailler en mode projet</strong></td>
+                        <td>
+                            Planification et séquençage du reconditionnement matériel avant les rentrées scolaires, documentation technique des procédures d'intégration Active Directory.
+                        </td>
+                        <td><span class="badge-valid"><i class="fas fa-check-circle"></i> Compétence Validée</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mettre à disposition les services</strong></td>
+                        <td>
+                            Jonction au domaine <code>sysdm.cpl</code>, déploiement automatisé du client FOG, mise en œuvre d'un pont réseau d'urgence par switch pour préserver les sessions.
+                        </td>
+                        <td><span class="badge-valid"><i class="fas fa-check-circle"></i> Compétence Validée</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Boutons d'action fin de page -->
+        <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem;">
+            <a href="TP.html" class="btn-primary-custom"><i class="fas fa-layer-group"></i> Consulter mes Projets & TPs</a>
+            <a href="cv.html" class="btn-secondary-custom"><i class="fas fa-file-pdf"></i> Voir mon Curriculum Vitae</a>
+            <a href="index.html" class="btn-secondary-custom"><i class="fas fa-home"></i> Retour à l'Accueil</a>
+        </div>
+    </section>
+
+    <!-- Modale Lightbox pour agrandissement des photos -->
+    <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox(event)">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            <img id="lightboxImg" src="" alt="Agrandissement photo stage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/load-nav.js"></script>
+
+    <script>
+        // Gestion de la Lightbox
+        const lightboxOverlay = document.getElementById('lightboxOverlay');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+
+        function openLightbox(src, caption) {
+            lightboxImg.src = src;
+            lightboxCaption.textContent = caption;
+            lightboxOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(e) {
+            if (e) e.preventDefault();
+            lightboxOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
