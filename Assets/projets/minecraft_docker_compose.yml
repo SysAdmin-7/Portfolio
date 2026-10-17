@@ -1,0 +1,36 @@
+version: '3.8'
+
+# ==============================================================================
+# INFRASTRUCTURE SERVEUR MINECRAFT CONTENEURISEE
+#   - BTS SIO SISR
+# ==============================================================================
+
+services:
+  minecraft-server:
+    image: itzg/minecraft-server:latest
+    container_name: mc-production
+    restart: unless-stopped
+    ports:
+      - "25565:25565"
+      - "25575:25575" # RCON
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      VERSION: "1.20.4"
+      MEMORY: "4G"
+      MAX_PLAYERS: "20"
+      VIEW_DISTANCE: "10"
+      ONLINE_MODE: "TRUE"
+      ENABLE_RCON: "TRUE"
+      RCON_PASSWORD: "AdminRconPassword2026!"
+      RCON_PORT: "25575"
+      JVM_XX_OPTS: "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch"
+    volumes:
+      - ./data:/data
+    deploy:
+      resources:
+        limits:
+          cpus: '3.0'
+          memory: 5G
+        reservations:
+          memory: 4G
